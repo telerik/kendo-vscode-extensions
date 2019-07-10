@@ -26,10 +26,6 @@ const messages = defineMessages({
     id: "leftSidebar.pages",
     defaultMessage: "3. Pages"
   },
-  services: {
-    id: "leftSidebar.services",
-    defaultMessage: "4. Services (Optional)"
-  },
   summary: {
     id: "leftSidebar.summary",
     defaultMessage: "5. Summary"
@@ -53,7 +49,6 @@ const LeftSidebar = (props: Props) => {
     formatMessage(messages.welcome),
     formatMessage(messages.frameworks),
     formatMessage(messages.pages),
-    formatMessage(messages.services),
     formatMessage(messages.summary)
   ];
   const { pathname } = props.location;

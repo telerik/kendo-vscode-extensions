@@ -10,7 +10,6 @@ const initialState = {
   [ROUTES.NEW_PROJECT]: true,
   [ROUTES.SELECT_FRAMEWORKS]: false,
   [ROUTES.SELECT_PAGES]: false,
-  [ROUTES.AZURE_LOGIN]: false,
   [ROUTES.REVIEW_AND_GENERATE]: false
 };
 
