@@ -250,7 +250,6 @@ class App extends React.Component<Props> {
             })}
           >
             <Route path={ROUTES.PAGE_DETAILS} component={PageDetails} />
-            <Route path={ROUTES.AZURE_LOGIN} component={AzureLogin} />
             <Route
               path={ROUTES.REVIEW_AND_GENERATE}
               component={ReviewAndGenerate}

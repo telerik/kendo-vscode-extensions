@@ -135,8 +135,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
   public render() {
     const {
       showFrameworks,
-      showPages,
-      showServices
+      showPages
     } = this.props.isRoutesVisited;
     const { pathname } = this.props.location;
     const { intl, contentOptions, isValidNameAndProjectPath } = this.props;
@@ -183,14 +182,6 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                 <div className={styles.sortablePages}>
                   {showPages && <SortablePageList />}
                 </div>
-                {showServices && (
-                  <div className={styles.sidebarItem}>
-                    <div className={styles.dropdownTitle}>
-                      {formatMessage(messages.services)}
-                    </div>
-                    <ServicesSidebarItem services={this.props.services} />
-                  </div>
-                )}
               </div>
             }
             <div>
