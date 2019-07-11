@@ -1,12 +1,22 @@
 ﻿[
   {
-    "name": "FullStackWebApp",
-    "displayName": "Fullstack Web Application",
-    "summary": "An end-to-end web application which includes front-end, back-end and database components.",
-    "author": "Microsoft",
+    "name": "KendoWebApp",
+    "displayName": "Kendo Web Application",
+    "summary": "Kendo web application",
+    "author": "Progress",
     "order": "1",
     "licenses": "",
     "platforms": ["Web"],
     "languages": ["Any"]
-  }
+  },
+  {
+    "name": "FullStackWebApp",
+    "displayName": "Fullstack Web Application",
+    "summary": "An end-to-end web application which includes front-end, back-end and database components.",
+    "author": "Microsoft",
+    "order": "2",
+    "licenses": "",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  }  
 ]

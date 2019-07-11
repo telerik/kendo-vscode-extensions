@@ -11,8 +11,8 @@ import WizardInfoType from "../../actions/wizardInfoActions/wizardInfoActionType
 */
 
 const initialState = {
-  title: "Fullstack Web Application",
-  internalName: "FullStackWebApp",
+  title: "Kendo Web Application",
+  internalName: "KendoWebApp",
   version: "v1.0",
   licenses: ""
 };
