@@ -22,13 +22,9 @@ const messages = defineMessages({
     id: "leftSidebar.frameworks",
     defaultMessage: "2. Frameworks"
   },
-  pages: {
-    id: "leftSidebar.pages",
-    defaultMessage: "3. Pages"
-  },
   summary: {
     id: "leftSidebar.summary",
-    defaultMessage: "5. Summary"
+    defaultMessage: "3. Summary"
   },
   ariaNavLabel: {
     id: "leftSideBar.ariaNavLabel",
@@ -48,7 +44,6 @@ const LeftSidebar = (props: Props) => {
   const leftSidebarData: string[] = [
     formatMessage(messages.welcome),
     formatMessage(messages.frameworks),
-    formatMessage(messages.pages),
     formatMessage(messages.summary)
   ];
   const { pathname } = props.location;

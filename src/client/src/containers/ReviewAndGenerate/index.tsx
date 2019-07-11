@@ -80,12 +80,6 @@ const ReviewAndGenerate = (props: Props) => {
         selectionTitle={intl.formatMessage(messages.frameworks)}
         selectionRows={frameworkRows}
       />
-      <div className={styles.selectionContainer}>
-        <div className={styles.selectionTitle}>
-          {intl.formatMessage(messages.pages)}
-        </div>
-        <SortablePageList isSummaryPage={true} />
-      </div>
       <SummarySection
         selectionTitle={intl.formatMessage(messages.services)}
         selectionRows={servicesRows}
