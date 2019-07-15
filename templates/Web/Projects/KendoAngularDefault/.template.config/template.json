@@ -1,0 +1,59 @@
+﻿{
+  "author": "Progress",
+  "classifications": ["Universal"],
+  "name": "KendoAngularDefault",
+  "groupIdentity": "wts.Proj.KendoAngularDefault",
+  "identity": "wts.Proj.KendoAngularDefault",
+  "description": "",
+  "tags": {
+    "language": "Any",
+    "type": "project",
+    "wts.type": "project",
+    "wts.projecttype": "KendoWebApp",
+    "wts.frontendframework": "Angular",
+    "wts.backendframework": "all",
+    "wts.platform": "Web",
+    "wts.version": "1.0.0",
+    "wts.displayOrder": "1"
+  },
+  "sourceName": "wts.KendoAngularDefault",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [],
+  "symbols": {
+    "wts.userName": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "Param_UserName"
+    },
+    "wts.wizardVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "Param_Wizard.Version"
+    },
+    "wts.templatesVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "Param_Templates.Version"
+    },
+    "wts.generationProjectType": {
+      "type": "parameter",
+      "replaces": "Param_ProjectType"
+    },
+    "wts.generationFramework": {
+      "type": "parameter",
+      "replaces": "Param_Framework"
+    },
+    "wts.generationPlatform": {
+      "type": "parameter",
+      "replaces": "Param_Platform"
+    },
+    "copyrightYear": {
+      "type": "generated",
+      "generator": "now",
+      "replaces": "1976",
+      "parameters": {
+        "format": "yyyy"
+      }
+    }
+  }
+}
