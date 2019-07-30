@@ -33,7 +33,7 @@ const Header = (props: Props) => {
   };
   return (
     <div className={styles.header}>
-      <div className={styles.headerTitle}>Web Template Studio</div>
+      <div className={styles.headerTitle}>Kendo Template Wizard</div>
       {isLoggedIn && (
         <div className={styles.azureProfile}>
           <div className={styles.profileName}>{email}</div>

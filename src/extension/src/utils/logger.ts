@@ -11,7 +11,7 @@ type ILoggingPayload = {
 };
 
 const ABSOLUTE_LOG_PATH = path.join(__dirname, "../../logs");
-const OUTPUT_CHANNEL_DEFAULT = "Web Template Studio";
+const OUTPUT_CHANNEL_DEFAULT = "Kendo Template Wizard";
 
 log4js.configure({
   appenders: {

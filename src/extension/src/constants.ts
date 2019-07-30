@@ -186,7 +186,7 @@ export const CONSTANTS = {
     LOGGED_OUT: "LoggedOut"
   },
   REACT_PANEL: {
-    Project_Title: "Microsoft Web Template Studio"
+    Project_Title: "Kendo Template Wizard"
   },
   GENERATE_ENDPOINT: "/api/generate",
   ENGINE_DIRECTORY: "./src/api/darwin/CoreTemplateStudio.Api",

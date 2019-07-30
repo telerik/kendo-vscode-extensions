@@ -43,7 +43,7 @@ const About = ({ versions, intl }: Props) => {
           className={styles.link}
           href="https://github.com/Microsoft/WebTemplateStudio"
         >
-          Web Template Studio
+          Kendo Template Wizard
         </a>
       </p>
       <p>
