@@ -1,9 +1,9 @@
 {
-  "name": "__EXTENSIONNAME__",
-  "displayName": "__DISPLAYNAME__",
-  "description": "Web Template Studio enables developers to quickly scaffold full-stack web applications with cloud services.",
-  "version": "0.0.0-UNTRACKEDVERSION",
-  "publisher": "__PUBLISHER__",
+  "name": "kendotemplatewizard",
+  "displayName": "Kendo Template Wizard",
+  "description": "Kendo Template Wizard enables developers to quickly scaffold web applications.",
+  "version": "0.0.0",
+  "publisher": "TelerikInc",
   "aiKey": "__AIKEY__",
   "engines": {
     "vscode": "^1.32.0"
@@ -17,22 +17,21 @@
   },
   "icon": "resources/WebTemplateStudioLogo_blueBackground.png",
   "keywords": [
-    "Garage",
     "Web Application",
     "Boilerplate",
     "React",
-    "Express",
+    "Angular",
     "Scaffolding"
   ],
   "preview": true,
-  "homepage": "https://github.com/Microsoft/WebTemplateStudio/blob/master/README.md",
+  "homepage": "https://github.com/telerik/kendo-vscode-extensions/blob/master/README.md",
   "bugs": {
-    "url": "https://github.com/Microsoft/WebTemplateStudio/issues"
+    "url": "https://github.com/telerik/kendo-vscode-extensions/issues"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/WebTemplateStudio",
+    "url": "https://github.com/telerik/kendo-vscode-extensions",
     "vsce": "^1.57.1",
     "vscode-extension-telemetry": "^0.1.1",
     "vscode-nls": "^4.0.0"
