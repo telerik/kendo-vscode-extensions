@@ -31,7 +31,7 @@ gulp.task("clean", function() {
     [
       "out/**",
       "package.nls.*.json",
-      "../../dist/webts-0.0.0-UNTRACKEDVERSION.vsix"
+      "../../dist/kendovscode.vsix"
     ],
     { force: true }
   );
@@ -58,7 +58,7 @@ gulp.task("vsce:publish", function() {
 
 gulp.task("vsce:package", function() {
   return vsce.createVSIX({
-    packagePath: "../../dist/webts-0.0.0-UNTRACKEDVERSION.vsix"
+    packagePath: "../../dist/kendovscode.vsix"
   });
 });
 
