@@ -41,7 +41,7 @@ const About = ({ versions, intl }: Props) => {
       <p className={styles.repo}>
         <a
           className={styles.link}
-          href="https://github.com/Microsoft/WebTemplateStudio"
+          href=""
         >
           Kendo Template Wizard
         </a>
@@ -49,7 +49,7 @@ const About = ({ versions, intl }: Props) => {
       <p>
         <a
           className={styles.link}
-          href="https://github.com/Microsoft/WebTemplateStudio/issues"
+          href=""
         >
           <FormattedMessage
             id="about.reportAnIssue"
