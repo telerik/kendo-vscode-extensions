@@ -172,7 +172,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                   options={this.props.backendDropdownItems}
                   handleDropdownChange={this.handleChange.bind(this)}
                   selectDropdownOption={this.props.selectBackendFramework}
-                  isVisible={showFrameworks}
+                  isVisible={false}
                   title={formatMessage(messages.backendFramework)}
                   value={this.convertOptionToDropdownItem(
                     this.props.selection.backendFramework
