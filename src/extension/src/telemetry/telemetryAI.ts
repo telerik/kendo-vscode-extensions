@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import TelemetryReporter from 'vscode-extension-telemetry';
+import {TelemetryReporterMock} from './telemetryReporterMock';
 import { getPackageInfo } from './getPackageInfo';
 import { IActionContext, ITelemetryReporter, callWithTelemetryAndCatchErrors } from './callWithTelemetryAndErrorHandling';
 import { TelemetryEventName, ExtensionCommand } from '../constants'; 
@@ -25,7 +25,7 @@ export class TelemetryAI extends WizardServant{
 
     private createTelemetryReporter(ctx: vscode.ExtensionContext) {
         const { extensionName, extensionVersion, aiKey } = getPackageInfo(ctx);
-        const reporter: TelemetryReporter = new TelemetryReporter(extensionName, extensionVersion, aiKey);
+        const reporter: TelemetryReporterMock = new TelemetryReporterMock(extensionName, extensionVersion, aiKey);
         // adding to the array of disposables
         ctx.subscriptions.push(reporter);
         return reporter;
