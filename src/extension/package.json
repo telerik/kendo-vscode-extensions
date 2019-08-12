@@ -37,20 +37,20 @@
     "vscode-nls": "^4.0.0"
   },
   "activationEvents": [
-    "onCommand:webTemplateStudioExtension.wizardLaunch"
+    "onCommand:kendoTemplateExtension.wizardLaunch"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "webTemplateStudioExtension.wizardLaunch",
-        "title": "%webTemplateStudioExtension.commands.wizardLaunch%",
-        "category": "%webTemplateStudioExtension.commands.wts%"
+        "command": "kendoTemplateExtension.wizardLaunch",
+        "title": "%kendoTemplateExtension.commands.wizardLaunch%",
+        "category": "%kendoTemplateExtension.commands.wts%"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "%webTemplateStudioExtension.commands.wts%",
+      "title": "%kendoTemplateExtension.commands.wts%",
       "properties": {
         "wts.defaultOutputPath": {
           "type": "string",

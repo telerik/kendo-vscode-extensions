@@ -1,4 +1,4 @@
 {
-  "webTemplateStudioExtension.commands.wts": "Kendo Template Wizard",
-  "webTemplateStudioExtension.commands.wizardLaunch": "Launch"
+  "kendoTemplateExtension.commands.wts": "Kendo Template Wizard",
+  "kendoTemplateExtension.commands.wizardLaunch": "Launch"
 }

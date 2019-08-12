@@ -4,7 +4,7 @@ import { Controller } from "./controller";
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand(
-      "webTemplateStudioExtension.wizardLaunch",
+      "kendoTemplateExtension.wizardLaunch",
       async () => {
         Controller.getInstance(context, Date.now());
       }
