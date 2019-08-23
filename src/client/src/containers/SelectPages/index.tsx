@@ -98,7 +98,7 @@ class SelectPages extends React.Component<Props> {
    */
   public convertSelectedPagesToIndices = (pages: ISelected[]): number[] => {
     const { options } = this.props;
-    const selectedPageIndices = [];
+    const selectedPageIndices: number[] = [];
     for (let i = 0; i < pages.length; i++) {
       for (let j = 0; j < options.length; j++) {
         if (pages[i].internalName === options[j].internalName) {

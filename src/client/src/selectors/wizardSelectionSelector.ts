@@ -103,7 +103,7 @@ const frameworksRowItems = (selection: SelectionState): RowType[] => {
 const getServices = (selection: SelectionState): RowType[] => {
   const { services } = selection;
   const { azureFunctions, cosmosDB } = services;
-  const servicesRows = [];
+  const servicesRows: RowType[] = [];
   if (!_.isEmpty(azureFunctions.selection)) {
     servicesRows.push({
       title: azureFunctions.selection[0].appName.value,

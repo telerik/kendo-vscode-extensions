@@ -196,7 +196,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
 }
 
 function convertOptionsToDropdownItems(options: any[]): IDropDownOptionType[] {
-  const dropDownItems = [];
+  const dropDownItems: IDropDownOptionType[] = [];
   for (const option of options) {
     if (option.unselectable) {
       continue;

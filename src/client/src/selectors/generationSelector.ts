@@ -36,7 +36,7 @@ const getBackendFramework = (selection: SelectionState): string => {
 
 const getServices = (selection: SelectionState): ITemplateInfo[] => {
   const { services } = selection;
-  const servicesInfo = [];
+  const servicesInfo: ITemplateInfo[] = [];
   if (
     _.has(services, SERVICE_KEYS.COSMOS_DB) &&
     services.cosmosDB.selection.length > 0
@@ -68,7 +68,7 @@ const getServices = (selection: SelectionState): ITemplateInfo[] => {
 
 const getPages = (selection: SelectionState): ITemplateInfo[] => {
   const { pages } = selection;
-  const pagesInfo = [];
+  const pagesInfo: ITemplateInfo[] = [];
   for (const page of pages) {
     pagesInfo.push({
       name: page.title,

@@ -14,21 +14,25 @@ import { IRoutes } from "../../reducers/wizardRoutes/navigationReducer";
 import { isValidNameAndProjectPathSelector } from "../../selectors/wizardSelectionSelector";
 
 const messages = defineMessages({
-  welcome: {
+  welcome:
+  {
     id: "leftSidebar.newProject",
-    defaultMessage: "1. New Project"
+    defaultMessage: "New Project"
   },
-  frameworks: {
+  summary:
+  {
     id: "leftSidebar.frameworks",
-    defaultMessage: "2. Frameworks"
+    defaultMessage: "Frameworks"
   },
-  summary: {
-    id: "leftSidebar.summary",
-    defaultMessage: "3. Summary"
+  pages:
+  {
+    id: "leftSidebar.pages",
+    defaultMessage: "Add Pages"
   },
-  ariaNavLabel: {
-    id: "leftSideBar.ariaNavLabel",
-    defaultMessage: "Navigate between pages in the Wizard"
+  theme:
+ {
+    id: "leftSideBar.themes",
+    defaultMessage: "Add Theme"
   }
 });
 
@@ -41,11 +45,8 @@ type Props = RouteComponentProps & IStateProps & InjectedIntlProps;
 
 const LeftSidebar = (props: Props) => {
   const { formatMessage } = props.intl;
-  const leftSidebarData: string[] = [
-    formatMessage(messages.welcome),
-    formatMessage(messages.frameworks),
-    formatMessage(messages.summary)
-  ];
+  const leftSidebarData: string[] = Object.keys(messages).map(k => formatMessage(messages[k]));
+
   const { pathname } = props.location;
   const [currentPathIndex, setPathIndex] = React.useState(
     ROUTES_ARRAY.indexOf(pathname)
@@ -59,7 +60,7 @@ const LeftSidebar = (props: Props) => {
       {pathname !== ROUTES.PAGE_DETAILS && (
         <nav
           className={classnames(styles.leftView, styles.container)}
-          aria-label={intl.formatMessage(messages.ariaNavLabel)}
+          aria-label="ARIA NAV LABEL"
         >
           <div>
             {leftSidebarData.map((sidebartitle, idx) => {
