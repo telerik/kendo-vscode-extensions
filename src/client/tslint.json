@@ -21,7 +21,7 @@
     "curly": true,
     "class-name": true,
     "triple-equals": false,
-    "object-literal-sort-keys": true,
+    "object-literal-sort-keys": false,
     "react-hooks-nesting": "error",
     "ordered-imports": false
   },

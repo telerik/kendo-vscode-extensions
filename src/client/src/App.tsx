@@ -8,7 +8,6 @@ import LeftSidebar from "./components/LeftSidebar";
 import PageDetails from "./containers/PageDetails";
 import SelectFrameworks from "./containers/SelectFrameworks";
 import SelectPages from "./containers/SelectPages";
-import SelectWebApp from "./containers/SelectWebApp";
 import NewProject from "./containers/NewProject";
 import CosmosResourceModal from "./containers/CosmosResourceModal";
 import Footer from "./containers/Footer";
@@ -32,9 +31,7 @@ import {
   setAppNameAvailabilityAction,
   IAvailabilityFromExtension
 } from "./actions/azureActions/setAccountAvailability";
-import AzureLogin from "./containers/AzureLogin";
 import { getSubscriptionData } from "./actions/azureActions/subscriptionData";
-import AzureFunctionsModal from "./containers/AzureFunctionsModal";
 import { setProjectPathValidation } from "./actions/wizardSelectionActions/setProjectPathValidation";
 import {
   updateTemplateGenerationStatusMessageAction,
@@ -226,8 +223,8 @@ class App extends React.Component<Props> {
     const { vscode } = this.props;
     if (vscode !== prevProps.vscode) {
       vscode.postMessage({
-        module: EXTENSION_MODULES.AZURE,
         command: EXTENSION_COMMANDS.GET_USER_STATUS,
+        module: EXTENSION_MODULES.AZURE,
         track: true
       });
     }
@@ -240,7 +237,6 @@ class App extends React.Component<Props> {
         <Header />
         <div className={appStyles.container}>
           <CosmosResourceModal />
-          <AzureFunctionsModal />
           <PostGenerationModal />
           <LeftSidebar />
 
