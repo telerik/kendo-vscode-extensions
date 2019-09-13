@@ -13,16 +13,13 @@
 }
 
 .rightViewCropped {
-  width: 400px;
+  width: 50vw;
   background-color: var(--vscode-editor-background);
   border-left: 0.5px solid #7f7f7f;
   box-sizing: border-box;
 }
 
 .rightViewCropped {
-  height: calc(100vh - 104px);
-  margin-top: 51px;
-  margin-bottom: 53px;
   padding-bottom: 0px;
 }
 

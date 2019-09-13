@@ -234,36 +234,37 @@ class App extends React.Component<Props> {
     const { pathname } = this.props.location;
     return (
       <React.Fragment>
-        <Header />
-        <div className={appStyles.container}>
-          <CosmosResourceModal />
-          <PostGenerationModal />
+        <div className={appStyles.layout}>
+          <Header />
+          <div className={classnames(appStyles.container, appStyles.mainContent)}>
+            <PostGenerationModal />
+            <main
+              className={classnames(appStyles.centerView, {
+                [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
+              })}
+            >
+              <Route path={ROUTES.PAGE_DETAILS} component={PageDetails} />
+              <Route
+                path={ROUTES.REVIEW_AND_GENERATE}
+                component={ReviewAndGenerate}
+              />
+              <Route
+                path={ROUTES.SELECT_FRAMEWORKS}
+                component={SelectFrameworks}
+              />
+              <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
+              <Route
+                exact={true}
+                path={ROUTES.NEW_PROJECT}
+                component={NewProject}
+              />
+            </main>
+            <hr />
+            <RightSidebar />
+          </div>
 
-
-          <main
-            className={classnames(appStyles.centerView, {
-              [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
-            })}
-          >
-            <Route path={ROUTES.PAGE_DETAILS} component={PageDetails} />
-            <Route
-              path={ROUTES.REVIEW_AND_GENERATE}
-              component={ReviewAndGenerate}
-            />
-            <Route
-              path={ROUTES.SELECT_FRAMEWORKS}
-              component={SelectFrameworks}
-            />
-            <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
-            <Route
-              exact={true}
-              path={ROUTES.NEW_PROJECT}
-              component={NewProject}
-            />
-          </main>
-          <RightSidebar />
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

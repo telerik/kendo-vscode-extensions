@@ -5,19 +5,11 @@
   overflow: auto;
 }
 
-.itemBorder {
-  border-bottom: 0.5px solid #7f7f7f;
-}
-
-.itemBorderTop {
-  border-top: 0.5px solid #7f7f7f;
-}
-
-.currentPath {
+/* .currentPath {
   background-color: #0067b8;
   color: white;
 }
-
+*/
 .nextPath {
   opacity: 0.4;
 }
@@ -27,7 +19,7 @@
   box-sizing: border-box;
 }
 
-.feedback {
+/* .feedback {
   text-align: center;
   color: var(--vscode-textLink-foreground);
   text-decoration: none;
@@ -38,4 +30,4 @@
 
 .feedback:focus {
   outline: 1px solid var(--vscode-contrastActiveBorder);
-}
+} */

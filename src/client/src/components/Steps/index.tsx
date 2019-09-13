@@ -70,9 +70,7 @@ const Steps = (props: Props) => {
                         styles.itemBorder,
                         {
                           [styles.currentPath]: idx === currentPathIndex,
-                          [styles.visitedPath]: isVisited[ROUTES_ARRAY[idx]] && isValidNameAndProjectPath,
-                          [styles.nextPath]: idx > currentPathIndex && (!isVisited[ROUTES_ARRAY[idx]] || !isValidNameAndProjectPath),
-                          [styles.itemBorderTop]: idx === 0
+                          [styles.visitedPath]: isVisited[ROUTES_ARRAY[idx]] && isValidNameAndProjectPath
                         }
                       )
                     }

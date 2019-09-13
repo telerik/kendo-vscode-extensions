@@ -1,6 +1,20 @@
 .container {
-  display: flex;
-  justify-content: space-between;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1px 1fr;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;
 }
 
 .centerView {
@@ -10,13 +24,5 @@
   width: 100%;
   box-sizing: border-box;
   background-color: var(--vscode-editor-background);
-  height: calc(100vh - 104px);
-  margin-top: 51px;
-  margin-bottom: 53px;
   justify-content: flex-start;
-}
-
-.centerViewMaxHeight {
-  height: calc(100vh - 51px);
-  margin-bottom: 0px;
 }
