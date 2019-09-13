@@ -7,18 +7,20 @@ import { ReactComponent as Check } from "../../assets/check.svg";
 
 import styles from "./styles.module.css";
 
-const LeftSidebarLink = ({
+const StepsLink = ({
   text,
   visitedCheck,
   path,
   disabled,
-  isSelected
+  isSelected,
+  stepIndex
 }: {
   text: string;
   visitedCheck: boolean;
   path: string;
   disabled: boolean;
   isSelected: boolean;
+  stepIndex;
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (disabled) {
@@ -32,25 +34,16 @@ const LeftSidebarLink = ({
       onClick={handleClick}
       className={styles.container}
     >
-      {visitedCheck || isSelected ? (
-        <Check
-          className={classnames(styles.icon, {
-            [styles.visitedIcon]: visitedCheck,
-            [styles.selected]: isSelected
-          })}
-        />
-      ) : (
-        <div className={styles.spacer} />
-      )}
-      <div
+      <span className={styles.step}>{stepIndex + 1}</span>
+      <span
         className={classnames(styles.text, {
           [styles.textSelected]: isSelected
         })}
       >
         {text}
-      </div>
+      </span>
     </Link>
   );
 };
 
-export default LeftSidebarLink;
+export default StepsLink;

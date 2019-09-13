@@ -23,7 +23,8 @@
     "triple-equals": false,
     "object-literal-sort-keys": false,
     "react-hooks-nesting": "error",
-    "ordered-imports": false
+    "ordered-imports": false,
+    "use-simple-attributes": false
   },
   "defaultSeverity": "warning"
 }

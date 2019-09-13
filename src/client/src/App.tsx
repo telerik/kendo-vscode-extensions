@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Route, RouteComponentProps } from "react-router-dom";
 
-import LeftSidebar from "./components/LeftSidebar";
+import Steps from "./components/Steps";
 import PageDetails from "./containers/PageDetails";
 import SelectFrameworks from "./containers/SelectFrameworks";
 import SelectPages from "./containers/SelectPages";
@@ -238,7 +238,7 @@ class App extends React.Component<Props> {
         <div className={appStyles.container}>
           <CosmosResourceModal />
           <PostGenerationModal />
-          <LeftSidebar />
+
 
           <main
             className={classnames(appStyles.centerView, {

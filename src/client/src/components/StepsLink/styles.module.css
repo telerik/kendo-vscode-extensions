@@ -15,30 +15,31 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  text-decoration: none;
+  flex-wrap: nowrap;
+  padding-left: 5px;
 }
 
 .container:focus {
   outline: 1px solid var(--vscode-contrastActiveBorder);
 }
 
-.icon {
-  height: 1em;
-  width: 1em;
-  padding-left: 1em;
-}
-
 .textSelected {
   color: #ffffff;
 }
 
-.icon path {
-  fill: var(--vscode-editor-background);
+.step {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  /* background-color: var(--vscode-editor-background); */
+  background-color: white;
 }
 
-.visitedIcon path {
-  fill: var(--vscode-editor-foreground);
+.visitedStep {
+  background-color: var(--vscode-editor-foreground);
 }
 
 .spacer {
