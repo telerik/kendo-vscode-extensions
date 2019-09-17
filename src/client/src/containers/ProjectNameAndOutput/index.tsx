@@ -124,7 +124,6 @@ const ProjectNameAndOutput = (props: Props) => {
           handleChange={handleProjectNameChange}
           ariaLabel={props.intl.formatMessage(messages.ariaProjectNameLabel)}
           value={props.projectName}
-          placeholder={props.intl.formatMessage(messages.projectName)}
         />
         {props.projectNameValidation.error && (
           <div className={styles.errorMessage}>

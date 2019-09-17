@@ -25,21 +25,29 @@
   outline: 1px solid var(--vscode-contrastActiveBorder);
 }
 
-.textSelected {
+/* .textSelected {
   color: #ffffff;
+} */
+
+a {
+  text-decoration: none;
+  color: var(--vscode-editor-foreground);
 }
 
 .step {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  border-color: var(--vscode-focusBorder);
+  border-style: solid;
   text-align: center;
   line-height: 40px;
-  background-color: white;
+  background-color:var(--vscode-editor-background);
 }
 
 .visitedStep {
-  background-color: var(--vscode-editor-foreground);
+  background-color: pink;
+  border:none;
 }
 
 .spacer {

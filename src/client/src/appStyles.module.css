@@ -26,3 +26,7 @@
   background-color: var(--vscode-editor-background);
   justify-content: flex-start;
 }
+
+* {
+  font-family: 'Roboto';
+}

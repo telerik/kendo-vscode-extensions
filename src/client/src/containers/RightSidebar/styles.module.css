@@ -10,6 +10,10 @@
   padding-top: 16.5px;
   padding-bottom: 71px;
   overflow: auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
 
 .rightViewCropped {
