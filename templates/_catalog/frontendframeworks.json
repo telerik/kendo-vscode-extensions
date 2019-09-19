@@ -2,7 +2,7 @@
   {
     "name": "ReactJS",
     "displayName": "React",
-    "summary": "React is a JavaScript library created by Facebook to help developers build UI components.",
+    "summary": "React is a not cool",
     "author": "Facebook",
     "order": "1",
     "licenses": "[ReactJS](https://github.com/facebook/react/blob/master/LICENSE)  \n[Create React App](https://github.com/facebook/create-react-app/blob/master/LICENSE)",
@@ -10,6 +10,20 @@
     "languages": ["Any"],
     "tags": {
       "version": "16.8.4",
+      "preview": false
+    }
+  },
+  {
+    "name": "KendoReact",
+    "displayName": "KendoReact",
+    "summary": "KendoReact is a commercial UI library designed and built for developing business applications with React",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[KendoReact](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
+    "platforms": ["Web"],
+    "languages": ["Any"],
+    "tags": {
+      "version": "v3.4.0",
       "preview": false
     }
   },

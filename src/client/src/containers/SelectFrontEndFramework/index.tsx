@@ -21,6 +21,8 @@ import { ThunkDispatch } from "redux-thunk";
 import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 
+import styles from "./styles.module.css";
+
 import {
   getIsVisitedRoutesSelector,
   IVisitedPages
@@ -113,6 +115,7 @@ class SelectFrontEndFramework extends React.Component<Props> {
     const { options, selectedFrontendFramework, intl } = this.props;
     return (
       <div>
+        <div className={styles.foo}>fooo</div>
         {this.props.options.length > 0 && (
           <SelectOption
             selectCard={this.handleFrameworkChange.bind(this)}

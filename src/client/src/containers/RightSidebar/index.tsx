@@ -6,10 +6,10 @@ import { withRouter } from "react-router-dom";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 
 import RightSidebarDropdown from "../../components/RightSidebarDropdown";
-import ServicesSidebarItem from "../../components/ServicesSidebarItem";
 import Licenses from "../Licenses";
 import About from "../About";
 import SortablePageList from "../SortablePageList";
+import InfoPane from "../../components/InfoPane";
 
 import { selectBackendFrameworkAction } from "../../actions/wizardSelectionActions/selectBackEndFramework";
 import { selectFrontendFramework as selectFrontEndFrameworkAction } from "../../actions/wizardSelectionActions/selectFrontEndFramework";
@@ -153,6 +153,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                 <div className={styles.title}>
                   {formatMessage(messages.yourProjectDetails)}
                 </div>
+                <InfoPane title="foo" isVisible={true} />
                 <RightSidebarDropdown
                   options={this.props.frontendDropdownItems}
                   handleDropdownChange={
