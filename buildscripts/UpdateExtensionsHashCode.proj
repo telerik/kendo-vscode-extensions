@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="UpdateExtensionsHashCode" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+
+  <UsingTask AssemblyFile="Tools\jsonpoke.msbuild.1.0.9\JsonPeek.MSBuild.dll" TaskName="JsonPoke"/>
+
+  <PropertyGroup>
+
+    <UpdateExtensionsHashCodeDependsOn>
+      PrepareProperties;
+      BuildWtsPackagingTool;
+      GenerateTemplatesMstx;
+      ReplaceTemplatesMstxUnderExtensions;
+      GetHashCode;
+      UpdateHashCode
+    </UpdateExtensionsHashCodeDependsOn>
+
+  </PropertyGroup>
+
+  <Target Name="UpdateExtensionsHashCode" DependsOnTargets="$(UpdateExtensionsHashCodeDependsOn)"/>
+
+  <Target Name="PrepareProperties">
+
+    <PropertyGroup>
+
+      <!--Directories-->
+      <SourceDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\..'))</SourceDirectory>
+      <CoreTemplateStudioDirectory>$(SourceDirectory)\CoreTemplateStudio</CoreTemplateStudioDirectory>
+      <WtsPackagingToolDirectory>$(CoreTemplateStudioDirectory)\code\tools\WtsPackagingTool</WtsPackagingToolDirectory>
+      <WtsPackagingToolsSolution>$(CoreTemplateStudioDirectory)\code\Tools.sln</WtsPackagingToolsSolution>
+      <KendoVscodeExtensions>$(SourceDirectory)\kendo-vscode-extensions</KendoVscodeExtensions>
+      <KendoVscodeExtensionsTemplates>$(SourceDirectory)\kendo-vscode-extensions\templates</KendoVscodeExtensionsTemplates>
+      <KendoVscodeExtensionsApiDirectory>$(KendoVscodeExtensions)\src\extension\src\api</KendoVscodeExtensionsApiDirectory>
+      
+      <!--<WtsPackagingTool-->
+      <Configuration>Release</Configuration>
+      <Platform>Any CPU</Platform>
+      <WtsPackagingToolDirectory>$(WtsPackagingToolDirectory)\bin\$(Configuration)</WtsPackagingToolDirectory>
+      <WtsPackagingTool>$(WtsPackagingToolDirectory)\WtsPackagingTool.exe</WtsPackagingTool>
+      <TemplatesDirectory></TemplatesDirectory>
+    </PropertyGroup>
+
+  </Target>
+
+  <Target Name="BuildWtsPackagingTool" >
+
+    <MSBuild Projects="$(WtsPackagingToolsSolution)" Properties="Configuration=$(Configuration);Platform=$(Platform)" Targets="Rebuild" />
+
+  </Target>
+
+  <Target Name="GenerateTemplatesMstx" >
+
+    <Exec Command='$(WtsPackagingTool) package-task -n $(KendoVscodeExtensionsTemplates) -f "Web.Any.Templates.mstx"' WorkingDirectory='$(WtsPackagingToolDirectory)'/>
+
+  </Target>
+
+  <Target Name="ReplaceTemplatesMstxUnderExtensions" >
+
+    <Copy SourceFiles="$(WtsPackagingToolDirectory)\Web.Any.Templates.mstx" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)" />
+
+  </Target>
+
+  <Target Name="GetHashCode" >
+
+    <ItemGroup>
+      <FilesToHash Include="$(WtsPackagingToolDirectory)\Web.Any.Templates.mstx" />
+    </ItemGroup>
+
+    <GetFileHash Files="@(FilesToHash)" Algorithm="SHA256">
+      <Output
+          TaskParameter="Hash"
+          PropertyName="TemplatestMstxHashCode" />
+    </GetFileHash>
+    
+    <Message Text="DEBUG INFO: TemplatestMstxHashCode: $(TemplatestMstxHashCode)" />
+
+  </Target>
+
+  <Target Name="UpdateHashCode" >
+    
+    <PropertyGroup>
+      <DarwinCoreTemplateStudioConfigFile>$(KendoVscodeExtensionsApiDirectory)\darwin\CoreTemplateStudio.config.json</DarwinCoreTemplateStudioConfigFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <FilesToUpdate Include="$(KendoVscodeExtensionsApiDirectory)\**\CoreTemplateStudio.config.json" />
+    </ItemGroup>
+
+    <JsonPoke JsonInputPath="%(FilesToUpdate.FullPath)" JValue="$(TemplatestMstxHashCode)" JPath="$.AllowedPackages">
+    </JsonPoke>
+
+  </Target>
+
+</Project>
