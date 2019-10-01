@@ -43,6 +43,8 @@
 
   <Target Name="BuildWtsPackagingTool" >
 
+    <MSBuild Projects="$(WtsPackagingToolsSolution)" Properties="Configuration=$(Configuration);Platform=$(Platform)" Targets="restore" />
+
     <MSBuild Projects="$(WtsPackagingToolsSolution)" Properties="Configuration=$(Configuration);Platform=$(Platform)" Targets="Rebuild" />
 
   </Target>
