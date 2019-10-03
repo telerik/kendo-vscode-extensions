@@ -10,7 +10,7 @@
     "type": "project",
     "wts.type": "project",
     "wts.projecttype": "KendoWebApp",
-    "wts.frontendframework": "ReactJS",
+    "wts.frontendframework": "KendoReact",
     "wts.backendframework": "all",
     "wts.platform": "Web",
     "wts.version": "1.0.0",

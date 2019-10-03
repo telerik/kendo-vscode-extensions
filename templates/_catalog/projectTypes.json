@@ -2,7 +2,7 @@
   {
     "name": "KendoWebApp",
     "displayName": "Kendo Web Application",
-    "summary": "Kendo web application",
+    "summary": "Kendo Web application",
     "author": "Progress",
     "order": "1",
     "licenses": "",
@@ -16,7 +16,7 @@
     "author": "Microsoft",
     "order": "2",
     "licenses": "",
-    "platforms": ["Web"],
+    "platforms": ["Desktop"],
     "languages": ["Any"]
-  }  
+  }
 ]
