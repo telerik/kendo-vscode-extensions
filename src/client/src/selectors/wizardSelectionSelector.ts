@@ -72,7 +72,7 @@ const getProjectTypeRowItems = (selection: SelectionState): RowType[] => {
     }
   ];
 };
-
+/* BOOM */
 const frameworksRowItems = (selection: SelectionState): RowType[] => {
   const { frontendFramework, backendFramework } = selection;
   return [

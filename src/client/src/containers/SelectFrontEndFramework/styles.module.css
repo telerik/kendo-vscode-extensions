@@ -14,10 +14,3 @@
 .icon {
   height: 36px;
 }
-
-.foo {
-  width:50px;
-  height: 50px;
-  background-color: red;
-  display: flex;
-}

@@ -52,7 +52,7 @@ type Props = IDispatchProps & ISelectFrontEndFrameworkProps & InjectedIntlProps;
 const messages = defineMessages({
   selectFrontendFramework: {
     id: "selectFrontendFramework.selectFrontendFramework",
-    defaultMessage: "Select a front-end framework."
+    defaultMessage: "Select a front-end framework"
   }
 });
 
@@ -115,7 +115,6 @@ class SelectFrontEndFramework extends React.Component<Props> {
     const { options, selectedFrontendFramework, intl } = this.props;
     return (
       <div>
-        <div className={styles.foo}>fooo</div>
         {this.props.options.length > 0 && (
           <SelectOption
             selectCard={this.handleFrameworkChange.bind(this)}

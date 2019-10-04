@@ -112,6 +112,7 @@ class SelectOption extends React.Component<Props, ISelectOptionState> {
       id: title as string,
       defaultName,
       isValidTitle: true,
+      description: "",
       licenses,
       author
     };
@@ -154,7 +155,7 @@ class SelectOption extends React.Component<Props, ISelectOptionState> {
     selectedCardIndices.pop();
     selectedCardIndices.push(cardNumber);
     const shorthandVersionLabel = `v${options[cardNumber].version || "1.0"}`;
-    const { title, internalName, licenses, author } = this.props.options[
+    const { title, internalName, licenses, author, longDescription } = this.props.options[
       cardNumber
     ];
 
@@ -164,7 +165,8 @@ class SelectOption extends React.Component<Props, ISelectOptionState> {
         title: title as string,
         version: shorthandVersionLabel,
         licenses,
-        author
+        author,
+        description: longDescription as string
       });
     }
     this.setState({

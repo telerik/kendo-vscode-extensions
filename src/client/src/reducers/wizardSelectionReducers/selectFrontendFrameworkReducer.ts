@@ -14,7 +14,8 @@ const initialState = {
   title: "",
   internalName: "",
   version: "",
-  author: ""
+  author: "",
+  description: ""
 };
 
 // TODO: Default state to remove once API is hooked up
