@@ -1,5 +1,5 @@
 ﻿{
-  "Environment": "Live",
+  "Environment": "LocalEnv",
   "CdnUrl": "",
   "RemoteTelemetryKey": "",
   "LogFileFolderPath": "WebTS\\Logs",
