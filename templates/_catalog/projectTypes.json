@@ -2,7 +2,7 @@
   {
     "name": "KendoWebApp",
     "displayName": "Kendo Web Application",
-    "summary": "Kendo Web application",
+    "summary": "Welcome to the Visual Studio Code visual scaffolder for Kendo UI. New to Kendo UI? Learn more here.",
     "author": "Progress",
     "order": "1",
     "licenses": "",

@@ -243,7 +243,6 @@ class App extends React.Component<Props> {
                 [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
               })}
             >
-              <Route path={ROUTES.PAGE_DETAILS} component={PageDetails} />
               <Route
                 path={ROUTES.REVIEW_AND_GENERATE}
                 component={ReviewAndGenerate}
@@ -260,9 +259,8 @@ class App extends React.Component<Props> {
               />
             </main>
             <hr />
-            <RightSidebar />
+            <PageDetails />
           </div>
-
           <Footer />
         </div>
       </React.Fragment>

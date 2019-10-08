@@ -6,6 +6,7 @@ import { IOption } from "../../types/option";
 import { screenShotMapping } from "../../utils/getSvgUrl";
 import styles from "./styles.module.css";
 import { AppState } from "../../reducers";
+import SelectWebApp from "../SelectWebApp";
 
 interface IPageDetailsProps {
   detailsPageInfo: IOption;
@@ -18,6 +19,7 @@ const PageDetails = (props: Props) => {
   const { history, detailsPageInfo, isIntlFormatted } = props;
   return (
     <div className={styles.detailsContainer}>
+      <SelectWebApp />
       <Details
         handleBackClick={history.goBack}
         detailInfo={detailsPageInfo}
