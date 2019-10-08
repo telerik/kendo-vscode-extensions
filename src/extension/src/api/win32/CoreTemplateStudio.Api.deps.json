@@ -1,20 +1,21 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2/win-x86",
-    "signature": "1e4f9356192196c86c39af53e8784204d907798e"
+    "signature": ""
   },
   "compilationOptions": {
     "defines": [
+      "DEBUG",
       "TRACE",
-      "RELEASE",
+      "DEBUG",
       "NETCOREAPP",
       "NETCOREAPP2_2"
     ],
-    "languageVersion": "",
+    "languageVersion": "7.3",
     "platform": "x86",
     "allowUnsafe": false,
     "warningsAsErrors": false,
-    "optimize": true,
+    "optimize": false,
     "keyFile": "TestKey.snk",
     "emitEntryPoint": true,
     "xmlDoc": false,
@@ -27,6 +28,7 @@
           "Microsoft.AspNetCore.App": "2.2.6",
           "Microsoft.NETCore.App": "2.2.6",
           "Microsoft.Templates.Core": "1.0.0",
+          "StyleCop.Analyzers": "1.1.0-beta009",
           "System.Net.Http": "4.3.2",
           "Telerik.Telemetry": "1.0.19.811"
         },
@@ -2207,6 +2209,7 @@
         }
       },
       "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
+      "StyleCop.Analyzers/1.1.0-beta009": {},
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -3100,6 +3103,7 @@
           "Microsoft.AspNetCore.App": "2.2.6",
           "Microsoft.NETCore.App": "2.2.6",
           "Microsoft.Templates.Core": "1.0.0",
+          "StyleCop.Analyzers": "1.1.0-beta009",
           "System.Net.Http": "4.3.2",
           "Telerik.Telemetry": "1.0.19.811"
         },
@@ -6468,6 +6472,7 @@
           }
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta009": {},
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -8905,6 +8910,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "StyleCop.Analyzers/1.1.0-beta009": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RUAinW5hzjFmX67CWVPHfn1odC/hG1zrtcub3t/imAU69GNCPZUz/8lrRJRcTkqFlatxcxvO/ELhG84gAwimAg==",
+      "path": "stylecop.analyzers/1.1.0-beta009",
+      "hashPath": "stylecop.analyzers.1.1.0-beta009.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
