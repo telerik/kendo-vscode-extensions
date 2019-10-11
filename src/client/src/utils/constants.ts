@@ -17,6 +17,13 @@ const INTL_MESSAGES = defineMessages({
   }
 });
 
+const KENDOKAS = {
+  ORANGE : "orange",
+  BLUE: "blue",
+  GREEN: "green",
+  RED: "red"
+}
+
 const ROUTES = {
   PAGE_DETAILS,
   SELECT_FRAMEWORKS,
@@ -108,6 +115,7 @@ export {
   EXTENSION_MODULES,
   EXTENSION_COMMANDS,
   ROUTES,
+  KENDOKAS,
   ROUTES_ARRAY,
   SERVICE_KEYS,
   WIZARD_CONTENT_INTERNAL_NAMES,

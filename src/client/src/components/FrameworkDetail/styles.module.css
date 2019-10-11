@@ -1,0 +1,19 @@
+.details-header {
+  font-size: 38px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 1;
+}
+
+.details-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-spacer {
+  flex: 1 1 auto;
+}
+
+.framework-description {
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

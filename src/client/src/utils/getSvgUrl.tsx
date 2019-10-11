@@ -1,5 +1,6 @@
 import * as React from "react";
 import classnames from "classnames";
+import { KENDOKAS } from "./constants";
 
 import { ReactComponent as FullStack } from "../assets/fullstack.svg";
 import { ReactComponent as MasterDetail } from "../assets/masterdetail.svg";
@@ -26,6 +27,17 @@ import masterdetailscreenshot from "../assets/masterdetailscreenshot.svg";
 import listscreenshot from "../assets/listscreenshot.svg";
 import gridscreenshot from "../assets/gridscreenshot.svg";
 import blankscreenshot from "../assets/blankscreenshot.svg";
+import greenkendoka from "../assets/kendoka_green.svg";
+import redkendoka from "../assets/kendoka_red.svg";
+import orangekendoka from "../assets/kendoka_orange.svg";
+import bluekendoka from "../assets/kendoka_blue.svg";
+
+const KENDOKA_MAPPINGS = {
+  [KENDOKAS.BLUE] : bluekendoka,
+  [KENDOKAS.RED]: redkendoka,
+  [KENDOKAS.ORANGE]: orangekendoka,
+  [KENDOKAS.GREEN]: greenkendoka
+}
 
 const SVG_MAPPINGS = {
   [WIZARD_CONTENT_INTERNAL_NAMES.REACT_JS]: react,
@@ -108,6 +120,12 @@ export const screenShotMapping = (internalName: string): string | undefined => {
 export const getSvg = (internalName: string, style?: string) => {
   if (SVG_REACTCOMPONENT_MAPPINGS[internalName]) {
     return SVG_REACTCOMPONENT_MAPPINGS[internalName](style || "");
+  }
+};
+
+export const getKendoka = (internalName: string) => {
+  if (KENDOKA_MAPPINGS[internalName]) {
+    return KENDOKA_MAPPINGS[internalName];
   }
 };
 
