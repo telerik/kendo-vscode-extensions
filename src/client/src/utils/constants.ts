@@ -69,6 +69,8 @@ const WIZARD_CONTENT_INTERNAL_NAMES = {
   NODE_JS: "NodeJS",
   FLASK: "Flask",
   REACT_JS: "ReactJS",
+  KENDO_REACT: "KendoReact",
+  KENDO_ANGULAR: "KendoAngular",
   REST_API: "RestAPI",
   VUE: "Vue",
   VUE_BLANK_PAGE: "wts.Page.Vue.Blank",

@@ -40,8 +40,8 @@ const KENDOKA_MAPPINGS = {
 }
 
 const SVG_MAPPINGS = {
-  [WIZARD_CONTENT_INTERNAL_NAMES.REACT_JS]: react,
-  [WIZARD_CONTENT_INTERNAL_NAMES.ANGULAR]: angular,
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT]: react,
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR]: angular,
   [WIZARD_CONTENT_INTERNAL_NAMES.VUE]: vue,
   [WIZARD_CONTENT_INTERNAL_NAMES.NODE_JS]: node,
   [WIZARD_CONTENT_INTERNAL_NAMES.FLASK]: flask,
@@ -125,7 +125,7 @@ export const getSvg = (internalName: string, style?: string) => {
 
 export const getKendoka = (internalName: string) => {
   if (KENDOKA_MAPPINGS[internalName]) {
-    return KENDOKA_MAPPINGS[internalName];
+    return withLocalPath(KENDOKA_MAPPINGS[internalName]);
   }
 };
 

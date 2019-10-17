@@ -15,7 +15,7 @@
   },
   {
     "name": "KendoReact",
-    "displayName": "Kendo",
+    "displayName": "Kendo UI for React",
     "summary": "KendoReact is a commercial UI library designed and built for developing business applications with React",
     "author": "Progress",
     "order": "1",

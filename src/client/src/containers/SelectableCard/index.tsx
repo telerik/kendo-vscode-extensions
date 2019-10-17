@@ -8,6 +8,7 @@ import CardBody from "../../components/CardBody";
 import CardTitle from "../../components/CardTitle";
 import DependencyInfo from "../DependencyInfo";
 import { ReactComponent as Check } from "../../assets/check.svg";
+import selector from "../../assets/selector.svg";
 
 import grid from "../../css/grid.module.css";
 import styles from "./styles.module.css";
@@ -17,7 +18,7 @@ import styles from "./styles.module.css";
 import { IOption } from "../../types/option";
 import { FormattedMessage } from "react-intl";
 import { ROUTES } from "../../utils/constants";
-import { getSvg } from "../../utils/getSvgUrl";
+import { getSvg, withLocalPath } from "../../utils/getSvgUrl";
 
 import { AppState } from "../../reducers";
 
@@ -63,76 +64,50 @@ const SelectableCard = ({
     }
   };
 
+  const getIconClass = (framework = "") =>  {
+    const matches = framework.match(/[A-Z][a-z]+/g);
+
+    if (matches) {
+      return matches.join("-").toLocaleLowerCase();
+    }
+
+    return framework;
+  };
+
+  const getparentFramework = (framework = "") =>  {
+    const matches = framework.match(/[A-Z][a-z]+/g);
+
+    if (matches) {
+      return matches[1];
+    }
+
+    return framework;
+  };
+
   return (
     <div
-      role="button"
-      tabIndex={0}
-      onClick={() => {
-        onCardClick(cardNumber);
-      }}
-      onKeyDown={keyDownHandler}
+      onKeyDown={keyDownHandler} 
       className={classNames(styles.container, styles.boundingBox, {
-        [styles.selected]: selected,
         [styles.unselectable]: disabled
       })}
     >
-      <div>
-        <div className={styles.cardHeader}>
-          <div className={styles.icon}>
+        <div className={styles["card-holder"]}>
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => {
+              onCardClick(cardNumber);
+            }}
+            className={classNames(styles["image-container"], {
+            [styles.selected]: selected
+          })}>
             {getSvg(option.internalName, iconStyles) ||
               (iconPath && (
-                <img src={iconPath} className={iconStyles} alt="" />
+                <img src={iconPath} className={styles[getIconClass(option.internalName)]} alt="" />
               ))}
           </div>
-          <div
-            className={classNames({
-              [styles.title]: iconPath,
-              [styles.titleLeftJustified]: iconPath === undefined ? true : false
-            })}
-          >
-            <CardTitle title={title} />
-          </div>
+          <p className={styles["text-holder"]}>{getparentFramework(option.internalName)}</p>
         </div>
-        {isPreview && isFrameworkSelection && selected && (
-          <DependencyInfo frameworkName={option.internalName} />
-        )}
-        <div className={grid.row}>
-          <div className={styles.body}>
-            <CardBody body={body} />
-          </div>
-        </div>
-      </div>
-      <div className={styles.cardFooter}>
-        <Link
-          onClick={detailsClickWrapper}
-          className={classNames(styles.link)}
-          to={ROUTES.PAGE_DETAILS}
-        >
-          <FormattedMessage
-            id="selectableCard.details"
-            defaultMessage="Details"
-          />
-        </Link>
-        <div
-          className={classNames({
-            [styles.hidden]: !selected,
-            [styles.selectedCheckMark]: selected && !clickCount,
-            [styles.cardCount]: selected && clickCount
-          })}
-        >
-          {clickCount || (
-            <div className={styles.selectedText}>
-              <div>
-                <FormattedMessage
-                  id="selectableCard.selected"
-                  defaultMessage="Selected"
-                />
-              </div>
-              <Check className={styles.iconCheckMark} />
-            </div>
-          )}
-        </div>
-      </div>
     </div>
   );
 };

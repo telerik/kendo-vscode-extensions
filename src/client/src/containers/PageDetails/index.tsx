@@ -12,6 +12,7 @@ import { getProjectTypesAction } from "../../actions/wizardContentActions/getPro
 import styles from "./styles.module.css";
 import { AppState } from "../../reducers";
 import SelectWebApp from "../SelectWebApp";
+import { Route } from "react-router-dom";
 import {
   ROUTES, KENDOKAS
 } from "../../utils/constants";
@@ -48,28 +49,22 @@ class PageDetails extends React.Component<Props> {
     const { history, detailsPageInfo, isIntlFormatted, location } = this.props;
     return (
       <div className={styles.detailsContainer}>
-        { location.pathname == ROUTES.NEW_PROJECT && this.props.type.length > 0? 
-          (<FrameworkDetail framework={this.props.mainFramework} />) : 
-          (<>
-          
-          <SelectWebApp />
-          {/* <FrameworkDetail framework={this.props.frontEndFramwork} /> */}
-          <Details
-            handleBackClick={history.goBack}
-            detailInfo={detailsPageInfo}
-            formatteDetailInfo={isIntlFormatted ? detailsPageInfo : undefined}
-          />
-          <div className={styles.screenShotContainer}>
-            {screenShotMapping(detailsPageInfo.internalName) && (
-              <img
-                className={styles.screenshot}
-                src={screenShotMapping(this.props.detailsPageInfo.internalName)}
-                alt="Screenshot preview of web page that will be generated"
-              />
-            )}
-          </div>
-          </>)
-        }
+          <Route path={ROUTES.NEW_PROJECT} exact={true} component={
+            () =>
+              <>{ this.props.mainFramework &&
+                  <FrameworkDetail 
+                  title={this.props.mainFramework.title as string} 
+                  description={this.props.mainFramework.longDescription as string} 
+                  name={this.props.mainFramework.internalName as string} />
+              }</>
+          }/>
+          <Route path={ROUTES.SELECT_FRAMEWORKS} exact={true}  component={ 
+            () =>
+              <FrameworkDetail 
+                title={this.props.frontEndFramwork.title as string} 
+                description={this.props.frontEndFramwork.description as string} 
+                name={this.props.frontEndFramwork.internalName as string}/>
+          }/>
       </div>
     );
   }

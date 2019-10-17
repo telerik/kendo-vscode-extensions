@@ -8,19 +8,21 @@ import {
 } from "../../utils/constants";
 
 interface IProps {
-  framework: IOption;
+  name: string;
+  title: string;
+  description: string;
 }
 
-const FrameworkDetail = ({ framework }: IProps) => {
+const FrameworkDetail = ({ name, title, description }: IProps) => {
   const findKendoka = (
     name: string = ""
   ) => {
     switch(name.toLocaleLowerCase()) {
-      case "angular":
+      case "kendoangular":
         return KENDOKAS.RED;
-      case "react":
+      case "kendoreact":
         return KENDOKAS.BLUE;
-      case "vue":
+      case "kendovue":
         return KENDOKAS.GREEN;
       default:
         return KENDOKAS.ORANGE;
@@ -30,10 +32,10 @@ const FrameworkDetail = ({ framework }: IProps) => {
   return (
     <React.Fragment>
       <div className={styles['details-wrap']}>
-       <h1 className={styles['details-header']}>{framework.title}</h1>
-       <p className={styles['framework-description']}>{framework.longDescription}</p>
+       <h1 className={styles['details-header']}>{title}</h1>
+       <p className={styles['framework-description']}>{description}</p>
        <div className={styles['details-spacer']} />
-       <Kendoka svgUrl={getKendoka(findKendoka(framework.internalName))} />
+       <Kendoka svgUrl={getKendoka(findKendoka(name))} />
       </div>
     </React.Fragment>
   );
