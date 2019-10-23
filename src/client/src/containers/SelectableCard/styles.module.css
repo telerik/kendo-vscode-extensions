@@ -28,6 +28,10 @@
   font-weight: bold;
 }
 
+.icon-class{
+  fill: var(--vscode-editor-foreground);
+}
+
 .container {
   outline: none;
 }

@@ -31,6 +31,12 @@
   font-weight: bold;
   margin-bottom: 3px;
   font-size: 14px;
+  text-transform: uppercase;
+}
+
+.pages-count {
+  color: var(--vscode-activityBarBadge-background);
+  font-size:20px;
 }
 
 .sidebarItem {

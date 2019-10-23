@@ -11,7 +11,7 @@
     "wts.platform": "Web",
     "wts.compositionOrder": 3,
     "wts.version": "1.0.0",
-    "wts.compositionFilter": "$frontendframework == ReactJS & identity == wts.Page.React.List"
+    "wts.compositionFilter": "$frontendframework == KendoReact & identity == wts.Page.Kendo.React.List"
   },
     "sourceName": "wts.ItemName",
     "preferNameDirectory": true,

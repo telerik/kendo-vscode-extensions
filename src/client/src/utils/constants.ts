@@ -17,6 +17,8 @@ const INTL_MESSAGES = defineMessages({
   }
 });
 
+const MAX_PAGES_ALLOWED = 20;
+
 const KENDOKAS = {
   ORANGE : "orange",
   BLUE: "blue",
@@ -55,6 +57,18 @@ const WIZARD_CONTENT_INTERNAL_NAMES = {
   AZURE: "wts.Feature.Azure",
   AZURE_FUNCTIONS: "wts.Feature.Azure.AzureFunctions",
   REACT_BLANK_PAGE: "wts.Page.React.Blank",
+  KENDO_REACT_BLANK_PAGE: "wts.Page.Kendo.React.Blank",
+  KENDO_REACT_HELLO_PAGE: "wts.Page.Kendo.React.Hello",
+  KENDO_REACT_APP_DRAWER_PAGE: "wts.Page.Kendo.React.AppDrawer",
+  KENDO_REACT_CHART_PAGE: "wts.Page.Kendo.React.Chart",
+  KENDO_REACT_FORM_PAGE: "wts.Page.Kendo.React.Form",
+  KENDO_ANGULAR_BLANK_PAGE: "wts.Page.Kendo.Angular.Blank",
+  KENDO_ANGULAR_HELLO_PAGE: "wts.Page.Kendo.Angular.Hello",
+  KENDO_ANGULAR_APP_DRAWER_PAGE: "wts.Page.Kendo.Angular.AppDrawer",
+  KENDO_ANGULAR_CHART_PAGE: "wts.Page.Kendo.Angular.Chart",
+  KENDO_ANGULAR_FORM_PAGE: "wts.Page.Kendo.Angular.Form",
+  KENDO_PLUS_ICON: "plusicon",
+  KENDO_MINUS_ICON: "minusicon",
   REACT_CONTENT_GRID: "wts.Page.React.Grid",
   REACT_MASTER_DETAIL: "wts.Page.React.MasterDetail",
   REACT_LIST: "wts.Page.React.List",
@@ -85,7 +99,9 @@ const EXTENSION_MODULES = {
   TELEMETRY: "Telemetry",
   VALIDATOR: "Validator",
   VSCODEUI: "VSCodeUI",
-  DEPENDENCYCHECKER: "DependencyChecker"
+  DEPENDENCYCHECKER: "DependencyChecker",
+  CORETS: "CoreTSModule",
+  DEFAULTS: "Defaults"
 };
 
 // Define extension commands here that should be received from the extension
@@ -94,12 +110,15 @@ const EXTENSION_COMMANDS = {
   AZURE_LOGOUT: "logout",
   GENERATE: "generate",
   GET_OUTPUT_PATH: "get-output-path",
+  GET_PROJECT_NAME: "get-project-name",
   GET_USER_STATUS: "get-user-status",
   NAME_COSMOS: "name-cosmos",
   NAME_FUNCTIONS: "name-functions",
+  NAME_APP_SERVICE: "name-app-service",
   PROJECT_PATH_VALIDATION: "project-path-validation",
   SUBSCRIPTION_DATA_COSMOS: "subscription-data-for-cosmos",
   SUBSCRIPTION_DATA_FUNCTIONS: "subscription-data-for-functions",
+  SUBSCRIPTION_DATA_APP_SERVICE: "subscription-data-for-app-service",
   TRACK_PAGE_SWITCH: "track-page-switch",
   GEN_STATUS_MESSAGE: "update-status-message",
   GEN_STATUS: "update-status",
@@ -109,7 +128,9 @@ const EXTENSION_COMMANDS = {
   CLOSE_WIZARD: "close-wizard",
   RESET_PAGES: "reset-pages",
   GET_PREVIEW_STATUS: "get-preview",
-  GET_DEPENDENCY_INFO: "check-dependency"
+  GET_DEPENDENCY_INFO: "check-dependency",
+  GET_FRAMEWORKS: "get-frameworks",
+  GET_PAGES: "get-pages"
 };
 
 export {
@@ -119,6 +140,7 @@ export {
   ROUTES,
   KENDOKAS,
   ROUTES_ARRAY,
+  MAX_PAGES_ALLOWED,
   SERVICE_KEYS,
   WIZARD_CONTENT_INTERNAL_NAMES,
   INTL_MESSAGES,

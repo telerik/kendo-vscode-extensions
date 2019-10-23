@@ -17,6 +17,7 @@ import {
   ROUTES, KENDOKAS
 } from "../../utils/constants";
 import { stat } from "fs";
+import SortablePageList from "../SortablePageList";
 
 interface IPageDetailsProps {
   detailsPageInfo: IOption;
@@ -64,6 +65,11 @@ class PageDetails extends React.Component<Props> {
                 title={this.props.frontEndFramwork.title as string} 
                 description={this.props.frontEndFramwork.description as string} 
                 name={this.props.frontEndFramwork.internalName as string}/>
+          }/>
+
+          <Route path={ROUTES.SELECT_PAGES} exact={true}  component={ 
+            () =>
+              <SortablePageList></SortablePageList>
           }/>
       </div>
     );

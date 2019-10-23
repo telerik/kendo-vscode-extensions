@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import styles from "./styles.module.css";
 
 import SelectOption from "../SelectOption";
 
@@ -83,12 +84,6 @@ class SelectPages extends React.Component<Props> {
         serverPort
       } = this.props;
 
-      getPages(
-        selectedProjectType.internalName,
-        selectedFrontend.internalName,
-        selectedBackend.internalName,
-        serverPort
-      );
     }
   }
 
@@ -118,20 +113,22 @@ class SelectPages extends React.Component<Props> {
       updatePageCount
     } = this.props;
     return (
-      <div>
+      <div className={styles["card-wrap"]}>
         {options.length > 0 && (
-          <SelectOption
-            selectOptions={selectPages}
-            multiSelect={true}
-            selectedCardIndices={this.convertSelectedPagesToIndices(
-              selectedPages
-            )}
-            title={intl.formatMessage(messages.pagesTitleQuestion)}
-            options={options}
-            currentCardData={selectedPages}
-            cardTypeCount={pageCount}
-            handleCountUpdate={updatePageCount}
-          />
+           <SelectOption
+           selectOptions={selectPages}
+           multiSelect={false}
+           isFrameworkSelection={false}
+           selectedCardIndices={this.convertSelectedPagesToIndices(
+             selectedPages
+           )}
+           title={intl.formatMessage(messages.pagesTitleQuestion)}
+           options={options}
+           currentCardData={selectedPages}
+           cardTypeCount={pageCount}
+           isPagesSelection={true}
+           handleCountUpdate={updatePageCount}
+         />
         )}
       </div>
     );

@@ -10,7 +10,7 @@
     "wts.type": "composition",
 	"wts.platform" : "Web",
     "wts.version": "1.0.0",
-    "wts.compositionFilter": "$frontendframework == ReactJS & wts.type == page"
+    "wts.compositionFilter": "$frontendframework == KendoReact & wts.type == wts.Page.Kendo.React.Blank"
   },
     "sourceName": "wts.ItemName",
     "preferNameDirectory": true,

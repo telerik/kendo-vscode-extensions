@@ -18,7 +18,7 @@ import styles from "./styles.module.css";
 import { IOption } from "../../types/option";
 import { FormattedMessage } from "react-intl";
 import { ROUTES } from "../../utils/constants";
-import { getSvg, withLocalPath } from "../../utils/getSvgUrl";
+import { getSvg } from "../../utils/getSvgUrl";
 
 import { AppState } from "../../reducers";
 
@@ -66,26 +66,33 @@ const SelectableCard = ({
 
   const getIconClass = (framework = "") =>  {
     const matches = framework.match(/[A-Z][a-z]+/g);
-
     if (matches) {
+      if (matches[0].indexOf("Page") > -1) {
+        return "icon-class";
+      }
       return matches.join("-").toLocaleLowerCase();
     }
 
     return framework;
   };
 
-  const getparentFramework = (framework = "") =>  {
+  const getText = (framework = "") =>  {
     const matches = framework.match(/[A-Z][a-z]+/g);
 
     if (matches) {
-      return matches[1];
+      let text: string = matches.pop() as string;
+      if (text.toLocaleLowerCase() == "drawer") {
+         text = matches.pop() + text; 
+      }
+      
+      return text;
     }
 
     return framework;
   };
 
   return (
-    <div
+    <><div
       onKeyDown={keyDownHandler} 
       className={classNames(styles.container, styles.boundingBox, {
         [styles.unselectable]: disabled
@@ -101,14 +108,15 @@ const SelectableCard = ({
             className={classNames(styles["image-container"], {
             [styles.selected]: selected
           })}>
-            {getSvg(option.internalName, iconStyles) ||
+            {getSvg(option.internalName, "icon-class") ||
               (iconPath && (
                 <img src={iconPath} className={styles[getIconClass(option.internalName)]} alt="" />
               ))}
           </div>
-          <p className={styles["text-holder"]}>{getparentFramework(option.internalName)}</p>
+          <p className={styles["text-holder"]}>{getText(option.internalName)}</p>
         </div>
     </div>
+    </>
   );
 };
 
