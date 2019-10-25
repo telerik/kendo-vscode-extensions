@@ -45,9 +45,9 @@ const NewProject = ({
 }: Props) => {
   return (
     <div className={styles.container}>
-      <span className={styles.description}>
+      <h1>
         Set a project name and location to create it
-      </span>
+      </h1>
       <div className={styles.projectDetailsContainer}>
         <ProjectNameAndOutput />
       </div>

@@ -345,7 +345,7 @@ class SelectOption extends React.Component<Props, ISelectOptionState> {
     const { title, options, setDetailPage, isFrameworkSelection, isPagesSelection } = this.props;
     return (
       <div className={styles["card-inner"]}>
-        <Title>{title}</Title>
+        <h1>{title}</h1>
         <div className={styles.container}>
           {options.map((option, cardNumber) => {
             const { svgUrl, title, body, unselectable, internalName } = option;

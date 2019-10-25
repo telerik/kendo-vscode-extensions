@@ -13,6 +13,9 @@ import { ReactComponent as FormPage } from "../assets/formpage.svg";
 import { ReactComponent as AppDrawerPage } from "../assets/appdrawerpage.svg";
 import { ReactComponent as PlusIcon } from "../assets/plusicon.svg";
 import { ReactComponent as MinusIcon } from "../assets/minusicon.svg";
+import { ReactComponent as MaterialTheme } from "../assets/materialtheme.svg";
+import { ReactComponent as BootstrapTheme } from "../assets/bootstraptheme.svg";
+import { ReactComponent as DefaultTheme } from "../assets/defaulttheme.svg";
 
 import svgStyles from "./svgStyles.module.css";
 
@@ -43,7 +46,6 @@ import chartpage from "../assets/chartpage.svg";
 import formpage from "../assets/formpage.svg";
 import hellopage from "../assets/hellopage.svg";
 import appdrawerpage from "../assets/appdrawerpage.svg";
-
 
 const KENDOKA_MAPPINGS = {
   [KENDOKAS.BLUE] : bluekendoka,
@@ -108,6 +110,15 @@ const SVG_REACTCOMPONENT_MAPPINGS = {
   ),
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_MINUS_ICON]: (style: string) => (
     <MinusIcon className={classnames(style, svgStyles.icon)} />
+  ),
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_MATERIAL_THEME]: (style: string) => (
+    <MaterialTheme className={classnames(style)} />
+  ),
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_BOOTSTRAP_THEME]: (style: string) => (
+    <BootstrapTheme className={classnames(style)} />
+  ),
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_DEFAULT_THEME]: (style: string) => (
+    <DefaultTheme className={classnames(style)} />
   ),
   [WIZARD_CONTENT_INTERNAL_NAMES.REACT_CONTENT_GRID]: (style: string) => (
     <ContentGrid className={classnames(style, svgStyles.icon)} />

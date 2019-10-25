@@ -41,8 +41,6 @@
 }
 
 .page-detail-wrap h4 {
-  color: var(--vscode-editorRuler-foreground);
-  text-transform: uppercase;
   margin: 10px 0;
 }
 

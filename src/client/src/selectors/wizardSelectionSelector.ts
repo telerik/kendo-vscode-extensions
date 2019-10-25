@@ -8,6 +8,7 @@ import { defineMessages } from "react-intl";
 import { IValidation } from "../reducers/wizardSelectionReducers/updateOutputPath";
 import { AppState } from "../reducers";
 import { SelectionState } from "../reducers/wizardSelectionReducers";
+import { ITheme } from "../reducers/wizardSelectionReducers/themeReducer";
 
 export const messages = defineMessages({
   azureFunctionsOriginalTitle: {
@@ -31,6 +32,7 @@ const getOutputPath = (state: AppState): string =>
 const getOutputPathValidation = (state: AppState): IValidation =>
   state.selection.outputPathObject.validation;
 const getPageCount = (state: AppState): IPageCount => state.selection.pageCount;
+const getTheme = (state: AppState): ITheme => state.selection.theme;
 
 const isValidNameAndProjectPath = (
   projectNameValidationObject: IValidation,
@@ -152,6 +154,7 @@ export {
   getOutputPathValidation,
   getProjectName,
   getPageCount,
+  getTheme,
   getProjectNameValidation,
   isValidNameAndProjectPathSelector
 };

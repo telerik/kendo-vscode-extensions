@@ -18,6 +18,7 @@ import {
 } from "../../utils/constants";
 import { stat } from "fs";
 import SortablePageList from "../SortablePageList";
+import ProjectSummary from "../../components/ProjectSummary";
 
 interface IPageDetailsProps {
   detailsPageInfo: IOption;
@@ -70,6 +71,11 @@ class PageDetails extends React.Component<Props> {
           <Route path={ROUTES.SELECT_PAGES} exact={true}  component={ 
             () =>
               <SortablePageList></SortablePageList>
+          }/>
+
+          <Route path={ROUTES.SELECT_THEME} exact={true}  component={ 
+            () =>
+              <ProjectSummary></ProjectSummary>
           }/>
       </div>
     );

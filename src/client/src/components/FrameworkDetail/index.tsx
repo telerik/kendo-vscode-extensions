@@ -32,7 +32,7 @@ const FrameworkDetail = ({ name, title, description }: IProps) => {
   return (
     <React.Fragment>
       <div className={styles['details-wrap']}>
-       <h1 className={styles['details-header']}>{title}</h1>
+       <h2 className={styles['details-header']}>{title}</h2>
        <p className={styles['framework-description']}>{description}</p>
        <div className={styles['details-spacer']} />
        <Kendoka svgUrl={getKendoka(findKendoka(name))} />

@@ -1,7 +1,11 @@
 import { defineMessages } from "react-intl";
 
 const PAGE_DETAILS = "/PageDetail";
+const DEFAULT = "default";
+const BOOTSTRAP = "bootstrap";
+const MATERIAL = "material";
 const SELECT_FRAMEWORKS = "/SelectFrameworks";
+const SELECT_THEME = "/SelectTheme";
 const SELECT_PAGES = "/SelectPages";
 const AZURE_LOGIN = "/AzureLogin";
 const REVIEW_AND_GENERATE = "/ReviewAndGenerate";
@@ -30,15 +34,23 @@ const ROUTES = {
   PAGE_DETAILS,
   SELECT_FRAMEWORKS,
   SELECT_PAGES,
+  SELECT_THEME,
   REVIEW_AND_GENERATE,
   NEW_PROJECT
 };
+
+const THEMES = [
+  DEFAULT,
+  BOOTSTRAP,
+  MATERIAL,
+];
 
 // Presents the routes in the order of the wizard
 const ROUTES_ARRAY = [
   NEW_PROJECT,
   SELECT_FRAMEWORKS,
   SELECT_PAGES,
+  SELECT_THEME,
   REVIEW_AND_GENERATE
 ];
 
@@ -69,6 +81,9 @@ const WIZARD_CONTENT_INTERNAL_NAMES = {
   KENDO_ANGULAR_FORM_PAGE: "wts.Page.Kendo.Angular.Form",
   KENDO_PLUS_ICON: "plusicon",
   KENDO_MINUS_ICON: "minusicon",
+  KENDO_DEFAULT_THEME: "default",
+  KENDO_BOOTSTRAP_THEME: "bootstrap",
+  KENDO_MATERIAL_THEME: "material",
   REACT_CONTENT_GRID: "wts.Page.React.Grid",
   REACT_MASTER_DETAIL: "wts.Page.React.MasterDetail",
   REACT_LIST: "wts.Page.React.List",
@@ -145,5 +160,6 @@ export {
   WIZARD_CONTENT_INTERNAL_NAMES,
   INTL_MESSAGES,
   COSMOS_APIS,
+  THEMES,
   DEVELOPMENT
 };

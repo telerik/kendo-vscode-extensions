@@ -39,5 +39,5 @@
 .selected {
   border: 1px solid #0078D7;
   box-sizing: border-box;
-  background-color: var(--vscode-activityBar-background);
+  background-color: var(--vscode-editor-selectionHighlightBackground);
 }

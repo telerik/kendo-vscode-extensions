@@ -72,12 +72,12 @@ type Props = RouteComponentProps &
 const pathsNext: any = {
   [ROUTES.NEW_PROJECT]: ROUTES.SELECT_FRAMEWORKS,
   [ROUTES.SELECT_FRAMEWORKS]: ROUTES.SELECT_PAGES,
-  [ROUTES.SELECT_PAGES]: ROUTES.REVIEW_AND_GENERATE
+  [ROUTES.SELECT_PAGES]: ROUTES.SELECT_THEME
 };
 const pathsBack: any = {
   [ROUTES.SELECT_FRAMEWORKS]: ROUTES.NEW_PROJECT,
   [ROUTES.SELECT_PAGES]: ROUTES.SELECT_FRAMEWORKS,
-  [ROUTES.REVIEW_AND_GENERATE]: ROUTES.SELECT_PAGES
+  [ROUTES.SELECT_THEME]: ROUTES.SELECT_PAGES
 };
 
 const messages = defineMessages({
@@ -127,7 +127,7 @@ class Footer extends React.Component<Props> {
       event.preventDefault();
       return;
     }
-    if (pathname !== ROUTES.REVIEW_AND_GENERATE) {
+    if (pathname !== ROUTES.SELECT_THEME) {
       setRouteVisited(pathsNext[pathname]);
     }
   };
@@ -217,8 +217,8 @@ class Footer extends React.Component<Props> {
                   this.handleLinkClick(event, pathname);
                 }}
                 to={
-                  pathname === ROUTES.REVIEW_AND_GENERATE
-                    ? ROUTES.REVIEW_AND_GENERATE
+                  pathname === ROUTES.SELECT_THEME
+                    ? ROUTES.SELECT_THEME
                     : pathsNext[pathname]
                 }
               >

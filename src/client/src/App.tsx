@@ -59,6 +59,7 @@ import { setPreviewStatusAction } from "./actions/wizardContentActions/setPrevie
 import { setPortAction } from "./actions/wizardContentActions/setPort";
 import { ThunkDispatch } from "redux-thunk";
 import RootAction from "./actions/ActionType";
+import SelectTheme from "./containers/SelectTheme";
 
 if (process.env.NODE_ENV === DEVELOPMENT) {
   require("./css/themes.css");
@@ -252,6 +253,9 @@ class App extends React.Component<Props> {
                 component={SelectFrameworks}
               />
               <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
+
+              <Route path={ROUTES.SELECT_THEME} component={SelectTheme} />
+              
               <Route
                 exact={true}
                 path={ROUTES.NEW_PROJECT}

@@ -108,6 +108,7 @@ const SortablePageList = (props: Props) => {
   const DRAG_PIXEL_THRESHOLD = 1;
   return (
     <div className={styles["width-100"]}>
+      <h1>Manage your app pages</h1>
       {!isSummaryPage && (
         <div
           className={classnames(styles.pageListContainer, styles.sidebarItem)}
