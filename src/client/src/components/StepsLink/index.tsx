@@ -20,18 +20,21 @@ const StepsLink = ({
   stepIndex;
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    if (disabled) {
       e.preventDefault();
-    }
   };
   return (
     <Link
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={-1}
       to={path}
       onClick={handleClick}
       className={styles.container}
     >
-      <span className={styles.step}>{stepIndex + 1}</span>
+      <span className={classnames(
+                        styles.step,
+                        {
+                          [styles.selected]: isSelected
+                        }
+                      )}>{stepIndex + 1}</span>
       <span
         className={classnames(styles.text, {
           [styles.textSelected]: isSelected

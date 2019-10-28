@@ -127,9 +127,7 @@ class Footer extends React.Component<Props> {
       event.preventDefault();
       return;
     }
-    if (pathname !== ROUTES.SELECT_THEME) {
-      setRouteVisited(pathsNext[pathname]);
-    }
+    setRouteVisited(pathsNext[pathname]);
   };
   public trackPageForTelemetry = (pathname: string) => {
     this.props.vscode.postMessage({
@@ -192,6 +190,9 @@ class Footer extends React.Component<Props> {
                 className={classnames(buttonStyles.buttonDark, styles.button, {
                   [styles.disabledOverlay]: pathname === ROUTES.NEW_PROJECT
                 })}
+                onClick={event => {
+                  this.handleLinkClick(event, pathname);
+                }}
                 to={
                   pathsBack[pathname] === undefined
                     ? ROUTES.NEW_PROJECT

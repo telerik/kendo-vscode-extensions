@@ -29,7 +29,7 @@ type Props = ISelectThemeProps & IDispatchProps;
 class SelectTheme extends React.Component<Props> {
   
   public isSelected = (currentTheme: string) => {
-    return this.props.theme.name == currentTheme;
+    return this.props.theme.name === currentTheme;
   };
 
   public onThemeClick(currentTheme: string): void {
@@ -45,8 +45,8 @@ class SelectTheme extends React.Component<Props> {
         <div className={styles["theme-chooser-inner"]}>
           <h4>Sass Themes</h4>
           <ul>
-              { THEMES.map((currentTheme) => {
-                return (<li className={classNames({[styles.selected]: this.isSelected(currentTheme) })} onClick={ () => this.onThemeClick(currentTheme)} tabIndex={0} >
+              { THEMES.map((currentTheme, idx) => {
+                return (<li  key={JSON.stringify(`${currentTheme} + ${idx}`)} className={classNames({[styles.selected]: this.isSelected(currentTheme) })} onClick={ () => this.onThemeClick(currentTheme)} tabIndex={0} >
                             {getSvg(currentTheme, "icon-class")}
                             <span className={styles["radio-btn-wrap"]}>
                                 <span className={styles["radio-btn"]}></span>
@@ -79,7 +79,6 @@ const mapDispatchToProps = (
 ): IDispatchProps => ({
  
   selectTheme: (theme: ITheme) => {
-    console.log("chiki riki");
     dispatch(selectThemeAction(theme));
   }
 });
