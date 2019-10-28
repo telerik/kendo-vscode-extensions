@@ -120,10 +120,18 @@ class Footer extends React.Component<Props> {
   public isReviewAndGenerate = (): boolean => {
     return this.props.location.pathname === ROUTES.REVIEW_AND_GENERATE;
   };
+  public isSelectTheme = (): boolean => {
+    return this.props.location.pathname === ROUTES.SELECT_THEME;
+  };
+
+  public isNewProject = (): boolean => {
+    return this.props.location.pathname === ROUTES.NEW_PROJECT;
+  };
+
   public handleLinkClick = (event: React.SyntheticEvent, pathname: string) => {
-    const { isValidNameAndProjectPath, setRouteVisited } = this.props;
+    const { setRouteVisited } = this.props;
     this.trackPageForTelemetry(pathname);
-    if (!isValidNameAndProjectPath) {
+    if (this.shouldDisableNextPage()) {
       event.preventDefault();
       return;
     }
@@ -137,6 +145,19 @@ class Footer extends React.Component<Props> {
       pageName: pathname
     });
   };
+
+  public shouldDisableNextPage = () => {
+    const { location, isValidNameAndProjectPath } = this.props;
+    const { pathname } = location;
+
+    if (pathname == ROUTES.NEW_PROJECT) {
+      return !isValidNameAndProjectPath;
+    } else if (pathname == ROUTES.SELECT_PAGES) {
+      return !(this.props.engine.pages && this.props.engine.pages.length > 0);
+    }
+    return false;
+  };
+
   public render() {
     // Validate the page names and do not generate if they are invalid or if there are duplicates
     const pageNames = new Set();
@@ -176,15 +197,9 @@ class Footer extends React.Component<Props> {
         {pathname !== ROUTES.PAGE_DETAILS && (
           <div className={styles.footer}>
             <div>
-              {showFrameworks && (
-                <FormattedMessage
-                  id="footer.license"
-                  defaultMessage="By continuing, you agree to the terms of all the licenses in the
-              licenses section."
-                />
-              )}
             </div>
             <div className={styles.buttonContainer}>
+              { !this.isNewProject() &&
               <Link
                 tabIndex={pathname === ROUTES.NEW_PROJECT ? -1 : 0}
                 className={classnames(buttonStyles.buttonDark, styles.button, {
@@ -199,20 +214,21 @@ class Footer extends React.Component<Props> {
                     : pathsBack[pathname]
                 }
               >
-                <FormattedMessage id="footer.back" defaultMessage="Back" />
+                <FormattedMessage id="footer.back" defaultMessage="Previous" />
               </Link>
+              }
+              { !this.isSelectTheme() &&
               <Link
                 tabIndex={
-                  !isValidNameAndProjectPath || this.isReviewAndGenerate()
+                  this.shouldDisableNextPage()
                     ? -1
                     : 0
                 }
                 className={classnames(styles.button, {
                   [buttonStyles.buttonDark]:
-                    this.isReviewAndGenerate() || !isValidNameAndProjectPath,
-                  [buttonStyles.buttonHighlightedBorder]: !this.isReviewAndGenerate(),
-                  [styles.disabledOverlay]:
-                    !isValidNameAndProjectPath || this.isReviewAndGenerate()
+                  this.shouldDisableNextPage(),
+                  [buttonStyles.buttonHighlightedBorder]: !this.shouldDisableNextPage(),
+                  [styles.disabledOverlay]: this.shouldDisableNextPage()
                 })}
                 onClick={event => {
                   this.handleLinkClick(event, pathname);
@@ -225,25 +241,28 @@ class Footer extends React.Component<Props> {
               >
                 <FormattedMessage id="footer.next" defaultMessage="Next" />
               </Link>
+              }
+              { this.isSelectTheme() &&
               <button
                 disabled={
                   pathname !== ROUTES.REVIEW_AND_GENERATE || !areValidNames
                 }
                 className={classnames(styles.button, {
                   [buttonStyles.buttonDark]:
-                    !this.isReviewAndGenerate() || !areValidNames,
+                    !this.isSelectTheme() || !areValidNames,
                   [buttonStyles.buttonHighlightedBorder]:
-                    this.isReviewAndGenerate() && areValidNames,
+                    this.isSelectTheme() && areValidNames,
                   [styles.disabledOverlay]:
-                    !this.isReviewAndGenerate() || !areValidNames
+                    !this.isSelectTheme() || !areValidNames
                 })}
                 onClick={this.logMessageToVsCode}
               >
                 <FormattedMessage
                   id="footer.generate"
-                  defaultMessage="Generate Template"
+                  defaultMessage="Create"
                 />
               </button>
+              }
             </div>
           </div>
         )}

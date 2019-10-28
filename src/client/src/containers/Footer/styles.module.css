@@ -9,8 +9,10 @@
 }
 
 .button {
-  margin-left: 1em;
+  margin-left: 1.5em;
   font-size: 1em;
+  width: 150px;
+  text-align: center;
 }
 
 .button:hover {
