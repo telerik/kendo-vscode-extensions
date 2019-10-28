@@ -245,7 +245,7 @@ class Footer extends React.Component<Props> {
               { this.isSelectTheme() &&
               <button
                 disabled={
-                  pathname !== ROUTES.REVIEW_AND_GENERATE || !areValidNames
+                  pathname !== ROUTES.SELECT_THEME || !areValidNames
                 }
                 className={classnames(styles.button, {
                   [buttonStyles.buttonDark]:

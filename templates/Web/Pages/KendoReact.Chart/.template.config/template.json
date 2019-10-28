@@ -17,6 +17,7 @@
     "wts.displayOrder": "0",
     "wts.genGroup": "0",
     "wts.rightClickEnabled": "true",
+    "wts.casing.sourceName": "kebab|pascal|camel",
     "wts.licenses": "[Bootstrap](https://github.com/twbs/bootstrap/blob/master/LICENSE)"
   },
   "sourceName": "KendoReactChart",
@@ -30,6 +31,10 @@
     "wts.itemNamespace": {
       "type": "parameter",
       "replaces": "Param_ItemNamespace"
+    },
+    "wts.sourceName.casing.kebab": {
+      "type": "parameter",
+      "replaces": "Param_SourceName_Kebab"
     },
     "baseclass": {
       "type": "parameter",
