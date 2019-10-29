@@ -32,6 +32,7 @@ export class GenerateCommand extends CoreTemplateStudioApiCommand {
       frontendFramework,
       backendFramework,
       pages,
+      theme,
       services
     } = payload;
 
@@ -44,6 +45,7 @@ export class GenerateCommand extends CoreTemplateStudioApiCommand {
       language: "Any",
       platform: "Web",
       homeName: "Test",
+      theme: theme,
       pages: pages.map((page: any) => ({
         name: page.name,
         templateid: page.identity

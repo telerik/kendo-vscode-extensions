@@ -30,6 +30,11 @@
       "dataType": "string",
       "replaces": "Param_Wizard.Version"
     },
+    "wts.theme": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "Param_Theme"
+    },
     "wts.templatesVersion": {
       "type": "parameter",
       "dataType": "string",

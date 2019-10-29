@@ -32,7 +32,7 @@ const getOutputPath = (state: AppState): string =>
 const getOutputPathValidation = (state: AppState): IValidation =>
   state.selection.outputPathObject.validation;
 const getPageCount = (state: AppState): IPageCount => state.selection.pageCount;
-const getTheme = (state: AppState): ITheme => state.selection.theme;
+const getTheme = (state: AppState): string => state.selection.theme.name;
 
 const isValidNameAndProjectPath = (
   projectNameValidationObject: IValidation,

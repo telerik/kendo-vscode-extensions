@@ -17,7 +17,7 @@ import RootAction from "../../actions/ActionType";
 
 interface ISelectThemeProps {
   pageCount: IPageCount;
-  theme: ITheme;
+  theme: string;
 }
 
 interface IDispatchProps {
@@ -29,7 +29,7 @@ type Props = ISelectThemeProps & IDispatchProps;
 class SelectTheme extends React.Component<Props> {
   
   public isSelected = (currentTheme: string) => {
-    return this.props.theme.name === currentTheme;
+    return this.props.theme === currentTheme;
   };
 
   public onThemeClick(currentTheme: string): void {

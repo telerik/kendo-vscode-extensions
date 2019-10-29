@@ -24,6 +24,8 @@ const getProjectType = (selection: SelectionState): string => {
   return projectType.internalName;
 };
 
+const getTheme = (selection: SelectionState): string => selection.theme.name;
+
 const getFrontendFramework = (selection: SelectionState): string => {
   const { frontendFramework } = selection;
   return frontendFramework.internalName;
@@ -103,6 +105,11 @@ const getServicesSelector = createSelector(
   getServices
 );
 
+const getThemeSelector = createSelector(
+  getWizardSelectionsSelector,
+  getTheme
+);
+
 const rootSelector = createSelector(
   getProjectName,
   getOutputPath,
@@ -110,6 +117,7 @@ const rootSelector = createSelector(
   getFrontendFrameworkSelector,
   getBackendFrameworkSelector,
   getPagesSelector,
+  getThemeSelector,
   getServicesSelector,
   (
     projectName,
@@ -118,6 +126,7 @@ const rootSelector = createSelector(
     frontendFramework,
     backendFramework,
     pages,
+    theme,
     services
   ) => {
     return {
@@ -127,6 +136,7 @@ const rootSelector = createSelector(
       frontendFramework,
       backendFramework,
       pages,
+      theme,
       services
     };
   }
