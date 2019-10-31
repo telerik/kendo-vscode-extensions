@@ -150,9 +150,9 @@ class Footer extends React.Component<Props> {
     const { location, isValidNameAndProjectPath } = this.props;
     const { pathname } = location;
 
-    if (pathname == ROUTES.NEW_PROJECT) {
+    if (pathname === ROUTES.NEW_PROJECT) {
       return !isValidNameAndProjectPath;
-    } else if (pathname == ROUTES.SELECT_PAGES) {
+    } else if (pathname === ROUTES.SELECT_PAGES) {
       return !(this.props.engine.pages && this.props.engine.pages.length > 0);
     }
     return false;
@@ -189,9 +189,8 @@ class Footer extends React.Component<Props> {
       }
     }
 
-    const { isValidNameAndProjectPath, location, isVisited, intl } = this.props;
+    const { location, isVisited, intl } = this.props;
     const { pathname } = location;
-    const { showFrameworks } = isVisited;
     return (
       <nav aria-label={intl.formatMessage(messages.navAriaLabel)}>
         {pathname !== ROUTES.PAGE_DETAILS && (

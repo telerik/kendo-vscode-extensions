@@ -52,7 +52,7 @@ const Steps = (props: Props) => {
   React.useEffect(() => {
     setPathIndex(ROUTES_ARRAY.indexOf(pathname));
   });
-  const { isVisited, intl, isValidNameAndProjectPath } = props;
+  const { isVisited, isValidNameAndProjectPath } = props;
   return (
     <React.Fragment>
       {pathname !== ROUTES.PAGE_DETAILS && (

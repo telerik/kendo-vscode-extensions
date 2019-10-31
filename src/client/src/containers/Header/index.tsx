@@ -20,7 +20,7 @@ interface IHeaderProps {
 type Props = IHeaderProps;
 
 const Header = (props: Props) => {
-  const { isLoggedIn, email } = props;
+  const { email } = props;
   const signOutClick = () => {
     props.vscode.postMessage({
       module: EXTENSION_MODULES.AZURE,

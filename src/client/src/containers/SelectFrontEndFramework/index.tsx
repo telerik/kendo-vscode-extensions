@@ -27,8 +27,6 @@ import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 import { getPageCount } from "../../selectors/wizardSelectionSelector";
 
-import styles from "./styles.module.css";
-
 import {
   getIsVisitedRoutesSelector,
   IVisitedPages
@@ -83,10 +81,7 @@ class SelectFrontEndFramework extends React.Component<Props> {
       vscode,
       selectedFrontendFramework,
       selectFrontendFramework,
-      selectedPages,
-      selectPages,
-      pageCount,
-      updatePageCount
+      selectedPages
     } = this.props;
 
     const { showPages } = this.props.isRoutesVisited;

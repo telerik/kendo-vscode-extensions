@@ -1,22 +1,18 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { withRouter, RouteComponentProps } from "react-router";
-import Details from "../../components/Details";
 import FrameworkDetail from "../../components/FrameworkDetail";
 import { IOption } from "../../types/option";
-import { screenShotMapping } from "../../utils/getSvgUrl";
 import { ISelected } from "../../types/selected";
 import { ThunkDispatch } from "redux-thunk";
 import RootAction from "../../actions/ActionType";
 import { getProjectTypesAction } from "../../actions/wizardContentActions/getProjectTypes";
 import styles from "./styles.module.css";
 import { AppState } from "../../reducers";
-import SelectWebApp from "../SelectWebApp";
 import { Route } from "react-router-dom";
 import {
   ROUTES, KENDOKAS
 } from "../../utils/constants";
-import { stat } from "fs";
 import SortablePageList from "../SortablePageList";
 import ProjectSummary from "../../components/ProjectSummary";
 
@@ -42,13 +38,12 @@ type Props = IDispatchProps & IStoreProps & IPageDetailsProps & RouteComponentPr
 
 class PageDetails extends React.Component<Props> {
   public componentDidMount() {
-    const { history, detailsPageInfo, isIntlFormatted, location, getProjectTypes, serverPort } = this.props;
+    const { getProjectTypes, serverPort } = this.props;
     if (getProjectTypes) {
       getProjectTypes(serverPort);
     }
   }
   public render () { 
-    const { history, detailsPageInfo, isIntlFormatted, location } = this.props;
     return (
       <div className={styles.detailsContainer}>
           <Route path={ROUTES.NEW_PROJECT} exact={true} component={

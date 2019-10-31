@@ -8,7 +8,6 @@ import { defineMessages } from "react-intl";
 import { IValidation } from "../reducers/wizardSelectionReducers/updateOutputPath";
 import { AppState } from "../reducers";
 import { SelectionState } from "../reducers/wizardSelectionReducers";
-import { ITheme } from "../reducers/wizardSelectionReducers/themeReducer";
 
 export const messages = defineMessages({
   azureFunctionsOriginalTitle: {
