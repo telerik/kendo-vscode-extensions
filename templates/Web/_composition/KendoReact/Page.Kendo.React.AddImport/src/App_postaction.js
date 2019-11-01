@@ -6,7 +6,6 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 //^^
 //{[{
-import wts.ItemName from "./components/wts.ItemName";
+import Param_SourceName_Pascal from "./components/Param_SourceName_Pascal";
 //}]}
-//TODO Web Template Studio: Add routes for your new pages here.
 function App() {

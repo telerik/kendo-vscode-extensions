@@ -2,6 +2,6 @@
     <MenuItem text="Home" render={()=> <Link to={'/'}>Home</Link>}/>
     //^^
     //{[{
-      <MenuItem text="wts.ItemName" render={()=> <Link to={'/wts.ItemName'}>wts.ItemName</Link>}/>
+    <MenuItem text="Param_SourceName_Pascal" render={()=> <Link to={'/Param_SourceName_Pascal'}>Param_SourceName_Pascal</Link>}/>
     //}]}
 </Menu>

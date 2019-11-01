@@ -36,6 +36,10 @@
       "type": "parameter",
       "replaces": "Param_SourceName_Kebab"
     },
+    "wts.sourceName.casing.pascal": {
+      "type": "parameter",
+      "replaces": "Param_SourceName_Pascal"
+    },
     "baseclass": {
       "type": "parameter",
       "replaces": "System.ComponentModel.INotifyPropertyChanged"
