@@ -68,17 +68,11 @@ if (process.env.NODE_ENV === DEVELOPMENT) {
 interface IDispatchProps {
   updateOutputPath: (outputPath: string) => any;
   getVSCodeApi: () => void;
-  logIntoAzure: (email: string, subscriptions: []) => void;
-  startLogOutToAzure: () => any;
   saveSubscriptionData: (subscriptionData: any) => void;
   setCosmosResourceAccountNameAvailability: (
     isAvailableObject: IAvailabilityFromExtension
   ) => any;
-  setAppNameAvailability: (
-    isAvailableObject: IAvailabilityFromExtension
-  ) => any;
   setProjectPathValidation: (validation: any) => void;
-  setAzureValidationStatus: (status: boolean) => void;
   updateTemplateGenStatusMessage: (status: string) => any;
   updateTemplateGenStatus: (isGenerated: IServiceStatus) => any;
   getVersionsData: (versions: IVersions) => any;
@@ -100,14 +94,10 @@ class App extends React.Component<Props> {
   public static defaultProps = {
     getVSCodeApi: () => {},
     loadWizardContent: () => {},
-    logIntoAzure: () => {},
-    startLogOutToAzure: () => {},
     saveSubscriptionData: () => {},
     updateOutputPath: () => {},
     setCosmosResourceAccountNameAvailability: () => {},
-    setAppNameAvailability: () => {},
     setProjectPathValidation: () => {},
-    setAzureValidationStatus: () => {},
     updateDependencyInfo: () => {},
     updateTemplateGenStatusMessage: () => {},
     updateTemplateGenStatus: () => {},
@@ -131,47 +121,7 @@ class App extends React.Component<Props> {
           }
           break;
         case EXTENSION_COMMANDS.GET_USER_STATUS:
-        case EXTENSION_COMMANDS.AZURE_LOGIN:
-          // email will be null or undefined if login didn't work correctly
-          if (message.payload != null) {
-            this.props.logIntoAzure(
-              message.payload.email,
-              message.payload.subscriptions
-            );
-          }
-          break;
-        case EXTENSION_COMMANDS.AZURE_LOGOUT:
-          this.props.startLogOutToAzure();
-          break;
         case EXTENSION_COMMANDS.SUBSCRIPTION_DATA_FUNCTIONS:
-        case EXTENSION_COMMANDS.SUBSCRIPTION_DATA_COSMOS:
-          // Expect resource groups and locations on this request
-          // Receive resource groups and locations
-          // and update redux (resourceGroups, locations)
-          if (message.payload != null) {
-            this.props.saveSubscriptionData({
-              locations: message.payload.locations,
-              resourceGroups: message.payload.resourceGroups
-            });
-          }
-          break;
-        case EXTENSION_COMMANDS.NAME_COSMOS:
-          // Receive input validation
-          // and update redux (boolean, string)
-          this.props.setCosmosResourceAccountNameAvailability({
-            isAvailable: message.payload.isAvailable,
-            message: message.payload.reason
-          });
-          this.props.setAzureValidationStatus(false);
-          break;
-
-        case EXTENSION_COMMANDS.NAME_FUNCTIONS:
-          this.props.setAppNameAvailability({
-            isAvailable: message.payload.isAvailable,
-            message: message.payload.reason
-          });
-          this.props.setAzureValidationStatus(false);
-          break;
         case EXTENSION_COMMANDS.PROJECT_PATH_VALIDATION:
           this.props.setProjectPathValidation(
             message.payload.projectPathValidation
@@ -278,12 +228,6 @@ const mapDispatchToProps = (
   getVSCodeApi: () => {
     dispatch(getVSCodeApi());
   },
-  logIntoAzure: (email: string, subscriptions: any[]) => {
-    dispatch(logIntoAzureAction({ email, subscriptions }));
-  },
-  startLogOutToAzure: () => {
-    dispatch(startLogOutAzure());
-  },
   saveSubscriptionData: (subscriptionData: any) => {
     dispatch(getSubscriptionData(subscriptionData));
   },
@@ -293,14 +237,8 @@ const mapDispatchToProps = (
   setCosmosResourceAccountNameAvailability: (isAvailableObject: any) => {
     dispatch(setAccountAvailability(isAvailableObject));
   },
-  setAppNameAvailability: (isAvailableObject: any) => {
-    dispatch(setAppNameAvailabilityAction(isAvailableObject));
-  },
   setProjectPathValidation: (validation: any) => {
     dispatch(setProjectPathValidation(validation));
-  },
-  setAzureValidationStatus: (status: boolean) => {
-    dispatch(setAzureValidationStatusAction(status));
   },
   updateTemplateGenStatusMessage: (status: string) => {
     dispatch(updateTemplateGenerationStatusMessageAction(status));

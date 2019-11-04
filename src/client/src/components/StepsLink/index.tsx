@@ -19,14 +19,8 @@ const StepsLink = ({
   isSelected: boolean;
   stepIndex;
 }) => {
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-      e.preventDefault();
-  };
   return (
-    <Link
-      tabIndex={-1}
-      to={path}
-      onClick={handleClick}
+    <span
       className={styles.container}
     >
       <span className={classnames(
@@ -42,7 +36,7 @@ const StepsLink = ({
       >
         {text}
       </span>
-    </Link>
+    </span>
   );
 };
 

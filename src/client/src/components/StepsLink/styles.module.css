@@ -19,7 +19,12 @@
   align-items: center;
   flex-wrap: nowrap;
   padding-left: 5px;
+  color: var(--vscode-editor-foreground);
   padding-right: 50px;
+}
+
+.container:hover {
+  cursor: default;
 }
 
 span.selected {
@@ -28,11 +33,6 @@ span.selected {
 
 .container:focus {
   outline: none;
-}
-
-a {
-  text-decoration: none;
-  color: var(--vscode-editor-foreground);
 }
 
 .step {

@@ -137,6 +137,13 @@ class Footer extends React.Component<Props> {
     }
     setRouteVisited(pathsNext[pathname]);
   };
+
+  public handlBackClick = (event: React.SyntheticEvent, pathname: string) => {
+    const { setRouteVisited } = this.props;
+    this.trackPageForTelemetry(pathname);
+    setRouteVisited(pathsNext[pathname]);
+  };
+
   public trackPageForTelemetry = (pathname: string) => {
     this.props.vscode.postMessage({
       module: EXTENSION_MODULES.TELEMETRY,
@@ -205,7 +212,7 @@ class Footer extends React.Component<Props> {
                   [styles.disabledOverlay]: pathname === ROUTES.NEW_PROJECT
                 })}
                 onClick={event => {
-                  this.handleLinkClick(event, pathname);
+                  this.handlBackClick(event, pathname);
                 }}
                 to={
                   pathsBack[pathname] === undefined
