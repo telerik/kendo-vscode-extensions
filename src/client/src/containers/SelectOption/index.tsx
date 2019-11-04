@@ -121,9 +121,6 @@ class SelectOption extends React.Component<Props, ISelectOptionState> {
    */
   public createTitle(optionIndexContainingData: number, count: number) {
     const { title } = this.props.options[optionIndexContainingData];
-    if (count === 1) {
-      return title;
-    }
     return `${title}${count}`;
   }
 
