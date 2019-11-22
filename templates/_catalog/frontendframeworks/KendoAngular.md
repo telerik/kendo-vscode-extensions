@@ -1,4 +1,4 @@
-What is Kendo UI for Angular?
+﻿What is Kendo UI for Angular?
 
 Kendo UI for Angular is a commercial UI library designed and built for developing business applications with Angular. Our components are engineered specifically for Angular enabling you to take full advantage of the framework’s native performance capabilities like Ahead of Time Compilation (AOT), Angular Universal Rendering and Tree Shaking.
 

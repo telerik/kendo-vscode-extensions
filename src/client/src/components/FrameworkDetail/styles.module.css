@@ -10,3 +10,7 @@
 .details-spacer {
   flex: 1 1 auto;
 }
+
+.framework-description {
+  margin: 0;
+}
