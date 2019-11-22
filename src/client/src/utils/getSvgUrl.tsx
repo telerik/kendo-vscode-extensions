@@ -10,7 +10,7 @@ import { ReactComponent as List } from "../assets/list.svg";
 import { ReactComponent as ChartPage } from "../assets/chartpage.svg";
 import { ReactComponent as HelloPage } from "../assets/hellopage.svg";
 import { ReactComponent as FormPage } from "../assets/formpage.svg";
-import { ReactComponent as AppDrawerPage } from "../assets/appdrawerpage.svg";
+import { ReactComponent as GridPage } from "../assets/gridpage.svg";
 import { ReactComponent as PlusIcon } from "../assets/plusicon.svg";
 import { ReactComponent as MinusIcon } from "../assets/minusicon.svg";
 import { ReactComponent as MaterialTheme } from "../assets/materialtheme.svg";
@@ -45,7 +45,7 @@ import blankpage from "../assets/blankpage.svg";
 import chartpage from "../assets/chartpage.svg";
 import formpage from "../assets/formpage.svg";
 import hellopage from "../assets/hellopage.svg";
-import appdrawerpage from "../assets/appdrawerpage.svg";
+import gridpage from "../assets/gridpage.svg";
 
 const KENDOKA_MAPPINGS = {
   [KENDOKAS.BLUE] : bluekendoka,
@@ -87,8 +87,8 @@ const SVG_REACTCOMPONENT_MAPPINGS = {
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_HELLO_PAGE]: (style: string) => (
     <HelloPage className={classnames(style, svgStyles.icon)} />
   ),
-  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_APP_DRAWER_PAGE]: (style: string) => (
-    <AppDrawerPage className={classnames(style, svgStyles.icon)} />
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_GRID_PAGE]: (style: string) => (
+    <GridPage className={classnames(style, svgStyles.icon)} />
   ),
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_BLANK_PAGE]: (style: string) => (
     <BlankPage className={classnames(style, svgStyles.icon)} />
@@ -102,8 +102,8 @@ const SVG_REACTCOMPONENT_MAPPINGS = {
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_HELLO_PAGE]: (style: string) => (
     <HelloPage className={classnames(style, svgStyles.icon)} />
   ),
-  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_APP_DRAWER_PAGE]: (style: string) => (
-    <AppDrawerPage className={classnames(style, svgStyles.icon)} />
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_GRID_PAGE]: (style: string) => (
+    <GridPage className={classnames(style, svgStyles.icon)} />
   ),
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_PLUS_ICON]: (style: string) => (
     <PlusIcon className={classnames(style, svgStyles.icon)} />
@@ -157,8 +157,8 @@ const KENDO_MAPPINGS = {
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_BLANK_PAGE]: blankpage,
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_HELLO_PAGE]: hellopage,
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_HELLO_PAGE]: hellopage,
-  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_APP_DRAWER_PAGE]: appdrawerpage,
-  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_APP_DRAWER_PAGE]: appdrawerpage,
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_GRID_PAGE]: gridpage,
+  [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_GRID_PAGE]: gridpage,
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_FORM_PAGE]: formpage,
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_ANGULAR_FORM_PAGE]: formpage,
   [WIZARD_CONTENT_INTERNAL_NAMES.KENDO_REACT_CHART_PAGE]: chartpage,
