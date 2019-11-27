@@ -72,6 +72,7 @@ function getOptionalFromApiTemplateInfo(items: IApiTemplateInfo[]): IOption[] {
     body: val.summary,
     internalName: val.name,
     licenses: val.licenses,
+    position: val.position,
     longDescription: val.longDescription,
     selected: val.selected,
     svgUrl: getSvgUrl(val.name),
@@ -79,7 +80,7 @@ function getOptionalFromApiTemplateInfo(items: IApiTemplateInfo[]): IOption[] {
     defaultName: val.defaultName,
     isValidTitle: true,
     author: val.author
-  }));
+  })).sort((a,b) => (a.position || 0) - (b.position || 0));
 }
 
 export { getPagesOptionsAction, getPagesOptionsSuccess };
