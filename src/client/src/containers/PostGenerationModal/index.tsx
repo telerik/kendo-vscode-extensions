@@ -41,6 +41,7 @@ interface IStateProps {
   isTemplatesFailed: boolean;
   isServicesDeployed: boolean;
   templateGenStatus: string;
+  framework: string;
   isModalOpen: boolean;
   isPostGenModalOpen: boolean;
   serviceStatus: PostGenSelectors.IAzureServiceStatus;
@@ -62,6 +63,7 @@ const PostGenerationModal = ({
   serviceStatus,
   isTemplateGenerated,
   isServicesDeployed,
+  framework,
   templateGenStatus,
   outputPath,
   vscode,
@@ -87,6 +89,14 @@ const PostGenerationModal = ({
           outputPath
         }
       });
+    }
+  };
+  const getLink = () => {
+    switch (framework) {
+      case "KendoReact":
+        return "https://github.com/telerik/kendo-react";
+      case "KendoAngular":
+        return "https://github.com/telerik/kendo-angular";
     }
   };
   const handleClick = () => {
@@ -191,7 +201,7 @@ const PostGenerationModal = ({
       <div className={styles.footerContainer}>
         <a
           className={styles.link}
-          href="https://github.com/Microsoft/WebTemplateStudio/issues"
+          href={getLink()}
         >
           {formatMessage(messages.help)}
         </a>
@@ -213,6 +223,7 @@ const mapStateToProps = (state: AppState): IStateProps => ({
     state
   ),
   isServicesSelected: PostGenSelectors.isServicesSelectedSelector(state),
+  framework: state.selection.frontendFramework.internalName,
   isTemplateGenerated: PostGenSelectors.isTemplateGeneratedSelector(state),
   isTemplatesFailed: PostGenSelectors.isTemplatesFailedSelector(state),
   outputPath: getOutputPath(state),
