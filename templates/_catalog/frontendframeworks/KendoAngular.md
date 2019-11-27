@@ -1,0 +1,1 @@
+Engineered specifically for Angular, this suite enables you to take full advantage of the framework’s native performance capabilities such as AOT Compilation, Angular Universal Rendering and Tree Shaking.

@@ -17,9 +17,15 @@ import {
 import { defineMessages, injectIntl, InjectedIntlProps } from "react-intl";
 import { AppState } from "../../reducers";
 import RootAction from "../../actions/ActionType";
+import {
+  selectPagesAction,
+  updatePageCountAction
+} from "../../actions/wizardSelectionActions/selectPages";
+import { IPageCount } from "../../reducers/wizardSelectionReducers/pageCountReducer";
 import { ThunkDispatch } from "redux-thunk";
 import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
+import { getPageCount } from "../../selectors/wizardSelectionSelector";
 
 import {
   getIsVisitedRoutesSelector,
@@ -28,16 +34,20 @@ import {
 
 interface IDispatchProps {
   selectFrontendFramework: (framework: ISelected) => void;
+  selectPages: (pages: ISelected[]) => void;
   getFrontendFrameworks: (
     projectType: string,
     isPreview: boolean,
     serverPort: number
   ) => void;
+  
+  updatePageCount: (pageCount: IPageCount) => any;
 }
 
 interface ISelectFrontEndFrameworkProps {
   options: IOption[];
   selectedFrontendFramework: ISelected;
+  pageCount: IPageCount;
   vscode: IVSCodeObject;
   serverPort: number;
   isPreview: boolean;
@@ -50,7 +60,7 @@ type Props = IDispatchProps & ISelectFrontEndFrameworkProps & InjectedIntlProps;
 const messages = defineMessages({
   selectFrontendFramework: {
     id: "selectFrontendFramework.selectFrontendFramework",
-    defaultMessage: "Select a front-end framework."
+    defaultMessage: "Select a front-end framework"
   }
 });
 
@@ -142,6 +152,7 @@ const mapStateToProps = (state: AppState): ISelectFrontEndFrameworkProps => {
     serverPort,
     selectedFrontendFramework: frontendFramework,
     selectedPages: pages,
+    pageCount: getPageCount(state),
     vscode: getVSCodeApiSelector(state)
   };
 };
@@ -151,6 +162,12 @@ const mapDispatchToProps = (
 ): IDispatchProps => ({
   selectFrontendFramework: (framework: ISelected) => {
     dispatch(selectFrontendAction(framework));
+  },
+  updatePageCount: (pageCount: IPageCount) => {
+    dispatch(updatePageCountAction(pageCount));
+  },
+  selectPages: (pages: ISelected[]) => {
+    dispatch(selectPagesAction(pages));
   },
   getFrontendFrameworks: (
     projectType: string,

@@ -24,6 +24,8 @@ const getProjectType = (selection: SelectionState): string => {
   return projectType.internalName;
 };
 
+const getTheme = (selection: SelectionState): string => selection.theme.name;
+
 const getFrontendFramework = (selection: SelectionState): string => {
   const { frontendFramework } = selection;
   return frontendFramework.internalName;
@@ -36,7 +38,7 @@ const getBackendFramework = (selection: SelectionState): string => {
 
 const getServices = (selection: SelectionState): ITemplateInfo[] => {
   const { services } = selection;
-  const servicesInfo = [];
+  const servicesInfo: ITemplateInfo[] = [];
   if (
     _.has(services, SERVICE_KEYS.COSMOS_DB) &&
     services.cosmosDB.selection.length > 0
@@ -68,7 +70,7 @@ const getServices = (selection: SelectionState): ITemplateInfo[] => {
 
 const getPages = (selection: SelectionState): ITemplateInfo[] => {
   const { pages } = selection;
-  const pagesInfo = [];
+  const pagesInfo: ITemplateInfo[] = [];
   for (const page of pages) {
     pagesInfo.push({
       name: page.title,
@@ -103,6 +105,11 @@ const getServicesSelector = createSelector(
   getServices
 );
 
+const getThemeSelector = createSelector(
+  getWizardSelectionsSelector,
+  getTheme
+);
+
 const rootSelector = createSelector(
   getProjectName,
   getOutputPath,
@@ -110,6 +117,7 @@ const rootSelector = createSelector(
   getFrontendFrameworkSelector,
   getBackendFrameworkSelector,
   getPagesSelector,
+  getThemeSelector,
   getServicesSelector,
   (
     projectName,
@@ -118,6 +126,7 @@ const rootSelector = createSelector(
     frontendFramework,
     backendFramework,
     pages,
+    theme,
     services
   ) => {
     return {
@@ -127,6 +136,7 @@ const rootSelector = createSelector(
       frontendFramework,
       backendFramework,
       pages,
+      theme,
       services
     };
   }

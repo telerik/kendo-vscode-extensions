@@ -10,7 +10,7 @@
     "type": "project",
     "wts.type": "project",
     "wts.projecttype": "KendoWebApp",
-    "wts.frontendframework": "Angular",
+    "wts.frontendframework": "KendoAngular",
     "wts.backendframework": "all",
     "wts.platform": "Web",
     "wts.version": "1.0.0",
@@ -29,6 +29,11 @@
       "type": "parameter",
       "dataType": "string",
       "replaces": "Param_Wizard.Version"
+    },
+    "wts.theme": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "Param_Theme"
     },
     "wts.templatesVersion": {
       "type": "parameter",

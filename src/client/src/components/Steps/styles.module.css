@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* .currentPath {
+  background-color: #0067b8;
+  color: white;
+}
+*/
+.nextPath {
+  opacity: 0.4;
+}
+
+.leftView {
+  background-color: var(--vscode-editor-background);
+  box-sizing: border-box;
+}
+
+/* .feedback {
+  text-align: center;
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+  margin-bottom: 19px;
+  margin-top: 19px;
+  font-size: 14px;
+}
+
+.feedback:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+} */

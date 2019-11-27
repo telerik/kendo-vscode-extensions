@@ -8,9 +8,11 @@ export interface ISelectFrontendAction {
 
 const selectFrontendFramework = (
   frontendFramework: ISelected
-): ISelectFrontendAction => ({
+): ISelectFrontendAction => {
+  return ({
   type: WIZARD_SELECTION_TYPEKEYS.SELECT_FRONTEND_FRAMEWORK,
   payload: frontendFramework
 });
+}
 
 export { selectFrontendFramework };

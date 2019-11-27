@@ -8,6 +8,7 @@ import projectNameObject from "./updateProjectName";
 import outputPathObject from "./updateOutputPath";
 import services from "./services";
 import pageCount from "./pageCountReducer";
+import theme from "./themeReducer";
 import isValidatingName from "./validatingNameReducer";
 
 const selectionStateReducer = combineReducers({
@@ -16,6 +17,7 @@ const selectionStateReducer = combineReducers({
   backendFramework,
   pages,
   services,
+  theme,
   outputPathObject,
   pageCount,
   isValidatingName,

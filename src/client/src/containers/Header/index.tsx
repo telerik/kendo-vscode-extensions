@@ -6,6 +6,8 @@ import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 import { EXTENSION_COMMANDS, EXTENSION_MODULES } from "../../utils/constants";
 import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 
+import Steps from "../../components/Steps";
+
 import { FormattedMessage, injectIntl } from "react-intl";
 import { AppState } from "../../reducers";
 
@@ -18,7 +20,7 @@ interface IHeaderProps {
 type Props = IHeaderProps;
 
 const Header = (props: Props) => {
-  const { isLoggedIn, email } = props;
+  const { email } = props;
   const signOutClick = () => {
     props.vscode.postMessage({
       module: EXTENSION_MODULES.AZURE,
@@ -33,7 +35,7 @@ const Header = (props: Props) => {
   };
   return (
     <div className={styles.header}>
-      <div className={styles.headerTitle}>Kendo Template Wizard</div>
+      <Steps />
       {false && (
         <div className={styles.azureProfile}>
           <div className={styles.profileName}>{email}</div>

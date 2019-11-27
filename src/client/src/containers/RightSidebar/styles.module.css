@@ -10,19 +10,20 @@
   padding-top: 16.5px;
   padding-bottom: 71px;
   overflow: auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
 
 .rightViewCropped {
-  width: 400px;
+  width: 50vw;
   background-color: var(--vscode-editor-background);
   border-left: 0.5px solid #7f7f7f;
   box-sizing: border-box;
 }
 
 .rightViewCropped {
-  height: calc(100vh - 104px);
-  margin-top: 51px;
-  margin-bottom: 53px;
   padding-bottom: 0px;
 }
 
@@ -30,6 +31,12 @@
   font-weight: bold;
   margin-bottom: 3px;
   font-size: 14px;
+  text-transform: uppercase;
+}
+
+.pages-count {
+  color: var(--vscode-activityBarBadge-background);
+  font-size:20px;
 }
 
 .sidebarItem {

@@ -12,6 +12,8 @@
 
 .detailsContainer {
   display: flex;
-  margin-top: 51px;
-  /*Height of the Title Bar */
+  background-color: var(--vscode-editor-background);
+  box-sizing: border-box;
+  padding: 50px;
+  width: 50vw;
 }

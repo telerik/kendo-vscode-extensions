@@ -1,15 +1,15 @@
 import { createSelector } from "reselect";
-import { ILicenseObject } from "../types/license";
+import { ILicenseObject, License } from "../types/license";
 
 const getSelection = (state: any) => state.selection;
 const getFrameworkLicenses = (selection: any): string[] => {
-  const licenses = [];
+  const licenses: any[] = [];
   licenses.push(selection.frontendFramework.licenses);
   licenses.push(selection.backendFramework.licenses);
   return licenses;
 };
 const getPageLicenses = (selection: any): ILicenseObject[] => {
-  const licenses = [];
+  const licenses: ILicenseObject[] = [];
   const licenseSet = new Set();
   for (const page of selection.pages) {
     for (const license of page.licenses) {

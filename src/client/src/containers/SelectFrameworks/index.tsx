@@ -10,8 +10,6 @@ import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 import { AppState } from "../../reducers";
 import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 
-import { EXTENSION_MODULES, EXTENSION_COMMANDS } from "../../utils/constants";
-
 interface ISelectFrameworksProps {
   vscode: IVSCodeObject;
   isPreview: boolean;
@@ -20,27 +18,6 @@ interface ISelectFrameworksProps {
 type Props = ISelectFrameworksProps;
 
 class SelectFrameworks extends React.Component<Props> {
-  componentDidMount() {
-    const { vscode, isPreview } = this.props;
-    if (isPreview) {
-      // send messages to extension to check dependency info when this component loads
-      vscode.postMessage({
-        module: EXTENSION_MODULES.DEPENDENCYCHECKER,
-        command: EXTENSION_COMMANDS.GET_DEPENDENCY_INFO,
-        payload: {
-          dependency: "node"
-        }
-      });
-      vscode.postMessage({
-        module: EXTENSION_MODULES.DEPENDENCYCHECKER,
-        command: EXTENSION_COMMANDS.GET_DEPENDENCY_INFO,
-        payload: {
-          dependency: "python"
-        }
-      });
-    }
-  }
-
   render() {
     return (
       <div className={styles.container}>

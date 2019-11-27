@@ -107,24 +107,16 @@ const SortablePageList = (props: Props) => {
     : props.intl!.formatMessage(messages.hide);
   const DRAG_PIXEL_THRESHOLD = 1;
   return (
-    <div>
+    <div className={styles["width-100"]}>
+      <h1>Manage your app pages</h1>
       {!isSummaryPage && (
         <div
           className={classnames(styles.pageListContainer, styles.sidebarItem)}
         >
           <div className={styles.dropdownTitle}>
-            {`${props.intl!.formatMessage(messages.pages)} (${
-              pages.length >= 0 ? pages.length : ""
-            })`}
+              {props.intl!.formatMessage(messages.pages)}
+              <span className={styles["pages-count"]}>{ pages.length >= 0 ? pages.length : ""}</span>
           </div>
-          <button
-            className={styles.hideOrShow}
-            onClick={() => {
-              setMinimized(isMinimized ? false : true);
-            }}
-          >
-            {hideOrShowText}
-          </button>
         </div>
       )}
       {!isMinimized && (

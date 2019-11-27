@@ -1,11 +1,9 @@
 .container {
-  align-self: center;
+  align-self: flex-start;
+  align-items: flex-start;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 
 .container > div {
@@ -34,7 +32,7 @@
 
 .projectDetailsContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
@@ -43,4 +41,16 @@
 
 .getStarted {
   align-self: flex-end;
+}
+
+.description {
+  width: 80%;
+  text-align: left;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0;
+  opacity: 1;
+  margin-bottom: 50px;
 }

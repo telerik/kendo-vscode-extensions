@@ -6,10 +6,10 @@ import { withRouter } from "react-router-dom";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 
 import RightSidebarDropdown from "../../components/RightSidebarDropdown";
-import ServicesSidebarItem from "../../components/ServicesSidebarItem";
 import Licenses from "../Licenses";
 import About from "../About";
 import SortablePageList from "../SortablePageList";
+import PageDetails from "../PageDetails";
 
 import { selectBackendFrameworkAction } from "../../actions/wizardSelectionActions/selectBackEndFramework";
 import { selectFrontendFramework as selectFrontEndFrameworkAction } from "../../actions/wizardSelectionActions/selectFrontEndFramework";
@@ -141,6 +141,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
     const { intl, contentOptions, isValidNameAndProjectPath } = this.props;
     const { formatMessage } = intl;
     const { frontendOptions, backendOptions, projectTypes } = contentOptions;
+
     return (
       <React.Fragment>
         {pathname !== ROUTES.PAGE_DETAILS && (
@@ -153,6 +154,10 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                 <div className={styles.title}>
                   {formatMessage(messages.yourProjectDetails)}
                 </div>
+                <PageDetails
+
+                />
+{/*
                 <RightSidebarDropdown
                   options={this.props.frontendDropdownItems}
                   handleDropdownChange={
@@ -178,15 +183,15 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
                     this.props.selection.backendFramework
                   )}
                   optionsData={backendOptions}
-                />
+                /> */}
                 <div className={styles.sortablePages}>
                   {showPages && <SortablePageList />}
                 </div>
               </div>
             }
             <div>
-              <Licenses />
-              <About />
+              {/* <Licenses />
+              <About /> */}
             </div>
           </div>
         )}
@@ -196,7 +201,7 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
 }
 
 function convertOptionsToDropdownItems(options: any[]): IDropDownOptionType[] {
-  const dropDownItems = [];
+  const dropDownItems: IDropDownOptionType[] = [];
   for (const option of options) {
     if (option.unselectable) {
       continue;

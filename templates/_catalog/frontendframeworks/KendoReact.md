@@ -1,0 +1,1 @@
+ Every UI component in the KendoReact suite, from the data grid and charts to date pickers and dropdowns, has been built from the ground-up specifically for React.

@@ -45,18 +45,9 @@ const NewProject = ({
 }: Props) => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>
-        <FormattedMessage
-          id="newProject.header"
-          defaultMessage="Welcome to Kendo Template Wizard"
-        />
+      <h1>
+        Set a project name and location to create it
       </h1>
-      <div className={styles.body}>
-        <FormattedMessage
-          id="newProject.body"
-          defaultMessage="Enter a project name and output path, then click next to get started on your full stack application."
-        />
-      </div>
       <div className={styles.projectDetailsContainer}>
         <ProjectNameAndOutput />
       </div>

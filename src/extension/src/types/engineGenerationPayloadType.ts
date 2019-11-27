@@ -8,6 +8,7 @@ export interface IEngineGenerationPayloadType {
   projectName: string;
   language: "Any";
   platform: "Web";
+  theme: string;
   homeName: "Test";
   projectType: string;
   features: IEngineGenerationTemplateType;

@@ -31,6 +31,7 @@ const getOutputPath = (state: AppState): string =>
 const getOutputPathValidation = (state: AppState): IValidation =>
   state.selection.outputPathObject.validation;
 const getPageCount = (state: AppState): IPageCount => state.selection.pageCount;
+const getTheme = (state: AppState): string => state.selection.theme.name;
 
 const isValidNameAndProjectPath = (
   projectNameValidationObject: IValidation,
@@ -72,7 +73,7 @@ const getProjectTypeRowItems = (selection: SelectionState): RowType[] => {
     }
   ];
 };
-
+/* BOOM */
 const frameworksRowItems = (selection: SelectionState): RowType[] => {
   const { frontendFramework, backendFramework } = selection;
   return [
@@ -103,7 +104,7 @@ const frameworksRowItems = (selection: SelectionState): RowType[] => {
 const getServices = (selection: SelectionState): RowType[] => {
   const { services } = selection;
   const { azureFunctions, cosmosDB } = services;
-  const servicesRows = [];
+  const servicesRows: RowType[] = [];
   if (!_.isEmpty(azureFunctions.selection)) {
     servicesRows.push({
       title: azureFunctions.selection[0].appName.value,
@@ -152,6 +153,7 @@ export {
   getOutputPathValidation,
   getProjectName,
   getPageCount,
+  getTheme,
   getProjectNameValidation,
   isValidNameAndProjectPathSelector
 };

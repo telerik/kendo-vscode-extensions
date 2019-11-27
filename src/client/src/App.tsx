@@ -4,11 +4,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Route, RouteComponentProps } from "react-router-dom";
 
-import LeftSidebar from "./components/LeftSidebar";
+import Steps from "./components/Steps";
 import PageDetails from "./containers/PageDetails";
 import SelectFrameworks from "./containers/SelectFrameworks";
 import SelectPages from "./containers/SelectPages";
-import SelectWebApp from "./containers/SelectWebApp";
 import NewProject from "./containers/NewProject";
 import CosmosResourceModal from "./containers/CosmosResourceModal";
 import Footer from "./containers/Footer";
@@ -32,9 +31,7 @@ import {
   setAppNameAvailabilityAction,
   IAvailabilityFromExtension
 } from "./actions/azureActions/setAccountAvailability";
-import AzureLogin from "./containers/AzureLogin";
 import { getSubscriptionData } from "./actions/azureActions/subscriptionData";
-import AzureFunctionsModal from "./containers/AzureFunctionsModal";
 import { setProjectPathValidation } from "./actions/wizardSelectionActions/setProjectPathValidation";
 import {
   updateTemplateGenerationStatusMessageAction,
@@ -62,6 +59,7 @@ import { setPreviewStatusAction } from "./actions/wizardContentActions/setPrevie
 import { setPortAction } from "./actions/wizardContentActions/setPort";
 import { ThunkDispatch } from "redux-thunk";
 import RootAction from "./actions/ActionType";
+import SelectTheme from "./containers/SelectTheme";
 
 if (process.env.NODE_ENV === DEVELOPMENT) {
   require("./css/themes.css");
@@ -70,17 +68,11 @@ if (process.env.NODE_ENV === DEVELOPMENT) {
 interface IDispatchProps {
   updateOutputPath: (outputPath: string) => any;
   getVSCodeApi: () => void;
-  logIntoAzure: (email: string, subscriptions: []) => void;
-  startLogOutToAzure: () => any;
   saveSubscriptionData: (subscriptionData: any) => void;
   setCosmosResourceAccountNameAvailability: (
     isAvailableObject: IAvailabilityFromExtension
   ) => any;
-  setAppNameAvailability: (
-    isAvailableObject: IAvailabilityFromExtension
-  ) => any;
   setProjectPathValidation: (validation: any) => void;
-  setAzureValidationStatus: (status: boolean) => void;
   updateTemplateGenStatusMessage: (status: string) => any;
   updateTemplateGenStatus: (isGenerated: IServiceStatus) => any;
   getVersionsData: (versions: IVersions) => any;
@@ -102,14 +94,10 @@ class App extends React.Component<Props> {
   public static defaultProps = {
     getVSCodeApi: () => {},
     loadWizardContent: () => {},
-    logIntoAzure: () => {},
-    startLogOutToAzure: () => {},
     saveSubscriptionData: () => {},
     updateOutputPath: () => {},
     setCosmosResourceAccountNameAvailability: () => {},
-    setAppNameAvailability: () => {},
     setProjectPathValidation: () => {},
-    setAzureValidationStatus: () => {},
     updateDependencyInfo: () => {},
     updateTemplateGenStatusMessage: () => {},
     updateTemplateGenStatus: () => {},
@@ -133,47 +121,7 @@ class App extends React.Component<Props> {
           }
           break;
         case EXTENSION_COMMANDS.GET_USER_STATUS:
-        case EXTENSION_COMMANDS.AZURE_LOGIN:
-          // email will be null or undefined if login didn't work correctly
-          if (message.payload != null) {
-            this.props.logIntoAzure(
-              message.payload.email,
-              message.payload.subscriptions
-            );
-          }
-          break;
-        case EXTENSION_COMMANDS.AZURE_LOGOUT:
-          this.props.startLogOutToAzure();
-          break;
         case EXTENSION_COMMANDS.SUBSCRIPTION_DATA_FUNCTIONS:
-        case EXTENSION_COMMANDS.SUBSCRIPTION_DATA_COSMOS:
-          // Expect resource groups and locations on this request
-          // Receive resource groups and locations
-          // and update redux (resourceGroups, locations)
-          if (message.payload != null) {
-            this.props.saveSubscriptionData({
-              locations: message.payload.locations,
-              resourceGroups: message.payload.resourceGroups
-            });
-          }
-          break;
-        case EXTENSION_COMMANDS.NAME_COSMOS:
-          // Receive input validation
-          // and update redux (boolean, string)
-          this.props.setCosmosResourceAccountNameAvailability({
-            isAvailable: message.payload.isAvailable,
-            message: message.payload.reason
-          });
-          this.props.setAzureValidationStatus(false);
-          break;
-
-        case EXTENSION_COMMANDS.NAME_FUNCTIONS:
-          this.props.setAppNameAvailability({
-            isAvailable: message.payload.isAvailable,
-            message: message.payload.reason
-          });
-          this.props.setAzureValidationStatus(false);
-          break;
         case EXTENSION_COMMANDS.PROJECT_PATH_VALIDATION:
           this.props.setProjectPathValidation(
             message.payload.projectPathValidation
@@ -226,8 +174,8 @@ class App extends React.Component<Props> {
     const { vscode } = this.props;
     if (vscode !== prevProps.vscode) {
       vscode.postMessage({
-        module: EXTENSION_MODULES.AZURE,
         command: EXTENSION_COMMANDS.GET_USER_STATUS,
+        module: EXTENSION_MODULES.AZURE,
         track: true
       });
     }
@@ -237,37 +185,38 @@ class App extends React.Component<Props> {
     const { pathname } = this.props.location;
     return (
       <React.Fragment>
-        <Header />
-        <div className={appStyles.container}>
-          <CosmosResourceModal />
-          <AzureFunctionsModal />
-          <PostGenerationModal />
-          <LeftSidebar />
+        <div className={appStyles.layout}>
+          <Header />
+          <div className={classnames(appStyles.container, appStyles.mainContent)}>
+            <PostGenerationModal />
+            <main
+              className={classnames(appStyles.centerView, {
+                [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
+              })}
+            >
+              <Route
+                path={ROUTES.REVIEW_AND_GENERATE}
+                component={ReviewAndGenerate}
+              />
+              <Route
+                path={ROUTES.SELECT_FRAMEWORKS}
+                component={SelectFrameworks}
+              />
+              <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
 
-          <main
-            className={classnames(appStyles.centerView, {
-              [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
-            })}
-          >
-            <Route path={ROUTES.PAGE_DETAILS} component={PageDetails} />
-            <Route
-              path={ROUTES.REVIEW_AND_GENERATE}
-              component={ReviewAndGenerate}
-            />
-            <Route
-              path={ROUTES.SELECT_FRAMEWORKS}
-              component={SelectFrameworks}
-            />
-            <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
-            <Route
-              exact={true}
-              path={ROUTES.NEW_PROJECT}
-              component={NewProject}
-            />
-          </main>
-          <RightSidebar />
+              <Route path={ROUTES.SELECT_THEME} component={SelectTheme} />
+              
+              <Route
+                exact={true}
+                path={ROUTES.NEW_PROJECT}
+                component={NewProject}
+              />
+            </main>
+            <hr />
+            <PageDetails />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }
@@ -279,12 +228,6 @@ const mapDispatchToProps = (
   getVSCodeApi: () => {
     dispatch(getVSCodeApi());
   },
-  logIntoAzure: (email: string, subscriptions: any[]) => {
-    dispatch(logIntoAzureAction({ email, subscriptions }));
-  },
-  startLogOutToAzure: () => {
-    dispatch(startLogOutAzure());
-  },
   saveSubscriptionData: (subscriptionData: any) => {
     dispatch(getSubscriptionData(subscriptionData));
   },
@@ -294,14 +237,8 @@ const mapDispatchToProps = (
   setCosmosResourceAccountNameAvailability: (isAvailableObject: any) => {
     dispatch(setAccountAvailability(isAvailableObject));
   },
-  setAppNameAvailability: (isAvailableObject: any) => {
-    dispatch(setAppNameAvailabilityAction(isAvailableObject));
-  },
   setProjectPathValidation: (validation: any) => {
     dispatch(setProjectPathValidation(validation));
-  },
-  setAzureValidationStatus: (status: boolean) => {
-    dispatch(setAzureValidationStatusAction(status));
   },
   updateTemplateGenStatusMessage: (status: string) => {
     dispatch(updateTemplateGenerationStatusMessageAction(status));

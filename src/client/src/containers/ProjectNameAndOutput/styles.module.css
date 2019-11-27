@@ -25,6 +25,7 @@
   display: block;
   position: relative;
   width: 100%;
+  max-width: 500px;
   text-decoration: none;
   outline: none;
   margin-bottom: 30px;

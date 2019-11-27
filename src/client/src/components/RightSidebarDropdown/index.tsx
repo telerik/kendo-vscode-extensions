@@ -26,7 +26,7 @@ const RightSidebarDropdown = (props: IProps) => {
     <div>
       {props.isVisible && (
         <div className={styles.sidebarItem}>
-          <div className={styles.dropdownTitle}>{props.title}</div>
+          <div className={styles.dropdownTitle}>Pages <span className={styles["pages-count"]}>{props.title}</span></div>
           <Dropdown
             handleChange={dropDrownItem => {
               props.handleDropdownChange(

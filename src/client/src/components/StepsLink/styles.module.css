@@ -1,0 +1,61 @@
+.textSelected,
+.text {
+  font-size: 1em;
+}
+
+.text {
+  font-weight: bold;
+  padding: 18px 0px;
+  color: var(--vscode-editor-foreground);
+}
+
+.selected path {
+  fill: #ffffff !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-left: 5px;
+  color: var(--vscode-editor-foreground);
+  padding-right: 50px;
+}
+
+.container:hover {
+  cursor: default;
+}
+
+span.selected {
+  background-color: #0067b8;
+}
+
+.container:focus {
+  outline: none;
+}
+
+.step {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: var(--vscode-focusBorder);
+  border-style: solid;
+  text-align: center;
+  line-height: 40px;
+  background-color:var(--vscode-editor-background);
+}
+
+.visitedStep {
+  background-color: pink;
+  border:none;
+}
+
+.spacer {
+  padding-left: 2em;
+}
+
+.spacer,
+.icon {
+  padding-right: 0.5em;
+}

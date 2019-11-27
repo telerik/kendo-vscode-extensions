@@ -11,11 +11,13 @@ import {
   IUpdateProjectNameActionType,
   IUpdateProjectPathActionType
 } from "./updateProjectNameAndPath";
+import { ISelectThemeAction } from "./selectTheme";
 
 type WizardSelectionActionType =
   | ISelectBackendAction
   | ISelectFrontendAction
   | ISelectPagesAction
+  | ISelectThemeAction
   | ISelectProjectTypeAction
   | IProjectPathValidationAction
   | IUpdatePageCountAction

@@ -2,16 +2,36 @@
   {
     "name": "ReactJS",
     "displayName": "React",
-    "summary": "React is a JavaScript library created by Facebook to help developers build UI components.",
-    "author": "Facebook",
+    "summary": "React is a not cool",
+    "author": "Progress",
     "order": "1",
-    "licenses": "[ReactJS](https://github.com/facebook/react/blob/master/LICENSE)  \n[Create React App](https://github.com/facebook/create-react-app/blob/master/LICENSE)",
+    "licenses": "[KendoReact](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
     "platforms": ["Web"],
     "languages": ["Any"],
     "tags": {
       "version": "16.8.4",
       "preview": false
     }
+  },
+  {
+    "name": "KendoReact",
+    "displayName": "KendoReact",
+    "summary": "KendoReact is a commercial UI library designed and built for developing business applications with React",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[KendoReact](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  },
+  {
+    "name": "KendoAngular",
+    "displayName": "Kendo UI for Angular",
+    "summary": "Kendo UI for Angular is a commercial UI library designed and built for developing business applications with Angular",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[KendoAngular](https://www.telerik.com/purchase/license-agreement/kendo-ui)",
+    "platforms": ["Web"],
+    "languages": ["Any"]
   },
   {
     "name": "Angular",
