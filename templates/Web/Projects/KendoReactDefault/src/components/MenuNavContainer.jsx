@@ -1,12 +1,16 @@
 ﻿import React from 'react';
-import { Link } from 'react-router-dom';
 import { Menu, MenuItem } from '@progress/kendo-react-layout';
+import { useHistory } from 'react-router-dom';
 
 
 const MenuNavContainer = (props) => {
+    const history = useHistory();
+    const onSelect = (event) => {
+        history.push(event.item.data.route);
+    }
     return (
-        <Menu>
-            <MenuItem text="Home" render={()=> <Link to={'/'}>Home</Link>}/>
+        <Menu onSelect={onSelect}>
+            <MenuItem text="Home" data={{ route: '/' }}/>
         </Menu>
     );
 }
