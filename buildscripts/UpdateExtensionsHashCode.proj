@@ -79,15 +79,15 @@
 
   <Target Name="UpdateHashCode" >
     
-    <PropertyGroup>
-      <DarwinCoreTemplateStudioConfigFile>$(KendoVscodeExtensionsApiDirectory)\darwin\CoreTemplateStudio.config.json</DarwinCoreTemplateStudioConfigFile>
-    </PropertyGroup>
-    
     <ItemGroup>
       <FilesToUpdate Include="$(KendoVscodeExtensionsApiDirectory)\**\CoreTemplateStudio.config.json" />
     </ItemGroup>
 
-    <JsonPoke JsonInputPath="%(FilesToUpdate.FullPath)" JValue="$(TemplatestMstxHashCode)" JPath="$.AllowedPackages">
+    <ItemGroup>
+      <TemplatestMstxHashCodes Include="$(TemplatestMstxHashCode)" />
+    </ItemGroup>
+
+    <JsonPoke JsonInputPath="%(FilesToUpdate.FullPath)" JArray="@(TemplatestMstxHashCode)" JPath="$.AllowedPackages">
     </JsonPoke>
 
   </Target>
