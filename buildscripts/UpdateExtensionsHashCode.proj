@@ -87,7 +87,7 @@
       <TemplatestMstxHashCodes Include="$(TemplatestMstxHashCode)" />
     </ItemGroup>
 
-    <JsonPoke JsonInputPath="%(FilesToUpdate.FullPath)" JArray="@(TemplatestMstxHashCode)" JPath="$.AllowedPackages">
+    <JsonPoke JsonInputPath="%(FilesToUpdate.FullPath)" JArray="@(TemplatestMstxHashCodes)" JPath="$.AllowedPackages">
     </JsonPoke>
 
   </Target>
