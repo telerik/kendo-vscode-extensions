@@ -28,7 +28,7 @@
       <WtsPackagingToolDirectory>$(CoreTemplateStudioDirectory)\code\tools\WtsPackagingTool</WtsPackagingToolDirectory>
       <WtsPackagingToolsSolution>$(CoreTemplateStudioDirectory)\code\Tools.sln</WtsPackagingToolsSolution>
       <KendoVscodeExtensions>$(SourceDirectory)\kendo-vscode-extensions</KendoVscodeExtensions>
-      <KendoVscodeExtensionsTemplates>$(SourceDirectory)\kendo-vscode-extensions\templates</KendoVscodeExtensionsTemplates>
+      <KendoVscodeExtensionsTemplates>$(SourceDirectory)\kendo-vscode-extensions\templates\</KendoVscodeExtensionsTemplates>
       <KendoVscodeExtensionsApiDirectory>$(KendoVscodeExtensions)\src\extension\src\api</KendoVscodeExtensionsApiDirectory>
       
       <!--<WtsPackagingTool-->
