@@ -3,7 +3,7 @@
   "displayName": "Kendo Template Wizard",
   "description": "Kendo Template Wizard enables developers to quickly scaffold web applications.",
   "version": "1.0.0",
-  "publisher": "TelerikInc",
+  "publisher": "KendoUI",
   "aiKey": "__AIKEY__",
   "engines": {
     "vscode": "^1.32.0"
