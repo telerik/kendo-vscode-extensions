@@ -2,7 +2,7 @@
   "name": "kendotemplatewizard",
   "displayName": "Kendo Template Wizard",
   "description": "Kendo Template Wizard enables developers to quickly scaffold web applications.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "KendoUI",
   "aiKey": "__AIKEY__",
   "engines": {
