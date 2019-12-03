@@ -91,14 +91,6 @@ const PostGenerationModal = ({
       });
     }
   };
-  const getLink = () => {
-    switch (framework) {
-      case "KendoReact":
-        return "https://github.com/telerik/kendo-react";
-      case "KendoAngular":
-        return "https://github.com/telerik/kendo-angular";
-    }
-  };
   const handleClick = () => {
     if (isTemplatesFailed) {
       resetWizard();
@@ -201,7 +193,7 @@ const PostGenerationModal = ({
       <div className={styles.footerContainer}>
         <a
           className={styles.link}
-          href={getLink()}
+          href={"https://github.com/telerik/kendo-vscode-extensions/issues"}
         >
           {formatMessage(messages.help)}
         </a>
