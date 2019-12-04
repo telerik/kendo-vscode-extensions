@@ -111,7 +111,7 @@ export class Controller {
     vscode.window.withProgress(
       {
         location: vscode.ProgressLocation.Notification,
-        title: "Launching Kendo Template Wizard"
+        title: "Launching Kendo UI Template Wizard"
       },
       async (progress: vscode.Progress<IVSCodeProgressType>) => {
         const launchExperience = new LaunchExperience(progress);

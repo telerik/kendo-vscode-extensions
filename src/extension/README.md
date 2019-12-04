@@ -4,11 +4,11 @@
 
 - Open **VSCode**
 - Press `ctrl+shift+p` in Windows/Linux or `⇧⌘P` in Mac to open VSCode's extension launcher
-- Type/Select `Kendo UI VS Code Template Wizard: Launch` and press `Enter` to launch the extension
+- Type/Select `Kendo UI Template Wizard: Launch` and press `Enter` to launch the extension
 
 ## Features
 
-Kendo UI VS Code Extension approaches web app creation using the following three attribute sets:
+Kendo UI VS Code Template Wizard approaches web app creation using the following three attribute sets:
 
 - **Frameworks**: We currently support two frameworks for frontend: _[React.js](https://reactjs.org/)_ with [KendoReact](https://www.telerik.com/kendo-react-ui/) and _[Angular](https://angular.io/)_ with [Kendo UI for Angular](https://www.telerik.com/kendo-angular-ui).
 

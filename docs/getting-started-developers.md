@@ -24,7 +24,7 @@ extension, run:
 ```
 
 Open `src/extension` using `VSCode` and press `F5` to run the extension. Use `Ctrl+Shift+P` to open VSCode's extension
-launcher. Select `Kendo Template Wizard: Launch` and press `Enter` to launch the extension
+launcher. Select `Kendo UI Template Wizard: Launch` and press `Enter` to launch the extension
 
 ## Developing the Client
 
@@ -58,7 +58,7 @@ code --install-extension [extensionName].vsix
 Alternatively, copy the extension into your extensions directory. For _Windows_, it is
 `%USERPROFILE%\.vscode\extensions`. For _Mac/Linux_, it is `~/.vscode/extensions` (By Default).
 
-After installation, use `ctrl+shift+p (Windows)` or `cmd+shift+p (Mac)` to open the Extension Launcher and select `Kendo Template Wizard: Launch` to run the extension.
+After installation, use `ctrl+shift+p (Windows)` or `cmd+shift+p (Mac)` to open the Extension Launcher and select `Kendo UI Template Wizard: Launch` to run the extension.
 
 ## Running the client in the VSCode Extension
 
