@@ -1,7 +1,7 @@
 {
-  "name": "kendotemplatewizard",
-  "displayName": "Kendo Template Wizard",
-  "description": "Kendo Template Wizard enables developers to quickly scaffold web applications.",
+  "name": "kendovscodeextension",
+  "displayName": "Kendo UI VS Code Template Wizard",
+  "description": "This extension allows you to quickly scaffold apps built with KendoReact or Kendo UI for Angular using a visual wizard.",
   "version": "1.0.0",
   "publisher": "KendoUI",
   "aiKey": "__AIKEY__",
