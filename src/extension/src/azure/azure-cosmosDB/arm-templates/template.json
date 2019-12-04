@@ -47,7 +47,7 @@
       },
       "tags": {
         "defaultExperience": "[parameters('defaultExperience')]",
-        "generatedBy": "Kendo Template Wizard"
+        "generatedBy": "Kendo UI Template Wizard"
       }
     }
   ],

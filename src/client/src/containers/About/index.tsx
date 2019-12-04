@@ -43,7 +43,7 @@ const About = ({ versions, intl }: Props) => {
           className={styles.link}
           href=""
         >
-          Kendo Template Wizard
+          Kendo UI Template Wizard
         </a>
       </p>
       <p>

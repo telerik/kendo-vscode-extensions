@@ -1,8 +1,8 @@
 ﻿[
   {
     "name": "KendoWebApp",
-    "displayName": "Kendo UI VS Code Extension",
-    "summary": "Welcome to the Visual Studio Code visual scaffolder for Kendo UI. New to Kendo UI? Learn more here.",
+    "displayName": "Kendo UI Template Wizard",
+    "summary": "Welcome to the Visual Studio Code scaffolder for Kendo UI. New to Kendo UI? Learn more here.",
     "description": "This extension allows you to quickly scaffold apps built with KendoReact or Kendo UI for Angular using a visual wizard.",
     "author": "Progress",
     "order": "1",
