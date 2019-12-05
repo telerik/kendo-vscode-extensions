@@ -31,7 +31,7 @@ const Home = (props) => {
                     </p>
                     <p>
                         <img src='./img/blogs.png' alt='blogs' />
-                        <a href='https://www.telerik.com/blogs/tag/react'>Bog Posts</a>
+                        <a href='https://www.telerik.com/blogs/tag/react'>Blog Posts</a>
                     </p>
                 </div>
             </div>
