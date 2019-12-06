@@ -44,7 +44,7 @@
 
   <Target Name="BuildWtsPackagingTool" >
   
-	<!--Add second comment for fix -->
+	<!--Add third comment for fix -->
 
     <MSBuild Projects="$(WtsPackagingToolsSolution)" Properties="Configuration=$(Configuration);Platform=$(Platform)" Targets="restore" />
 
