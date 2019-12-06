@@ -78,7 +78,7 @@ export abstract class AzureAuth {
   }
   public static getEmail(): string {
     this.initialize();
-    if (this.api.sessions.length > 0) {
+    if (this.api && this.api.sessions && this.api.sessions.length > 0) {
       return this.api.sessions[0].userId;
     } else {
       return "";
