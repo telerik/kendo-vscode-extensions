@@ -1,4 +1,4 @@
-# Kendo UI Scaffolder
+# Kendo UI Template Wizard
 
 ## Overview
 

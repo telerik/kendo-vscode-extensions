@@ -16,4 +16,4 @@ Once you make the selections you want and click generate, you can quickly extend
 
 ## License
 
-This code is distributed under the terms and conditions of the [MIT license](LICENSE.md).
+This code is distributed under the terms and conditions of the Progress Software Corporation End User License Agreement for [Visual Studio Code Extensions](https://github.com/telerik/kendo-vscode-extensions/tree/master/src/extension/LICENSE.md).
