@@ -2,10 +2,8 @@ import * as vscode from 'vscode';
 import {TelemetryReporterMock} from './telemetryReporterMock';
 import { getPackageInfo } from './getPackageInfo';
 import { IActionContext, ITelemetryReporter, callWithTelemetryAndCatchErrors } from './callWithTelemetryAndErrorHandling';
-import { TelemetryEventName, ExtensionCommand } from '../constants'; 
+import { TelemetryEventName, ExtensionCommand } from '../constants';
 import { WizardServant, IPayloadResponse } from '../wizardServant';
-
-export type IActionContext = IActionContext;
 
 export class TelemetryAI extends WizardServant{
     clientCommandMap: Map<ExtensionCommand, (message: any) => Promise<IPayloadResponse>> = new Map([
@@ -37,7 +35,7 @@ export class TelemetryAI extends WizardServant{
 
     /*
     * @param pageToTrack is the name of the page the wizard is on before the user clicks the next button; this page name will be sent to Application Insights as property
-    * 
+    *
     */
     public async trackWizardPageTimeToNext(payload: any){
         this.trackTimeDuration(TelemetryEventName.PageChange, this.pageStartTime, Date.now(), {"Page-Name": payload.pageName});

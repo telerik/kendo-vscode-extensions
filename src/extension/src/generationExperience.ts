@@ -1,7 +1,8 @@
 import * as vscode from "vscode";
 import { WizardServant, IPayloadResponse } from "./wizardServant";
 import { ExtensionCommand, TelemetryEventName, CONSTANTS } from "./constants";
-import { TelemetryAI, IActionContext } from "./telemetry/telemetryAI";
+import { TelemetryAI } from "./telemetry/telemetryAI";
+import { IActionContext } from "./telemetry/callWithTelemetryAndErrorHandling";
 import { ReactPanel } from "./reactPanel";
 import { AzureServices } from "./azure/azureServices";
 import { CoreTemplateStudio } from "./coreTemplateStudio";

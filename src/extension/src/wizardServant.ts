@@ -1,5 +1,6 @@
 import { ExtensionCommand, CONSTANTS } from "./constants";
-import { TelemetryAI, IActionContext } from "./telemetry/telemetryAI";
+import { TelemetryAI } from "./telemetry/telemetryAI";
+import { IActionContext } from "./telemetry/callWithTelemetryAndErrorHandling";
 
 export abstract class WizardServant {
     abstract clientCommandMap: Map<

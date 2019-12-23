@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 // tslint:disable-next-line:no-require-imports
-import opn = require("opn");
+import open = require('open');
 import * as vscode from 'vscode';
 import { getPackageInfo } from "./getPackageInfo";
 import { IParsedError } from "./parseError";
@@ -49,5 +49,5 @@ ${parsedError.stack}
     const url: string = `${baseUrl}/new?body=${encodeURIComponent(body)}`;
 
     // tslint:disable-next-line:no-floating-promises
-    opn(url);
+    open(url);
 }
