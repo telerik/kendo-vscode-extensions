@@ -1,11 +1,13 @@
 ﻿import React, { useState } from 'react';
 import { sampleProducts } from '../common/sample-products';
-import { MyCommandCell } from './myCommandCell.jsx';
+import { MyCommandCell } from './MyCommandCell.jsx';
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
+import { process } from '@progress/kendo-data-query';
 
 const Param_SourceName_Pascal = (props) => {
     const editField = "inEdit";
     const [data, setData] = useState(sampleProducts);
+    const [dataState, setDataState ] = useState({skip: 0, take: 10 })
 
     const generateId = data => data.reduce((acc, current) => Math.max(acc, current.ProductID), 0) + 1;
 
@@ -25,11 +27,11 @@ const Param_SourceName_Pascal = (props) => {
     }
 
     const remove = (dataItem) => {
-        const newData = [data];
+
+        const newData = [...data];
         removeItem(newData, dataItem);
         removeItem(sampleProducts, dataItem);
-
-        setData(newData);
+        setData([...newData]);
     }
 
     const add = (dataItem) => {
@@ -105,9 +107,14 @@ const Param_SourceName_Pascal = (props) => {
             <div className='row my-4'>
                 <div className='col-12 col-lg-9 border-right'>
                     <Grid
-                        data={data}
+                        data={process(data, dataState)}
                         onItemChange={itemChange}
                         editField={editField}
+                        // pageable // uncomment to enable paging
+                        // sortable // uncomment to enable sorting
+                        // filterable // uncomment to enable filtering
+                        // onDataStateChange={(e) => setDataState(e.data)} // uncomment to enable data operations
+                        // {...dataState} // uncomment to enable data operations
                     >
                         <GridToolbar>
                             <button
@@ -128,16 +135,16 @@ const Param_SourceName_Pascal = (props) => {
                             )}
                         </GridToolbar>
                         <Column field="ProductID" title="Id" width="50px" editable={false} />
-                        <Column field="ProductName" title="Product Name" />
-                        <Column field="FirstOrderedOn" title="First Ordered" editor="date" format="{0:d}" />
+                        <Column field="ProductName" title="Product Name" width="250px"/>
                         <Column field="UnitsInStock" title="Units" width="150px" editor="numeric" />
                         <Column field="Discontinued" title="Discontinued" editor="boolean" />
                         <Column cell={CommandCell} width="240px" />
                     </Grid>
                 </div>
                 <div className='col-12 col-lg-3 mt-3 mt-lg-0'>
-                    <h3>KendoReact Chart</h3>
+                    <h3>KendoReact Grid</h3>
                     <p>The KendoReact Data Grid (Table) provides 100+ ready-to-use features covering everything from paging, sorting, filtering, editing, and grouping to row and column virtualization, export to PDF and Excel and accessibility.</p>
+                    <p>For documentation and demos of all available Grid features (filtering, sorting, paging, editing etc), please visit the <a href="https://www.telerik.com/kendo-react-ui/components/grid/?utm_medium=cpm&utm_source=stackblitz-app&utm_campaign=kendo-ui-react-trial-grid">KendoReact Grid documentation page.</a> </p>
                 </div>
             </div>
         </div>
