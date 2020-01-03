@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { sampleProducts } from '../common/sample-products';
-import { MyCommandCell } from './MyCommandCell.jsx';
+import { MyCommandCell } from './myCommandCell.jsx';
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
 import { process } from '@progress/kendo-data-query';
 
