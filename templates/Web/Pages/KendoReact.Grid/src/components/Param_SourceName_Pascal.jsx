@@ -144,7 +144,7 @@ const Param_SourceName_Pascal = (props) => {
                 <div className='col-12 col-lg-3 mt-3 mt-lg-0'>
                     <h3>KendoReact Grid</h3>
                     <p>The KendoReact Data Grid (Table) provides 100+ ready-to-use features covering everything from paging, sorting, filtering, editing, and grouping to row and column virtualization, export to PDF and Excel and accessibility.</p>
-                    <p>For documentation and demos of all available Grid features (filtering, sorting, paging, editing etc), please visit the <a href="https://www.telerik.com/kendo-react-ui/components/grid/?utm_medium=cpm&utm_source=stackblitz-app&utm_campaign=kendo-ui-react-trial-grid">KendoReact Grid documentation page.</a> </p>
+                    <p>For documentation and demos of all available Grid features (filtering, sorting, paging, editing etc), please visit the <a href="https://www.telerik.com/kendo-react-ui/components/grid/?utm_medium=product&utm_source=vs&utm_campaign=kendo-ui-react-branding-vs-ext">KendoReact Grid documentation page.</a> </p>
                 </div>
             </div>
         </div>
