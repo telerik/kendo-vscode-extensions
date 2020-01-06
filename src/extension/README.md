@@ -14,6 +14,10 @@ Kendo UI VS Code Template Wizard approaches web app creation using the following
 
 Once you make the selections you want and click generate, you can quickly extend the generated code.
 
+## Request a Feature / Submit Feedback
+
+You can request a feature or submit feedback in the extension [issue tracker](https://github.com/telerik/kendo-vscode-extensions/issues)
+
 ## License
 
 This code is distributed under the terms and conditions of the Progress Software Corporation End User License Agreement for [Visual Studio Code Extensions](https://github.com/telerik/kendo-vscode-extensions/tree/master/src/extension/LICENSE.md).
