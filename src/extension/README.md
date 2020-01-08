@@ -1,4 +1,4 @@
-# Kendo UI VS Code Template Wizard
+# Kendo UI Template Wizard for Visual Studio Code
 
 ## Instruction To Use
 
