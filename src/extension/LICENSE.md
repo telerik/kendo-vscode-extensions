@@ -2,7 +2,7 @@ End User License Agreement for Progress Kendo UI Template Wizard for Visual Stud
 
 
 
-(Last Updated January 1, 2019)
+(Last Updated January 9, 2019)
 
 
 
