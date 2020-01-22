@@ -1,0 +1,34 @@
+﻿{
+    "author": "Progress",
+    "classifications": [
+      "Universal"
+    ],
+    "name": "Page.Kendo.Vue.AddProducts",
+    "tags": {
+    "language": "Any",
+    "type": "item",
+    "wts.type": "composition",
+    "wts.platform": "Web",
+    "wts.version": "1.0.0",
+    "wts.casing.sourceName": "kebab|pascal|camel",
+    "wts.compositionFilter": "$frontendframework == KendoVue & identity == wts.Page.Kendo.Vue.Grid"
+  },
+    "sourceName": "wts.ItemName",
+    "preferNameDirectory": true,
+    "PrimaryOutputs": [
+    ],
+    "symbols": {
+      "wts.rootNamespace": {
+        "type": "parameter",
+        "replaces": "Param_RootNamespace"
+      },
+      "wts.sourceName.casing.pascal": {
+        "type": "parameter",
+        "replaces": "Param_SourceName_Pascal"
+      },
+      "wts.itemNamespace": {
+        "type": "parameter",
+        "replaces": "Param_ItemNamespace"
+      }
+    }
+  }
