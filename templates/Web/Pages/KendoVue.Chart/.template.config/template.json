@@ -1,0 +1,52 @@
+﻿{
+  "author": "Progress",
+  "classifications": ["Universal"],
+  "name": "Chart",
+  "groupIdentity": "wts.Page.Kendo.Chart",
+  "identity": "wts.Page.Kendo.Vue.Chart",
+  "description": "A chart page for you to build your web application.",
+  "tags": {
+    "language": "Any",
+    "type": "item",
+    "wts.type": "page",
+    "wts.platform": "Web",
+    "wts.projecttype": "KendoWebApp",
+    "wts.frontendframework": "KendoVue",
+    "wts.backendframework": "all",
+    "wts.version": "1.0.0",
+    "wts.displayOrder": "3",
+    "wts.genGroup": "0",
+    "wts.rightClickEnabled": "true",
+    "wts.casing.sourceName": "kebab|pascal|camel",
+    "wts.licenses": "[Bootstrap](https://github.com/twbs/bootstrap/blob/master/LICENSE)"
+  },
+  "sourceName": "KendoVueChart",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [],
+  "symbols": {
+    "wts.rootNamespace": {
+      "type": "parameter",
+      "replaces": "Param_RootNamespace"
+    },
+    "wts.itemNamespace": {
+      "type": "parameter",
+      "replaces": "Param_ItemNamespace"
+    },
+    "wts.sourceName.casing.kebab": {
+      "type": "parameter",
+      "replaces": "Param_SourceName_Kebab"
+    },
+    "wts.sourceName.casing.pascal": {
+      "type": "parameter",
+      "replaces": "Param_SourceName_Pascal"
+    },
+    "baseclass": {
+      "type": "parameter",
+      "replaces": "System.ComponentModel.INotifyPropertyChanged"
+    },
+    "setter": {
+      "type": "parameter",
+      "replaces": "Param_Setter"
+    }
+  }
+}
