@@ -1,0 +1,56 @@
+{
+  "name": "kendo-vue-template-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@progress/kendo-charts-vue-wrapper": "^2020.1.115",
+    "@progress/kendo-data-query": "^1.5.2",
+    "@progress/kendo-layout-vue-wrapper": "^2020.1.115",
+    "@progress/kendo-ui": "^2020.1.115",
+    "@progress/kendo-vue-animation": "^0.4.3",
+    "@progress/kendo-vue-dialogs": "^0.4.3",
+    "@progress/kendo-vue-grid": "^0.4.3",
+    "@progress/kendo-vue-inputs": "^0.4.3",
+    "@progress/kendo-vue-intl": "^0.4.3",
+    "@progress/kendo-vue-popup": "^0.4.3",
+    "bootstrap": "^4.4.1",
+    "core-js": "^3.4.4",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.2.2",
+    "vue-router": "^3.1.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
