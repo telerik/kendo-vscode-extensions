@@ -35,7 +35,7 @@
   },
   {
     "name": "KendoVue",
-    "displayName": "KendoVue",
+    "displayName": "Kendo UI for Vue",
     "summary": "Kendo UI for Vue is a commercial UI library designed and built for developing business applications with Vue",
     "author": "Progress",
     "order": "1",
