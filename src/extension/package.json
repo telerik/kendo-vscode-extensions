@@ -1,7 +1,7 @@
 {
   "name": "kendotemplatewizard",
   "displayName": "Kendo UI Template Wizard",
-  "description": "This extension allows you to quickly scaffold apps built with KendoReact or Kendo UI for Angular using a visual wizard.",
+  "description": "This extension allows you to quickly scaffold apps built with KendoReact, Kendo UI for Angular or Kendo UI for Vue using a visual wizard.",
   "version": "1.0.3",
   "publisher": "KendoUI",
   "aiKey": "__AIKEY__",
@@ -21,6 +21,7 @@
     "Boilerplate",
     "React",
     "Angular",
+    "Vue",
     "Scaffolding"
   ],
   "preview": true,

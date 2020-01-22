@@ -34,6 +34,16 @@
     "languages": ["Any"]
   },
   {
+    "name": "KendoVue",
+    "displayName": "KendoVue",
+    "summary": "Kendo UI for Vue is a commercial UI library designed and built for developing business applications with Vue",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[KendoVue](https://www.telerik.com/purchase/license-agreement/kendo-ui)",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  },
+  {
     "name": "Angular",
     "displayName": "Angular",
     "summary": "Angular is an open source, front-end web application framework maintained by Google to develop single page applications.",
