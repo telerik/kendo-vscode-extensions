@@ -1,8 +1,8 @@
 <template>
   <div id="root">
       <div class="content">
-          <Header :project-name="'Project Name'" />
-           <router-view></router-view>
+          <Header :project-name="'wts.KendoVueDefault'" />
+          <router-view></router-view>
     </div>
     <div class="footer">
       <Footer />
