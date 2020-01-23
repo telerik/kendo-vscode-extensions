@@ -2,7 +2,7 @@
 
 ## Overview
 
-Kendo UI VS Code Template Wizard allows you to quickly scaffold apps built with KendoReact or Kendo UI for Angular using a visual wizard.
+Kendo UI VS Code Template Wizard allows you to quickly scaffold apps built with KendoReact, Kendo UI for Angular or Kendo UI for Vue using a visual wizard.
 
 ## Feedback and Feature Requests
 
