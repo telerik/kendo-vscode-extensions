@@ -19,8 +19,7 @@
                     <h3>Kendo UI for Vue Chart</h3>
                     <p>The Kendo UI for Vue Charts provide high quality graphical data visualization options.</p>
                     <p>They include a variety of chart types and styles that have extensive configuration options. This flexibility allows you to quickly and easily create the exact chart you need to fit your specific requirements for functionality and appearance.</p>
-                    <p>The Kendo UI for Vue Chart Components are built from the ground up, specifically for Vue, so that you get high performance chart components that integrate with your Vue app and with the rest of your Vue UI components.</p>
-                    <p>For documentation and demos of all available Chart types (Bar, Line, Donut, Sparkline, StockChart etc), please visit the <a href="https://www.telerik.com/kendo-vue-ui/components/charts/?utm_medium=cpm&utm_source=stackblitz-app&utm_campaign=kendo-ui-vue-trial-charts">KendoVue Chart documentation page.</a> </p>
+                    <p>For documentation and demos of all available Chart types (Bar, Line, Donut, Sparkline, StockChart etc), please visit the <a href="https://www.telerik.com/kendo-vue-ui/components/charts/?utm_medium=cpm&utm_source=vscode-app&utm_campaign=kendo-ui-vue-trial-charts">KendoVue Chart documentation page.</a> </p>
                 </div>
             </div>
         </div>
