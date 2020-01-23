@@ -2,7 +2,7 @@
         <div class="container mt-5">
             <div class='row'>
                 <div class='col-12'>
-                    <h1 class='welcome mb-0'>Welcome to KendoVue</h1>
+                    <h1 class='welcome mb-0'>Welcome to Kendo UI for Vue</h1>
                     <h2 class='sub-header mt-0'>Focus on the core of your application and spend less time sweating over the UI</h2>
                 </div>
             </div>
