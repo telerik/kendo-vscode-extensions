@@ -20,4 +20,4 @@ You can request a feature or submit feedback in the extension [issue tracker](ht
 
 ## License
 
-This code is distributed under the terms and conditions of the Progress Software Corporation End User License Agreement for [Visual Studio Code Extensions](https://github.com/telerik/kendo-vscode-extensions/tree/master/src/extension/LICENSE.md).
+This code is distributed under the terms and conditions of the Progress Software Corporation End User License Agreement for [Visual Studio Code Extensions](https://github.com/telerik/kendo-vscode-extensions/tree/master/kendo-ui-template-wizard/src/extension/LICENSE.md).
