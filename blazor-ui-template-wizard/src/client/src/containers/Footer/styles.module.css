@@ -1,0 +1,34 @@
+.footer {
+  background-color: var(--vscode-badge-background);
+  border-top: 1px solid var(--vscode-editorGroup-border);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.button {
+  margin-left: 1.5em;
+  font-size: 1em;
+  width: 150px;
+  text-align: center;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.button:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.disabledOverlay {
+  opacity: 0.5;
+  outline: 0px;
+}

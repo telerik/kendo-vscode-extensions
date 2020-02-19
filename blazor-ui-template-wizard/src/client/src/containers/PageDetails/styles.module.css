@@ -1,0 +1,19 @@
+.screenshot {
+  margin-top: 100px;
+  width: 100%;
+  border: 1px solid var(--vscode-editor-foreground);
+}
+
+.screenShotContainer {
+  max-width: 42%;
+  margin-left: auto;
+  margin-right: 48px;
+}
+
+.detailsContainer {
+  display: flex;
+  background-color: var(--vscode-editor-background);
+  box-sizing: border-box;
+  padding: 50px;
+  width: 50vw;
+}

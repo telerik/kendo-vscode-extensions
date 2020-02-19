@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+}
+
+.info-table h4{
+  margin: 0;
+  font-size: 16px;
+}
+
+.info-table td{
+  padding: 10px 50px 10px 0;
+}
+
+.info-table tr td:last-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

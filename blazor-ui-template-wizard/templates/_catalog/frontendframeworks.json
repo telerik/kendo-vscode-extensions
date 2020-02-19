@@ -1,0 +1,36 @@
+﻿[
+  {
+    "name": "ReactJS",
+    "displayName": "React",
+    "summary": "React is a not cool",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[KendoReact](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
+    "platforms": ["Web"],
+    "languages": ["Any"],
+    "tags": {
+      "version": "16.8.4",
+      "preview": false
+    }
+  },
+  {
+    "name": "BlazorClient",
+    "displayName": "Blazor Client",
+    "summary": "Client-side Blazor project that runs on WebAssembly (WASM) in the browser and uses HTTP endpoints for data.",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[Blazor](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  },
+  {
+    "name": "BlazorServer",
+    "displayName": "Blazor Server",
+    "summary": "Server-side Blazor project that runs over a SignalR connection to the server.",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "[Blazor](https://www.telerik.com/purchase/license-agreement/progress-kendoreact)",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  }
+]

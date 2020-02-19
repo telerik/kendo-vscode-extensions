@@ -1,0 +1,23 @@
+﻿[
+  {
+    "name": "BlazorWebApp",
+    "displayName": "Telerik UI for Blazor Template Wizard",
+    "summary": "Welcome to the Visual Studio Code scaffolder for Telerik UI for Blazor. New to Telerik Blazor? Learn more here.",
+    "description": "This extension allows you to quickly scaffold client and server apps built with Telerik UI for Blazor.",
+    "author": "Progress",
+    "order": "1",
+    "licenses": "",
+    "platforms": ["Web"],
+    "languages": ["Any"]
+  },
+  {
+    "name": "FullStackWebApp",
+    "displayName": "Fullstack Web Application",
+    "summary": "An end-to-end web application which includes front-end, back-end and database components.",
+    "author": "Microsoft",
+    "order": "2",
+    "licenses": "",
+    "platforms": ["Desktop"],
+    "languages": ["Any"]
+  }
+]

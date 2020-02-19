@@ -1,0 +1,16 @@
+.details-header {
+  margin-top: 60px;
+}
+
+.details-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-spacer {
+  flex: 1 1 auto;
+}
+
+.framework-description {
+  margin: 0;
+}

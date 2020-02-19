@@ -1,0 +1,30 @@
+.container {
+  margin-right: 20%;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 1em;
+}
+
+.tileContainer {
+  margin-bottom: 10px;
+}
+
+.selectionContainer {
+  margin-bottom: 24px;
+}
+
+.selectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.projectDetailsContainer {
+  margin-left: 2%;
+  width: calc(100% - 40px);
+}

@@ -1,0 +1,1 @@
+Server-side Blazor project that runs over a SignalR connection to the server.

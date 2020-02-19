@@ -1,0 +1,27 @@
+.title {
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.container {
+  margin: 15px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--vscode-textLink-foreground);
+}
+
+.link:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+}
+
+.name {
+  margin-bottom: 1.5em;
+}
+
+.repo {
+  font-size: 14px;
+  margin-bottom: 30px;
+}

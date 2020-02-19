@@ -1,0 +1,72 @@
+.loginContainer {
+  padding: 16px;
+  background-color: var(--vscode-sideBar-background);
+  border: 1px solid var(--vscode-editorGroup-border);
+  margin-right: 15px;
+}
+
+.selectionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--vscode-textLink-foreground);
+  font-size: var(--vscode-font-size);
+}
+
+.createAccountButton {
+  text-decoration: none;
+  color: var(--vscode-textLink-foreground);
+}
+
+.createAccountButton:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.signInButton {
+  font-size: 1em;
+  margin-left: 16px;
+  border: none;
+}
+
+.signInButton:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+}
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.cardBody {
+  margin-bottom: 5%;
+}
+
+.details {
+  color: var(--vscode-textLink-foreground);
+  font-size: 14px;
+  background: none;
+  border: none;
+  text-decoration: none;
+  padding: 0px;
+}
+
+.details:hover {
+  cursor: pointer;
+}
+
+.details:focus {
+  outline: 1px solid var(--vscode-contrastActiveBorder);
+}
+
+.icon {
+  height: 36px;
+  margin-right: 10px;
+}

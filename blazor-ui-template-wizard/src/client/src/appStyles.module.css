@@ -1,0 +1,65 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: var(--vscode-editor-foreground);
+}
+
+h1 {
+  font-weight: lighter;
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size:18px;
+  color: var(--vscode-editor-foreground);
+}
+
+p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+hr {
+  margin: 120px 0 50px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1px 1fr;
+  background-color: var(--vscode-editor-background);
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;
+}
+
+.centerView {
+  display: flex;
+  padding: 0px 0.75em 0px 0.75em;
+  overflow: auto;
+  width: 100%;
+  padding : 50px;
+  box-sizing: border-box;
+  background-color: var(--vscode-editor-background);
+  justify-content: flex-start;
+}

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="198" height="46" viewBox="0 0 198 46">
+    <defs>
+        <style>
+            .a1 {
+                fill: #e4e7eb;
+            }
+
+            .b1 {
+                fill: #007bff;
+            }
+
+            .c1 {
+                fill: #0069d9;
+            }
+
+            .d1 {
+                fill: #fff;
+            }
+
+            .e1 {
+                fill: #f7f7f9;
+            }
+
+            .f1 {
+                filter: url(#i1);
+            }
+
+            .g1 {
+                filter: url(#g1);
+            }
+
+            .h1 {
+                filter: url(#e1);
+            }
+
+            .i1 {
+                filter: url(#c1);
+            }
+
+            .j1 {
+                filter: url(#a1);
+            }
+        </style>
+        <filter id="a1" x="76" y="0" width="46" height="46" filterUnits="userSpaceOnUse">
+            <feOffset dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="b1" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="b1" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="c1" x="114" y="0" width="46" height="46" filterUnits="userSpaceOnUse">
+            <feOffset dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="d1" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="d1" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="e1" x="152" y="0" width="46" height="46" filterUnits="userSpaceOnUse">
+            <feOffset dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="f1" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="f1" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="g1" x="0" y="0" width="46" height="46" filterUnits="userSpaceOnUse">
+            <feOffset dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="h1" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="h1" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+        <filter id="i1" x="38" y="0" width="46" height="46" filterUnits="userSpaceOnUse">
+            <feOffset dy="2" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="j1" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="j1" />
+            <feComposite in="SourceGraphic" />
+        </filter>
+    </defs>
+    <g transform="translate(-130 -305)">
+        <g class="j1" transform="matrix(1, 0, 0, 1, 130, 305)">
+            <circle class="a1" cx="14" cy="14" r="14" transform="translate(85 7)" />
+        </g>
+        <g class="i1" transform="matrix(1, 0, 0, 1, 130, 305)">
+            <path class="b1" d="M14,0A14,14,0,1,1,0,14,14,14,0,0,1,14,0Z" transform="translate(123 7)" />
+        </g>
+        <g class="h1" transform="matrix(1, 0, 0, 1, 130, 305)">
+            <circle class="c1" cx="14" cy="14" r="14" transform="translate(161 7)" />
+        </g>
+        <g class="g1" transform="matrix(1, 0, 0, 1, 130, 305)">
+            <circle class="d1" cx="14" cy="14" r="14" transform="translate(9 7)" />
+        </g>
+        <g class="f1" transform="matrix(1, 0, 0, 1, 130, 305)">
+            <circle class="e1" cx="14" cy="14" r="14" transform="translate(47 7)" />
+        </g>
+    </g>
+</svg>

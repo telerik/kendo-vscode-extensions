@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+src/**
+.gitignore
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/tslint.json
+**/*.map
+**/*.ts
+!src/api/**
+!src/azure/azure-cosmosDB/arm-templates
+!src/azure/azure-functions/arm-templates
+!src/azure/azure-functions/templates
