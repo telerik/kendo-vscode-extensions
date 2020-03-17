@@ -17,12 +17,12 @@
   },
   "icon": "resources/TelerikUI_Template_Wizard.png",
   "keywords": [
-    "Web Application",
+    "Blazor",
     "Boilerplate",
-    "React",
-    "Angular",
-    "Vue",
-    "Scaffolding"
+    "Scaffolding",
+    "Web Application",
+    ".NET",
+    "SPA"
   ],
   "preview": true,
   "homepage": "https://github.com/telerik/kendo-vscode-extensions/blob/master/README.md",
