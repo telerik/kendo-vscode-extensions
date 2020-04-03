@@ -25,18 +25,11 @@
     "SPA"
   ],
   "preview": true,
-  "homepage": "https://github.com/telerik/kendo-vscode-extensions/blob/master/README.md",
+  "homepage": "https://www.telerik.com/kendo-ui/",
   "bugs": {
-    "url": "https://github.com/telerik/kendo-vscode-extensions/issues"
+    "url": "https://www.telerik.com/account/support-tickets"
   },
   "license": "SEE LICENSE IN LICENSE.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/telerik/kendo-vscode-extensions",
-    "vsce": "^1.57.1",
-    "vscode-extension-telemetry": "^0.1.1",
-    "vscode-nls": "^4.0.0"
-  },
   "activationEvents": [
     "onCommand:blazorTemplateExtension.wizardLaunch"
   ],
