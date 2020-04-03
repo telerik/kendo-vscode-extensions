@@ -16,7 +16,7 @@ Once you make the selections you want and click generate, you can quickly extend
 
 ## Request a Feature / Submit Feedback
 
-You can request a feature or submit feedback in the extension [issue tracker](https://github.com/telerik/kendo-vscode-extensions/issues)
+You can request a feature or submit feedback using the Kendo UI [support system](https://www.telerik.com/account/support-tickets)
 
 ## License
 

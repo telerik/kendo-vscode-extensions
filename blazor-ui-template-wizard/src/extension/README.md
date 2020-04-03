@@ -8,13 +8,13 @@
 
 ## Features
 
-The `Telerik UI for Blazor Template Wizard` lets you create [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) projects that use the [Telerik UI for Blazor components](https://www.telerik.com/blazor-ui). 
+The `Telerik UI for Blazor Template Wizard` lets you create [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) projects that use the [Telerik UI for Blazor components](https://www.telerik.com/blazor-ui).
 
 You can create both WASM and Server-side projects, and it also contains a few predefined examples (a grid with CRUD operations through a service, charts, forms) that you can review and use as base for further development.
 
 ## Request a Feature / Submit Feedback
 
-You can request a feature or submit feedback in the extension [issue tracker](https://github.com/telerik/kendo-vscode-extensions/issues)
+You can request a feature or submit feedback using the Telerik UI for Blazor [support system](https://www.telerik.com/account/support-tickets)
 
 ## License
 
