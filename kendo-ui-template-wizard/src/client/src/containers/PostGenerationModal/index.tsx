@@ -193,7 +193,7 @@ const PostGenerationModal = ({
       <div className={styles.footerContainer}>
         <a
           className={styles.link}
-          href={"https://github.com/telerik/kendo-vscode-extensions/issues"}
+          href={"https://www.telerik.com/account/support-tickets"}
         >
           {formatMessage(messages.help)}
         </a>
