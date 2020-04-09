@@ -7,4 +7,4 @@ Build
 
 Build is availble at the VSX Jenkins http://192.168.2.89:8080/view/Kendo/job/VisualStudioCode_Extension_Kendo/
 
-Output is available at this location smb://telerik.com/distributions/DailyBuilds/Guidance/VSCodeExtensions/master
+Output available at this location smb://telerik.com/distributions/DailyBuilds/Guidance/VSCodeExtensions/master
