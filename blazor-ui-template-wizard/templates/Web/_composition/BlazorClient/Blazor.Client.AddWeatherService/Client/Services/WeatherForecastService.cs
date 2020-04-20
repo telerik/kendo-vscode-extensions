@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ClientApp.Shared;
 using Microsoft.AspNetCore.Components;
@@ -21,13 +22,13 @@ namespace ClientApp.Services
 
         public async Task<List<WeatherForecast>> GetForecastListAsync(DateTime startDate)
         {
-            var data = await Http.GetJsonAsync<List<WeatherForecast>>("WeatherForecast?startDate=" + startDate.ToString(CultureInfo.InvariantCulture));
+            var data = await Http.GetFromJsonAsync<List<WeatherForecast>>("WeatherForecast?startDate=" + startDate.ToString(CultureInfo.InvariantCulture));
             return data;
         }
 
         public async Task UpdateForecastAsync(WeatherForecast forecastToUpdate)
         {
-            await Http.PostJsonAsync("WeatherForecast", forecastToUpdate);
+            await Http.PostAsJsonAsync("WeatherForecast", forecastToUpdate);
         }
 
         public async Task DeleteForecastAsync(WeatherForecast forecastToRemove)
@@ -37,7 +38,7 @@ namespace ClientApp.Services
 
         public async Task InsertForecastAsync(WeatherForecast forecastToInsert)
         {
-            await Http.PutJsonAsync("WeatherForecast", forecastToInsert);
+            await Http.PutAsJsonAsync("WeatherForecast", forecastToInsert);
         }
     }
 }
