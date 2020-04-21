@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System;
 //^^
 //{[{
 using ClientApp.Services;
@@ -14,7 +17,7 @@ namespace ClientApp.Client
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
-            builder.Services.AddBaseAddressHttpClient();
+            builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             //^^
             //{[{
             builder.Services.AddScoped<WeatherForecastService>();
