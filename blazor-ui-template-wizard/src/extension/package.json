@@ -24,7 +24,7 @@
     ".NET",
     "SPA"
   ],
-  "preview": true,
+  "preview": false,
   "homepage": "https://www.telerik.com/kendo-ui/",
   "bugs": {
     "url": "https://www.telerik.com/account/support-tickets"
