@@ -7,7 +7,6 @@ using System;
 //{[{
 using ClientApp.Services;
 //}]}
-using System.Threading.Tasks;
 
 namespace ClientApp.Client
 {
