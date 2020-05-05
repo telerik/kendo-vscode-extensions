@@ -23,6 +23,7 @@ namespace ClientApp.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,8 +49,8 @@ namespace ClientApp.Server
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
-                
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();                
                 endpoints.MapFallbackToFile("index.html");
             });
         }
