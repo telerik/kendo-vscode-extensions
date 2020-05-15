@@ -8,11 +8,11 @@
     <div class='row my-4'>
         <div class='col-12 col-lg-9 border-right'>
             <TelerikGrid Data="@forecasts" Height="550px" FilterMode="@GridFilterMode.FilterMenu"
-                         Sortable="true" Pageable="true" PageSize="20" Groupable="true"
+                         Sortable="true" Pageable="true" PageSize="20" Groupable="true" Resizable="true" Reorderable="true"
                          OnUpdate="@UpdateHandler" OnDelete="@DeleteHandler" OnCreate="@CreateHandler" EditMode="@GridEditMode.Inline">
                 <GridColumns>
                     <GridColumn Field="Id" Title="Id" Width="100px" Editable="false" Groupable="false" />
-                    <GridColumn Field="Date">
+                    <GridColumn Field="Date" Width="220px">
                         <Template>
                             @((context as WeatherForecast).Date.ToString("dddd, dd MMM yyyy"))
                         </Template>
@@ -20,7 +20,7 @@
                     <GridColumn Field="TemperatureC" Title="Temp. C" />
                     <GridColumn Field="TemperatureF" Title="Temp. F" />
                     <GridColumn Field="Summary" />
-                    <GridCommandColumn>
+                    <GridCommandColumn Width="200px" Resizable="false">
                         <GridCommandButton Command="Save" Icon="@IconName.Save" ShowInEdit="true">Update</GridCommandButton>
                         <GridCommandButton Command="Edit" Icon="@IconName.Edit" Primary="true">Edit</GridCommandButton>
                         <GridCommandButton Command="Delete" Icon="@IconName.Delete">Delete</GridCommandButton>
@@ -29,7 +29,11 @@
                 </GridColumns>
                 <GridToolBar>
                     <GridCommandButton Command="Add" Icon="@IconName.Plus" Primary="true">Add Forecast</GridCommandButton>
+                    <GridCommandButton Command="ExcelExport" Icon="@IconName.FileExcel">Export to Excel</GridCommandButton>
                 </GridToolBar>
+                <GridExport>
+                    <GridExcelExport FileName="weather-forecasts" AllPages="true" />
+                </GridExport>
             </TelerikGrid>
         </div>
         <div class='col-12 col-lg-3 mt-3 mt-lg-0'>
