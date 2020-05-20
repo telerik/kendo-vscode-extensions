@@ -53,7 +53,7 @@
       <PreparedTemplates Include="$(WtsPackagingToolOutputDirectory)\Preparation_v$(Version)\Templates\**\*.*" />
     </ItemGroup>
 
-    <Copy SourceFiles="@(PreparedTemplates)" DestinationFolder="$(WtsPackagingToolOutputDirectory)\templates\%(RecursiveDir)" />
+    <Copy SourceFiles="@(PreparedTemplates)" DestinationFolder="$(WtsPackagingToolOutputDirectory)\templates\%(RecursiveDir)" OverwriteReadOnlyFiles="true"/>
 
     <exec command='$(wtspackagingtool) package-task -n $(WtsPackagingToolOutputDirectory)\templates\ -f "web.any.templates.mstx"' workingdirectory='$(WtsPackagingToolOutputDirectory)'/>
 
