@@ -4,7 +4,7 @@
   <PropertyGroup>
 
     <!--Directories-->
-    <SourceDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\..\..'))</SourceDirectory>
+    <SourceDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\..'))</SourceDirectory>
     <CoreTemplateStudioDirectory>$(SourceDirectory)\CoreTemplateStudio</CoreTemplateStudioDirectory>
     <CoreTemplateStudioApiDirectory>$(CoreTemplateStudioDirectory)\code\src\CoreTemplateStudio\CoreTemplateStudio.Api</CoreTemplateStudioApiDirectory>
     <WtsPackagingToolDirectory>$(CoreTemplateStudioDirectory)\code\tools\WtsPackagingTool</WtsPackagingToolDirectory>
