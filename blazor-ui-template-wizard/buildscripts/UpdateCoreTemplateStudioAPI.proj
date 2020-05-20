@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="UpdateCoreTemplateStudioAPI" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+
+  <Import Project="config.targets" />
+  
+  <PropertyGroup>
+
+    <UpdateCoreTemplateStudioAPIDependsOn>
+      PublishCoreTemplateStudioAPI;
+      UpdateExtensionsWithLatestAPI
+    </UpdateCoreTemplateStudioAPIDependsOn>
+
+  </PropertyGroup>
+
+  <Target Name="UpdateCoreTemplateStudioAPI" DependsOnTargets="$(UpdateCoreTemplateStudioAPIDependsOn)"/>
+
+  <Target Name="PublishCoreTemplateStudioAPI" >
+
+    <Exec Command="$(dotnettool) publish $(CoreTemplateStudioApiProject) -c $(Configuration) -r $(OsxRuntime)" />
+
+    <Exec Command="$(dotnettool) publish $(CoreTemplateStudioApiProject) -c $(Configuration) -r $(LinuxRuntime)" />
+
+    <Exec Command="$(dotnettool) publish $(CoreTemplateStudioApiProject) -c $(Configuration) -r $(WinRuntime)" />
+
+  </Target>
+
+  <Target Name="UpdateExtensionsWithLatestAPI" >
+
+    <ItemGroup>
+      <OsxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\**\*.*" />
+      <LinuxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\**\*.*" />
+      <WinFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\**\*.*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(OsxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(DarwinFolderName)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(LinuxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(LinuxFolderName)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(WinFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(Win32FolderName)\%(RecursiveDir)" />
+
+  </Target>
+
+</Project>
