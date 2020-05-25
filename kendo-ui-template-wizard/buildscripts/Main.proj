@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Main" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  
+  <PropertyGroup>
+
+    <MainDependsOn>
+      UpdateCoreTemplateStudioAPI;
+      UpdateExtensionsHashCode
+    </MainDependsOn>
+
+  </PropertyGroup>
+
+  <Target Name="Main" DependsOnTargets="$(MainDependsOn)"/>
+
+  <Target Name="UpdateCoreTemplateStudioAPI" >
+
+    <MSBuild Projects="UpdateCoreTemplateStudioAPI.proj" />
+
+  </Target>
+
+  <Target Name="UpdateExtensionsHashCode" >
+
+    <MSBuild Projects="UpdateExtensionsHashCode.proj" />
+
+  </Target>
+
+</Project>
