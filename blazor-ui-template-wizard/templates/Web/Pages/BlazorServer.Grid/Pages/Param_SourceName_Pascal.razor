@@ -17,8 +17,16 @@
                             @((context as WeatherForecast).Date.ToString("dddd, dd MMM yyyy"))
                         </Template>
                     </GridColumn>
-                    <GridColumn Field="TemperatureC" Title="Temp. C" />
-                    <GridColumn Field="TemperatureF" Title="Temp. F" />
+                    <GridColumn Field="TemperatureC" Title="Temp. C">
+                        <Template>
+                            @((context as WeatherForecast).TemperatureC.ToString("N1"))
+                        </Template>
+                    </GridColumn>
+                    <GridColumn Field="TemperatureF" Title="Temp. F">
+                        <Template>
+                            @((context as WeatherForecast).TemperatureF.ToString("N1"))
+                        </Template>
+                    </GridColumn>
                     <GridColumn Field="Summary" />
                     <GridCommandColumn Width="200px" Resizable="false">
                         <GridCommandButton Command="Save" Icon="@IconName.Save" ShowInEdit="true">Update</GridCommandButton>
