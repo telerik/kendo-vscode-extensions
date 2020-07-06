@@ -1,3 +1,4 @@
+# ****💡 This repo should be cloned again localy by every contributor****
 # Starter projects locations
 
 Starter projects are sourced from https://github.com/telerik/kendo-vsx-templatesß
