@@ -1,3 +1,6 @@
+# ***💡 This repo should be cloned again localy by every contributor***
+# ***Blazor extension is [moved here](https://github.com/telerik/blazor-vscode-extensions)***
+
 # Starter projects locations
 
 Starter projects are sourced from https://github.com/telerik/kendo-vsx-templatesß
