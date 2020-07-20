@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { Controller } from "./controller";
+import { activateCallHomeTracking } from "./workspace/fileEvents"
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -10,6 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
+
+  activateCallHomeTracking(context);
 }
 
 export function deactivate() {
