@@ -27,9 +27,12 @@
   <Target Name="UpdateExtensionsWithLatestAPI" >
 
     <ItemGroup>
-      <OsxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\**\*.*" />
-      <LinuxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\**\*.*" />
-      <WinFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\**\*.*" />
+      <OsxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\**\*.*" 
+	            Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
+      <LinuxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\**\*.*"
+	              Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
+      <WinFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\**\*.*"
+	            Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
     </ItemGroup>
 
     <Copy SourceFiles="@(OsxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(DarwinFolderName)\%(RecursiveDir)" />
