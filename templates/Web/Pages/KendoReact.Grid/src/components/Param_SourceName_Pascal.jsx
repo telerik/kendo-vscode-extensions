@@ -43,7 +43,7 @@ const Param_SourceName_Pascal = (props) => {
     }
 
     const discard = (dataItem) => {
-        const newData = [data];
+        const newData = [...data];
         removeItem(newData, dataItem);
 
         setData(newData);
