@@ -46,6 +46,7 @@ export class GenerateCommand extends CoreTemplateStudioApiCommand {
       platform: "Web",
       homeName: "Test",
       theme: theme,
+      isTrial: false,
       pages: pages.map((page: any) => ({
         name: page.name,
         templateid: page.identity
