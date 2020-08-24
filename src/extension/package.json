@@ -2,8 +2,8 @@
   "name": "kendotemplatewizard",
   "displayName": "Kendo UI Template Wizard",
   "description": "This extension allows you to quickly scaffold apps built with KendoReact, Kendo UI for Angular or Kendo UI for Vue using a visual wizard.",
-  "version": "1.1.8",
-  "publisher": "KendoUI",
+  "version": "0.0.0-semantically-released",
+  "publisher": "ipeshev",
   "aiKey": "__AIKEY__",
   "engines": {
     "vscode": "^1.32.0"
@@ -67,7 +67,8 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test",
     "generate": "node ./out/scripts/generate-test",
-    "createVsixPackage": "gulp package"
+    "createVsixPackage": "gulp package",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.42",
@@ -80,6 +81,11 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^5.0.1",
     "run-sequence": "^2.2.1",
+    "semantic-release": "^17.1.1",
+    "semantic-release-vsce": "^3.0.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
     "tslint": "^5.20.1",
     "typescript": "^3.7.3",
     "vscode": "^1.1.36",
