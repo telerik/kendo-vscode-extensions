@@ -37,7 +37,7 @@
 
     <!--Tools-->
     <dotnettool>"C:\Program Files\dotnet\dotnet.exe"</dotnettool>
-    
+    <!--Tools-->
   </PropertyGroup>
 
 </Project>
