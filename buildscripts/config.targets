@@ -37,6 +37,8 @@
 
     <!--Tools-->
     <dotnettool>"C:\Program Files\dotnet\dotnet.exe"</dotnettool>
+    
+    <!--Comment-->
 
   </PropertyGroup>
 
