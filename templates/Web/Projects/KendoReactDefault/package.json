@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    
     "@progress/kendo-data-query": "latest",
     "@progress/kendo-drawing": "latest",
     "@progress/kendo-react-animation": "^4.0.0",
