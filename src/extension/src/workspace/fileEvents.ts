@@ -15,6 +15,6 @@ export async function activateCallHomeTracking(context: vscode.ExtensionContext)
 
     var engineAPI = new EngineAPIService(port, undefined);
     vscode.workspace.onDidSaveTextDocument(async (e) => {
-        await engineAPI.putSavedTextDocument(e.fileName);
+        await engineAPI.putSavedTextDocument(e.fileName + "^telerik^KENDOUIREACT^KENDOUIVUE^KENDOUIANGULAR");
       })
 }
