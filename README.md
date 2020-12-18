@@ -1,11 +1,11 @@
 # Starter projects locations
 
-Starter projects are sourced from https://github.com/telerik/kendo-vsx-templatesß
+Starter projects are sourced from https://github.com/telerik/kendo-vsx-templates
 
 # Build
 
 Build is availble at the VSX Jenkins
-`http://192.168.2.89:8080/view/Kendo/job/VisualStudioCode_Extension_Kendo/`
+`http://10.10.7.82:8080/view/Kendo/job/VisualStudioCode_Extension_Kendo/` (VPN required)
 
 Output is available at this location:
 `smb://telerik.com/distributions/DailyBuilds/Guidance/VSCodeExtensions/master`
