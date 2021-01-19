@@ -2,7 +2,7 @@
 <div class='container-fluid'>
            <div class='row my-4'>
                 <div class='col-12 col-lg-9 border-right' >
-                    <div v-if="loading" class="k-loading-mask">
+                    <div v-if="initData.loading" class="k-loading-mask">
                         <span class="k-loading-text">Loading</span>
                         <div class="k-loading-image"></div>
                         <div class="k-loading-color"></div>
@@ -11,7 +11,7 @@
                                 :title-font="'19pt sans-serif'" 
                                 :title-margin-bottom="50" 
                                 :legend-position="'bottom'"
-                                :series="series"
+                                :series="initData.series"
                                 :theme="'sass'">
                     </Chart>
                 </div>
@@ -28,18 +28,14 @@
 <script>
 import '@progress/kendo-ui/js/kendo.dataviz.chart'
 import { Chart } from '@progress/kendo-charts-vue-wrapper';
+import { reactive, onMounted } from 'vue';
 
 export default {
-     mounted: function(){
-        setTimeout(() => {
-            this.loading = false;
-        }, 100);
-     },
-     components: {
+    components: {
         Chart
-     },
-     data: function() {
-        return {
+    },
+    setup () {
+        const initData = reactive({
             loading: true,
             series: [{
                     type: "pie",
@@ -59,7 +55,17 @@ export default {
                       { category: 'AFRICA', value: 0.05 }
                     ]
             }]
-        }
+        });
+
+        onMounted(() => {
+            setTimeout(() => {
+                initData.loading = false;
+            }, 100);
+        });
+
+        return {
+           initData
+        };
     }
 }
 </script>
