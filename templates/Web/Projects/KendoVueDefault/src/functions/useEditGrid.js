@@ -43,13 +43,15 @@ const useInlineEditGrid = function(sampleProducts) {
         }
     };
     const save = (e) => {
-        let index = initData.gridData.findIndex(p => p.ProductID === e.dataItem.ProductID);
-        let item = initData.gridData[index];
-        let updated = update(initData.gridData.slice(), item);
-        initData.gridData[index] = updated;
-        initData.gridData[index].inEdit = undefined;
-        let updateDataIndex = initData.updatedData.findIndex(p => p.ProductID === e.dataItem.ProductID);
-        initData.updatedData[updateDataIndex] = updated;
+        if(e.dataItem.ProductID) {
+            let index = initData.gridData.findIndex(p => p.ProductID === e.dataItem.ProductID);
+            let item = initData.gridData[index];
+            let updated = update(initData.gridData.slice(), item);
+            initData.gridData[index] = updated;
+            initData.gridData[index].inEdit = undefined;
+            let updateDataIndex = initData.updatedData.findIndex(p => p.ProductID === e.dataItem.ProductID);
+            initData.updatedData[updateDataIndex] = updated;
+        }
     };
     const update = (data, item, remove) => {
         let updated;
