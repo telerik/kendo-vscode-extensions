@@ -4,18 +4,21 @@
                 <div class='col-12 col-lg-9 border-right'>
                      <Grid ref="grid"
                         :style="{height: '770px'}"
-                        :data-items="gridData"
+                        :data-items="initData.gridData"
                         :edit-field="'inEdit'"
-                        :take="take"
-                        :skip="skip"
-                        :total="total"
-                        @edit="edit"
-                        @remove="remove"
-                        @save="save"
-                        @cancel="cancel"
+                        :take="initData.take"
+                        :skip="initData.skip"
+                        :total="initData.total"
                         @itemchange="itemChange"
                         @dataStateChange="dataStateChange"
-                        :columns="columns">
+                        :columns="initData.columns">
+                          <template v-slot:myTemplate="{props}">
+                            <custom :data-item="props.dataItem" 
+                                    @edit="edit"
+                                    @save="save" 
+                                    @remove="remove"
+                                    @cancel="cancel"/>
+                        </template>
                         <grid-toolbar>
                             <button title="Add new"
                                     class="k-button k-primary"
@@ -46,12 +49,14 @@
 import { Grid, GridToolbar, GridNoRecords } from '@progress/kendo-vue-grid';
 import { useInlineEditGrid } from '../functions/useEditGrid';
 import { sampleProducts } from '../common/sample-products';
+import myCommandCell from '../components/myCommandCell';
 
 export default {
     components: {
         'Grid': Grid,
         'grid-toolbar': GridToolbar,
-        'grid-norecords': GridNoRecords
+        'grid-norecords': GridNoRecords,
+        custom: myCommandCell
     },
     setup () {
 

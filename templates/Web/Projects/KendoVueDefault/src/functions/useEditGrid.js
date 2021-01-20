@@ -1,6 +1,5 @@
 import { process } from '@progress/kendo-data-query';
-import { computed, reactive, markRaw } from 'vue';
-import myCommandCell from '../components/myCommandCell';
+import { computed, reactive } from 'vue';
 
 const useInlineEditGrid = function(sampleProducts) {
     const initData = reactive({
@@ -16,7 +15,7 @@ const useInlineEditGrid = function(sampleProducts) {
             { field: 'FirstOrderedOn', editor: 'date', title: 'First Ordered', format: '{0:d}' },
             { field: 'UnitPrice', filter: 'numeric', title: 'Unit Price' },
             { field: 'UnitsInStock', title: 'Units', filter: 'numeric', width: '150px', editor: 'numeric' },
-            { cell: markRaw(myCommandCell), width: '180px' }
+            { cell: 'myTemplate', width: '180px' }
         ]
     });
 
@@ -43,15 +42,14 @@ const useInlineEditGrid = function(sampleProducts) {
         }
     };
     const save = (e) => {
-        if(e.dataItem.ProductID) {
-            let index = initData.gridData.findIndex(p => p.ProductID === e.dataItem.ProductID);
-            let item = initData.gridData[index];
-            let updated = update(initData.gridData.slice(), item);
-            initData.gridData[index] = updated;
-            initData.gridData[index].inEdit = undefined;
-            let updateDataIndex = initData.updatedData.findIndex(p => p.ProductID === e.dataItem.ProductID);
-            initData.updatedData[updateDataIndex] = updated;
-        }
+        let index = initData.gridData.findIndex(p => p.ProductID === e.dataItem.ProductID);
+        let item = initData.gridData[index];
+        let updated = update(initData.gridData.slice(), item);
+        update(initData.updatedData, item);
+        initData.gridData[index] = updated;
+        initData.gridData[index].inEdit = undefined;
+        let updateDataIndex = initData.updatedData.findIndex(p => p.ProductID === e.dataItem.ProductID);
+        initData.updatedData[updateDataIndex] = updated;
     };
     const update = (data, item, remove) => {
         let updated;
@@ -61,7 +59,9 @@ const useInlineEditGrid = function(sampleProducts) {
             data[index] = updated;
         } else {
             let id = 1;
-            initData.updatedData.forEach(p => { if (p.ProductID) { id = Math.max(p.ProductID + 1, id); } });
+            initData.updatedData.forEach(p => { if (p.ProductID) { 
+                id = Math.max(p.ProductID + 1, id);
+             } });
             updated = Object.assign({}, item, { ProductID: id });
             data.unshift(updated);
             index = 0;
@@ -94,15 +94,15 @@ const useInlineEditGrid = function(sampleProducts) {
      
     };
     const cancelChanges = () => {
-         let editedItems = initData.updatedData.filter(p => p.inEdit === true);
-         if(editedItems.length){
-            editedItems.forEach(
-                item => {
-                   item['inEdit'] = undefined;
-                 });
-         }
-        getData();
-    };
+        let editedItems = initData.updatedData.filter(p => p.inEdit === true);
+        if(editedItems.length){
+           editedItems.forEach(
+               item => {
+                  item['inEdit'] = undefined;
+                });
+        }
+       getData();
+   };
      const getData = () => {
         initData.gridData = process( 
           initData.updatedData,
@@ -127,7 +127,7 @@ const useInlineEditGrid = function(sampleProducts) {
     getData();
   
     return {
-        ...initData,
+        initData,
         itemChange,
         insert,
         edit,
