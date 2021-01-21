@@ -24,7 +24,7 @@
                     </p>
                     <p>
                         <img src="../assets/images/styles.svg" alt='styles' />
-                        <a href='https://www.telerik.com/kendo-vue-ui/components/styling/?utm_medium=cpm&utm_source=vscode-app&utm_campaign=kendo-ui-vue-trial-styling'>KendoVue Themes Overview</a>
+                        <a href='https://www.telerik.com/kendo-vue-ui/styling/?utm_medium=cpm&utm_source=vscode-app&utm_campaign=kendo-ui-vue-trial-styling'>Kendo UI for Vue Themes Overview</a>
                     </p>
                     <p>
                         <img src="../assets/images/blogs.svg" alt='blogs' />
