@@ -23,6 +23,12 @@
                                     <Input :name="'lastName'" v-model="lastName"  :placeholder="'Your Last Email'"  />
                                  </label>
                             </div>
+                            <div>
+                                 <label class="k-form-field">
+                                    <span>Last name</span>
+                                    <datepicker :name="'dateOfBirth'" v-model="dateOfBirth" :placeholder="'Date of Birth'"  />
+                                 </label>
+                            </div>
                             <div class="k-form-field">
                                 <span>Gender</span>
                                     <input type="radio" name="gender" id="female" class="k-radio">
@@ -86,55 +92,24 @@
 </template>
 <script>
 import { Input } from '@progress/kendo-vue-inputs';
+import { DatePicker } from '@progress/kendo-vue-dateinputs';
 import { Dialog, DialogActionsBar } from '@progress/kendo-vue-dialogs';
 import FormContainer from './FormContainer';
+import { useForm } from '../functions/useForm';
 
 export default {
      components: {
         Input,
         Dialog,
         DialogActionsBar,
-        FormContainer
+        FormContainer,
+        datepicker: DatePicker
      },
-     computed: {
-        validationMessage: function(){
-            return (this.emailRegex.test(this.email) ? "" : "Please enter a valid email.");
-        }
-     },
-     data: function() {
+    setup () { 
+
         return {
-            firstName: '',
-            lastName: '',
-            email: '',
-            company: '',
-            userName: '',
-            password: '',
-            twoFactor: true,
-            showDialog: false,
-            emailRegex: new RegExp(/\S+@\S+\.\S+/),
-            allowSubmit:false            
+          ...useForm()
         };
-     },
-     methods: {
-         onFormReset(){
-            this.firstName = '';
-            this.lastName = '';
-            this.email = '';
-            this.company = '';
-            this.userName = '';
-            this.password = '';
-         },
-        toggleDialog() {
-            this.showDialog = !this.showDialog;
-        },
-        handleSubmit() {
-            this.showDialog = !this.showDialog;
-        },
-        onSubmit(){
-            event.preventDefault();
-            this.showDialog = true;
-            setTimeout(() => { this.showDialog = false; }, 3000);
-        }
-     }
+    }
 }
 </script>
