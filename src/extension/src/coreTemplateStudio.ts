@@ -7,10 +7,11 @@ import * as os from "os";
 import * as fs from "fs";
 
 import { ChildProcess, execFile } from "child_process";
-import { CONSTANTS } from "./constants";
+import { CONSTANTS, ExtensionCommand } from "./constants";
 import { GenerateCommand } from "./signalr-api-module/generateCommand";
 import { SyncCommand } from "./signalr-api-module/syncCommand";
 import { ICommandPayload } from "./signalr-api-module/commandPayload";
+import { Controller } from "./Controller";
 
 /**
  * An interface for CoreTS. It should be transparent to the communication
@@ -109,7 +110,13 @@ export class CoreTemplateStudio {
     const url = new URL(CONSTANTS.API.ENDPOINTS.PROJECT_TYPE, this._url);
     return await fetch(url.href, { method: CONSTANTS.API.METHODS.GET })
       .then((response: Response) => {
-        return response.json();
+        var responseJson = response.json();
+        Controller.reactPanelContext.postMessageWebview({
+          command: ExtensionCommand.GetProjectTypes,
+          payload: responseJson
+        });
+
+        return responseJson
       })
       .catch((error: Error) => {
         throw Error(error.toString());
@@ -126,7 +133,13 @@ export class CoreTemplateStudio {
 
     return await fetch(url.href, { method: CONSTANTS.API.METHODS.GET })
       .then((response: Response) => {
-        return response.json();
+        var responseJson = response.json();
+        Controller.reactPanelContext.postMessageWebview({
+          command: ExtensionCommand.GetFeatures,
+          payload: responseJson
+        });
+
+        return responseJson
       })
       .catch((error: Error) => {
         throw Error(error.toString());
@@ -154,7 +167,13 @@ export class CoreTemplateStudio {
     );
     return await fetch(url.href, { method: CONSTANTS.API.METHODS.GET })
       .then((response: Response) => {
-        return response.json();
+        var responseJson = response.json();
+        Controller.reactPanelContext.postMessageWebview({
+          command: ExtensionCommand.GetFeatures,
+          payload: responseJson
+        });
+
+        return responseJson
       })
       .catch((error: Error) => {
         throw Error(error.toString());
@@ -183,7 +202,13 @@ export class CoreTemplateStudio {
 
     return await fetch(url.href, { method: CONSTANTS.API.METHODS.GET })
       .then((response: Response) => {
-        return response.json();
+        var responseJson = response.json();
+        Controller.reactPanelContext.postMessageWebview({
+          command: ExtensionCommand.GetPages,
+          payload: responseJson
+        });
+
+        return responseJson
       })
       .catch((error: Error) => {
         throw Error(error.toString());

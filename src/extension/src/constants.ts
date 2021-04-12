@@ -240,7 +240,11 @@ export enum ExtensionCommand {
   GetPort = "get-port",
   ResetPages = "reset-pages",
   GetPreviewStatus = "get-preview",
-  CheckDependency = "check-dependency"
+  CheckDependency = "check-dependency",
+  GetProjectTypes = "get-project-types",
+  GetFeatures = "get-features",
+  GetFrameworks = "get-frameworks",
+  GetPages = "get-pages",
 }
 export enum ExtensionModule {
   Azure = "Azure",

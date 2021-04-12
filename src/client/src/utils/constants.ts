@@ -151,7 +151,9 @@ const EXTENSION_COMMANDS = {
   GET_PREVIEW_STATUS: "get-preview",
   GET_DEPENDENCY_INFO: "check-dependency",
   GET_FRAMEWORKS: "get-frameworks",
-  GET_PAGES: "get-pages"
+  GET_PAGES: "get-pages",
+  GET_PROJECT_TYPES: "get-project-types",
+  GET__FEATURES: "get-features"
 };
 
 export {

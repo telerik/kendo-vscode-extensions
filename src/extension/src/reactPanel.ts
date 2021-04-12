@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import { CONSTANTS } from "./constants";
+import { CONSTANTS, ExtensionCommand } from "./constants";
 import { CoreTemplateStudio } from "./coreTemplateStudio";
 import { Logger } from "./utils/logger";
 import { deactivate } from "./extension";
@@ -20,8 +20,20 @@ export class ReactPanel {
   private _disposables: vscode.Disposable[] = [];
   private static _controllerFunctionDelegate = function(message: any) {
     //default behavior
-    if (message.command === "alert") {
-      vscode.window.showErrorMessage(message.text);
+    switch (message.command) {
+      case "alert":
+        vscode.window.showErrorMessage(message.text);
+        break;
+      case ExtensionCommand.GetProjectTypes:
+        CoreTemplateStudio.GetExistingInstance().getProjectTypes();
+        break;
+      case ExtensionCommand.GetFrameworks:
+        CoreTemplateStudio.GetExistingInstance().getFrameworks(message.payload.projectType);
+        break;
+      case ExtensionCommand.GetPages:
+        CoreTemplateStudio.GetExistingInstance().getPages(message.payload.projectType, message.payload.frontendFramework, message.payload.backendFramework)
+        break;
+    
     }
   };
 
