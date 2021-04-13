@@ -60,6 +60,9 @@ import { setPortAction } from "./actions/wizardContentActions/setPort";
 import { ThunkDispatch } from "redux-thunk";
 import RootAction from "./actions/ActionType";
 import SelectTheme from "./containers/SelectTheme";
+import { getProjectTypesSuccess } from "./actions/wizardContentActions/getProjectTypesSuccess";
+import { IMetadata } from "./types/metadata";
+import getSvgUrl from "./utils/getSvgUrl";
 
 if (process.env.NODE_ENV === DEVELOPMENT) {
   require("./css/themes.css");
@@ -76,6 +79,7 @@ interface IDispatchProps {
   updateTemplateGenStatusMessage: (status: string) => any;
   updateTemplateGenStatus: (isGenerated: IServiceStatus) => any;
   getVersionsData: (versions: IVersions) => any;
+  getProjectTypes: (items: any[]) => void;
   updateDependencyInfo: (dependencyInfo: IDependencyInfo) => any;
   resetPageSelection: () => any;
   selectFrontend: (frontendFramework: ISelected) => any;
@@ -109,8 +113,13 @@ class App extends React.Component<Props> {
   public componentDidMount() {
     this.props.getVSCodeApi();
     // listens for a login event from VSCode
+    // this.props.vscode.window.addEventListener("message", event => {
+    //   const message = event.data;
+    //   console.log("recieved project types" + JSON.stringify(message));
+    // });
     window.addEventListener("message", event => {
       const message = event.data;
+      console.log("recieved project types" + JSON.stringify(message));
       switch (message.command) {
         case EXTENSION_COMMANDS.GET_DEPENDENCY_INFO:
           this.props.updateDependencyInfo(message.payload);
@@ -122,6 +131,12 @@ class App extends React.Component<Props> {
           break;
         case EXTENSION_COMMANDS.GET_USER_STATUS:
         case EXTENSION_COMMANDS.SUBSCRIPTION_DATA_FUNCTIONS:
+        case EXTENSION_COMMANDS.GET_PROJECT_TYPES:
+          console.log("recieved project types" + JSON.stringify(message));
+        this.props.getProjectTypes(
+          message.payload
+        );
+        break;
         case EXTENSION_COMMANDS.PROJECT_PATH_VALIDATION:
           this.props.setProjectPathValidation(
             message.payload.projectPathValidation
@@ -172,13 +187,11 @@ class App extends React.Component<Props> {
 
   public componentDidUpdate(prevProps: Props) {
     const { vscode } = this.props;
-    if (vscode !== prevProps.vscode) {
-      vscode.postMessage({
-        command: EXTENSION_COMMANDS.GET_USER_STATUS,
-        module: EXTENSION_MODULES.AZURE,
-        track: true
-      });
-    }
+      if (vscode !== prevProps.vscode) {
+        window.addEventListener("message", event => {
+          console.log("desperado" + JSON.stringify(event.data));
+        });
+      }
   }
 
   public render() {
@@ -255,6 +268,13 @@ const mapDispatchToProps = (
   resetPageSelection: () => {
     dispatch(resetPagesAction());
   },
+  getProjectTypes: (items: any[]) => {
+    dispatch(
+      getProjectTypesSuccess(
+        getOptionalFromMetadata(getMetadataFromJson(items))
+      )
+    )
+  },
   selectFrontend: (frontendFramework: ISelected) => {
     dispatch(selectFrontendFramework(frontendFramework));
   },
@@ -270,6 +290,34 @@ const mapStateToProps = (state: AppState): IStateProps => ({
   vscode: getVSCodeApiSelector(state),
   frontendOptions: state.wizardContent.frontendOptions
 });
+
+function getMetadataFromJson(items: any[]): IMetadata[] {
+  return items.map<IMetadata>(val => ({
+    name: val.name,
+    displayName: val.displayName,
+    summary: val.summary,
+    longDescription: val.description,
+    position: val.order,
+    licenses: val.licenses,
+    svgUrl: val.icon,
+    tags: val.tags,
+    selected: false,
+    author: val.author
+  }));
+}
+
+function getOptionalFromMetadata(items: IMetadata[]): IOption[] {
+  return items.map<IOption>(val => ({
+    title: val.displayName,
+    internalName: val.name,
+    body: val.summary,
+    longDescription: val.longDescription,
+    position: val.position,
+    svgUrl: getSvgUrl(val.name),
+    selected: val.selected,
+    licenses: val.licenses
+  }));
+}
 
 export default withRouter(
   connect(

@@ -35,12 +35,6 @@ import {
 interface IDispatchProps {
   selectFrontendFramework: (framework: ISelected) => void;
   selectPages: (pages: ISelected[]) => void;
-  getFrontendFrameworks: (
-    projectType: string,
-    isPreview: boolean,
-    serverPort: number
-  ) => void;
-  
   updatePageCount: (pageCount: IPageCount) => any;
 }
 
@@ -66,14 +60,24 @@ const messages = defineMessages({
 
 class SelectFrontEndFramework extends React.Component<Props> {
   public componentDidMount() {
-    const { getFrontendFrameworks, isPreview, serverPort } = this.props;
-    if (getFrontendFrameworks) {
-      getFrontendFrameworks(
-        WIZARD_CONTENT_INTERNAL_NAMES.FULL_STACK_APP,
-        isPreview,
-        serverPort
-      );
-    }
+    //const { getFrontendFrameworks, isPreview, serverPort } = this.props;
+    console.log(this.props.vscode);
+    this.props.vscode.postMessage({
+      command: EXTENSION_COMMANDS.GET_FRAMEWORKS,
+      module: EXTENSION_MODULES.CORETS,
+      track: true,
+      payload: {
+        projectType: WIZARD_CONTENT_INTERNAL_NAMES.FULL_STACK_APP
+      }
+    });
+
+    // if (getFrontendFrameworks) {
+    //   getFrontendFrameworks(
+    //     WIZARD_CONTENT_INTERNAL_NAMES.FULL_STACK_APP,
+    //     isPreview,
+    //     serverPort
+    //   );
+    // }
   }
 
   public handleFrameworkChange(option: ISelected) {
@@ -168,13 +172,6 @@ const mapDispatchToProps = (
   },
   selectPages: (pages: ISelected[]) => {
     dispatch(selectPagesAction(pages));
-  },
-  getFrontendFrameworks: (
-    projectType: string,
-    isPreview: boolean,
-    serverPort: number
-  ) => {
-    dispatch(getFrontendFrameworksAction(projectType, isPreview, serverPort));
   }
 });
 

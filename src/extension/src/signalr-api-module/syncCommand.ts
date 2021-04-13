@@ -7,7 +7,6 @@ export class SyncCommand extends CoreTemplateStudioApiCommand {
       CONSTANTS.API.SYNC_LIVE_MESSAGE_TRIGGER_NAME,
       this.commandPayload.liveMessageHandler
     );
-
     const result = await connection
       .invoke(
         CONSTANTS.API.SIGNALR_API_SYNC_METHOD_NAME,

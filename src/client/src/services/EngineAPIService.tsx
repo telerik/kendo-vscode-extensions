@@ -14,6 +14,7 @@ export default class EngineAPIService {
 
   public async getProjectTypes(): Promise<any> {
     const url = new URL(constants.API.Endpoints.ProjectType, this.API);
+    console.log("getProjectTypes");
     return await fetch(url.href, { method: constants.API.Methods.GET })
       .then((response: Response) => {
         return response.json();
@@ -26,7 +27,7 @@ export default class EngineAPIService {
   public async getFrameworks(projectType: string): Promise<any> {
     const url = new URL(constants.API.Endpoints.Framework, this.API);
     url.searchParams.append(constants.API.QueryParams.ProjectType, projectType);
-
+    console.log("getFrameworks");
     return await fetch(url.href, { method: constants.API.Methods.GET })
       .then((response: Response) => {
         return response.json();
@@ -51,6 +52,7 @@ export default class EngineAPIService {
       constants.API.QueryParams.BackendFramework,
       backendFramework
     );
+    console.log("getFeatures");
     return await fetch(url.href, { method: constants.API.Methods.GET })
       .then((response: Response) => {
         return response.json();
@@ -65,6 +67,7 @@ export default class EngineAPIService {
     frontendFramework: string,
     backendFramework: string
   ): Promise<any> {
+    console.log("getPages");
     const url = new URL(constants.API.Endpoints.Page, this.API);
     url.searchParams.append(constants.API.QueryParams.ProjectType, projectType);
     url.searchParams.append(

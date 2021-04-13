@@ -20,17 +20,21 @@ export class ReactPanel {
   private _disposables: vscode.Disposable[] = [];
   private static _controllerFunctionDelegate = function(message: any) {
     //default behavior
+    console.log("_controllerFunctionDelegate");
     switch (message.command) {
       case "alert":
         vscode.window.showErrorMessage(message.text);
         break;
       case ExtensionCommand.GetProjectTypes:
+        console.log("this is being called");
         CoreTemplateStudio.GetExistingInstance().getProjectTypes();
         break;
       case ExtensionCommand.GetFrameworks:
+        console.log("framwerorks being requested");
         CoreTemplateStudio.GetExistingInstance().getFrameworks(message.payload.projectType);
         break;
       case ExtensionCommand.GetPages:
+        console.log("pages being requested being requested");
         CoreTemplateStudio.GetExistingInstance().getPages(message.payload.projectType, message.payload.frontendFramework, message.payload.backendFramework)
         break;
     

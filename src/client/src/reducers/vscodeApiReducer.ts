@@ -37,6 +37,7 @@ function vscodeApi(
       if (!state.isVsCodeApiAcquired) {
         const newState = { ...state };
         newState.isVsCodeApiAcquired = true;
+        console.log(process.env.NODE_ENV);
         newState.vscodeObject =
           process.env.NODE_ENV === PRODUCTION
             ? //

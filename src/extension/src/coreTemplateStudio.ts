@@ -111,12 +111,7 @@ export class CoreTemplateStudio {
     return await fetch(url.href, { method: CONSTANTS.API.METHODS.GET })
       .then((response: Response) => {
         var responseJson = response.json();
-        Controller.reactPanelContext.postMessageWebview({
-          command: ExtensionCommand.GetProjectTypes,
-          payload: responseJson
-        });
-
-        return responseJson
+        return responseJson;
       })
       .catch((error: Error) => {
         throw Error(error.toString());

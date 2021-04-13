@@ -6,42 +6,59 @@ import { IOption } from "../../types/option";
 import { ISelected } from "../../types/selected";
 import { ThunkDispatch } from "redux-thunk";
 import RootAction from "../../actions/ActionType";
-import { getProjectTypesAction } from "../../actions/wizardContentActions/getProjectTypes";
+//import { getProjectTypesAction } from "../../actions/wizardContentActions/getProjectTypes";
+import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 import styles from "./styles.module.css";
 import { AppState } from "../../reducers";
 import { Route } from "react-router-dom";
 import {
-  ROUTES, KENDOKAS
+  ROUTES, KENDOKAS, EXTENSION_COMMANDS, EXTENSION_MODULES
 } from "../../utils/constants";
 import SortablePageList from "../SortablePageList";
 import ProjectSummary from "../../components/ProjectSummary";
+import { IVSCodeObject } from "../../reducers/vscodeApiReducer";
 
 interface IPageDetailsProps {
   detailsPageInfo: IOption;
   isIntlFormatted: boolean;
   frontEndFramwork: ISelected;
+  vscode: IVSCodeObject;
   type: IOption[];
   mainFramework: IOption;
-  serverPort: number;
 }
 
-interface IStoreProps {
-  serverPort: number;
-}
-
-interface IDispatchProps {
-  getProjectTypes: (serverPort: number) => any;
-}
-
-type Props = IDispatchProps & IStoreProps & IPageDetailsProps & RouteComponentProps & ISelected;
-
+type Props =  IPageDetailsProps & RouteComponentProps & ISelected;
 
 class PageDetails extends React.Component<Props> {
-  public componentDidMount() {
-    const { getProjectTypes, serverPort } = this.props;
-    if (getProjectTypes) {
-      getProjectTypes(serverPort);
+  public componentDidUpdate(prevProps: Props) {
+    const { vscode } = this.props;
+    if (vscode !== prevProps.vscode) {
+      // vscode.postMessage({
+      //   command: EXTENSION_COMMANDS.GET_USER_STATUS,
+      //   module: EXTENSION_MODULES.AZURE,
+      //   track: true
+      // });
+      console.log("lalala types 4");
+      vscode.postMessage({
+        command: EXTENSION_COMMANDS.GET_PROJECT_TYPES,
+        module: "kendo-generator", //EXTENSION_MODULES.GENERATE,//
+        track: true
+      });
     }
+  }
+
+  public componentDidMount() {
+    console.log("project types 4");
+    console.log(this.props.vscode);
+    // this.props.vscode.postMessage({
+    //   command: EXTENSION_COMMANDS.GET_PROJECT_TYPES,
+    //   module: EXTENSION_MODULES.AZURE,
+    //   track: true
+    // });
+
+    window.addEventListener("message", event => {
+      console.log("desperado 222222" + JSON.stringify(event.data));
+    });
   }
   public render () { 
     return (
@@ -77,30 +94,20 @@ class PageDetails extends React.Component<Props> {
   }
 };
 
-const mapStateToProps = (state: AppState, props): IPageDetailsProps => {
+const mapStateToProps = (state: AppState): IPageDetailsProps => {
   const { serverPort } = state.wizardContent;
   return {
     detailsPageInfo: state.wizardContent.detailsPage.data,
     isIntlFormatted: state.wizardContent.detailsPage.isIntlFormatted,
     type: state.wizardContent.projectTypes,
     mainFramework: state.wizardContent.projectTypes[0],
-    frontEndFramwork: state.selection.frontendFramework,
-    serverPort
+    vscode: getVSCodeApiSelector(state),
+    frontEndFramwork: state.selection.frontendFramework
   };
 };
 
-const mapDispatchToProps = (
-  dispatch: ThunkDispatch<AppState, void, RootAction>
-): IDispatchProps => ({
-  getProjectTypes: (serverPort: number) => {
-    dispatch(getProjectTypesAction(serverPort));
-  }
-});
-
-
 export default withRouter(
   connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
   )(PageDetails)
 );

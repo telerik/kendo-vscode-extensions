@@ -57,7 +57,28 @@ export class Controller {
   private async routingMessageReceieverDelegate(message: any) {
     let extensionModule = message.module;
 
-    if (extensionModule) {
+    if (message.module === "kendo-generator") {
+      switch (message.command) {
+        case ExtensionCommand.GetProjectTypes:
+          console.log("this is being called");
+          CoreTemplateStudio.GetExistingInstance().getProjectTypes().then((responseJson) => {
+              Controller.reactPanelContext.postMessageWebview({
+                command: ExtensionCommand.GetProjectTypes,
+                payload: responseJson
+              });
+            }
+          );
+          break;
+        case ExtensionCommand.GetFrameworks:
+          console.log("framwerorks being requested");
+          CoreTemplateStudio.GetExistingInstance().getFrameworks(message.payload.projectType);
+          break;
+        case ExtensionCommand.GetPages:
+          console.log("pages being requested being requested");
+          CoreTemplateStudio.GetExistingInstance().getPages(message.payload.projectType, message.payload.frontendFramework, message.payload.backendFramework)
+          break;
+      }
+    }else if (extensionModule) {
       let classModule = Controller.extensionModuleMap.get(extensionModule);
       if (classModule) {
         let responsePayload = await WizardServant.executeWizardCommandOnServantClass(
