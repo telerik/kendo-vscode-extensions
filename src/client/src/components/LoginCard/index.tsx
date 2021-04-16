@@ -1,6 +1,5 @@
 import classnames from "classnames";
 import * as React from "react";
-import { Link } from "react-router-dom";
 
 import CardBody from "../CardBody";
 
@@ -38,13 +37,12 @@ const LoginCard = ({
         <CardBody body={cardBody} />
       </div>
       <div className={styles.selectionContainer}>
-        <Link
+        <a
           className={styles.details}
           onClick={() => handleDetailsClick(option)}
-          to={ROUTES.PAGE_DETAILS}
         >
           <FormattedMessage id="loginCard.details" defaultMessage="Details" />
-        </Link>
+        </a>
         <div className={styles.buttonContainer}>
           <a
             className={styles.createAccountButton}

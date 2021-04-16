@@ -1,7 +1,6 @@
 import classnames from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
-import { RouteComponentProps, withRouter } from "react-router";
 import ReactMarkdown from "react-markdown";
 
 import asModal from "../../components/Modal";
@@ -56,8 +55,7 @@ interface IDispatchProps {
 
 type Props = IStateProps &
   InjectedIntlProps &
-  IDispatchProps &
-  RouteComponentProps;
+  IDispatchProps ;
 
 const PostGenerationModal = ({
   serviceStatus,
@@ -70,8 +68,7 @@ const PostGenerationModal = ({
   intl,
   isTemplatesFailed,
   isServicesSelected,
-  resetWizard,
-  history
+  resetWizard
 }: Props) => {
   const { formatMessage } = intl;
   const LinkRenderer = (props: any) => (
@@ -94,7 +91,6 @@ const PostGenerationModal = ({
   const handleClick = () => {
     if (isTemplatesFailed) {
       resetWizard();
-      history.push(ROUTES.NEW_PROJECT);
     }
     if (isTemplateGenerated && isServicesDeployed) {
       vscode.postMessage({
@@ -230,9 +226,9 @@ const mapDispatchToProps = (dispatch: any): IDispatchProps => ({
   }
 });
 
-export default withRouter(
+export default 
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(asModal(injectIntl(PostGenerationModal)))
-);
+;

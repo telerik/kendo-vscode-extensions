@@ -8,7 +8,6 @@ import CardBody from "../CardBody";
 import buttonStyles from "../../css/buttonStyles.module.css";
 import styles from "./styles.module.css";
 import { IOption } from "../../types/option";
-import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/constants";
 
 interface IProps {
@@ -48,14 +47,13 @@ export const Card = ({
           <CardBody formattedBody={formattedBody} />
         </div>
         <div className={styles.selectionContainer}>
-          <Link
+          <a
             onClick={() => handleDetailsClick(option)}
             className={styles.details}
-            to={ROUTES.PAGE_DETAILS}
             tabIndex={disabled! ? -1 : 0}
           >
             <FormattedMessage id="card.details" defaultMessage="Details" />
-          </Link>
+          </a>
           <button
             disabled={disabled!}
             onClick={handleButtonClick}

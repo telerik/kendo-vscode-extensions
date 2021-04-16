@@ -1,5 +1,4 @@
 import * as React from "react";
-import { withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 
 import LoginCard from "../../components/LoginCard";
@@ -30,7 +29,7 @@ interface IAzureLoginProps {
   vscode: any;
 }
 
-type Props = IDispatchProps & IAzureLoginProps & InjectedIntlProps & RouteComponentProps;
+type Props = IDispatchProps & IAzureLoginProps & InjectedIntlProps;
 
 class AzureLogin extends React.Component<Props> {
   handleClick = () => {
@@ -85,9 +84,9 @@ const mapDispatchToProps = (
   }
 });
 
-export default withRouter(
+export default
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(injectIntl(AzureLogin))
-);
+;

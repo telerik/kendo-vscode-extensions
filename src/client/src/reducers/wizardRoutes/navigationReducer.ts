@@ -31,4 +31,34 @@ const wizardNavigation = (
   }
 };
 
+export const selected = (
+  state = "/",
+  action: WizardInfoType
+) => {
+  switch (action.type) {
+    case WIZARD_INFO_TYPEKEYS.SET_PAGE_WIZARD_PAGE:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const isVisited = (
+  state: IRoutes = initialState,
+  action: WizardInfoType
+) => {
+  switch (action.type) {
+    case WIZARD_INFO_TYPEKEYS.SET_VISITED_WIZARD_PAGE:
+      const newSelectionState = {
+        ...state,
+        [action.payload]: true
+      };
+      return newSelectionState;
+    case WIZARD_INFO_TYPEKEYS.RESET_VISITED_WIZARD_PAGE:
+        return initialState;
+    default:
+      return state;
+  }
+};
+
 export default wizardNavigation;

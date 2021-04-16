@@ -2,7 +2,6 @@ import classNames from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
-import { withRouter } from "react-router-dom";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 
 import RightSidebarDropdown from "../../components/RightSidebarDropdown";
@@ -58,6 +57,7 @@ interface IRightSidebarProps {
   isValidNameAndProjectPath: boolean;
   isRoutesVisited: IVisitedPages;
   contentOptions: WizardContentType;
+  selectedRoute: string;
 }
 
 interface IRightSidebarState {
@@ -137,14 +137,14 @@ class RightSidebar extends React.Component<Props, IRightSidebarState> {
       showFrameworks,
       showPages
     } = this.props.isRoutesVisited;
-    const { pathname } = this.props.location;
+    const { selectedRoute } = this.props;
     const { intl, contentOptions, isValidNameAndProjectPath } = this.props;
     const { formatMessage } = intl;
     const { frontendOptions, backendOptions, projectTypes } = contentOptions;
 
     return (
       <React.Fragment>
-        {pathname !== ROUTES.PAGE_DETAILS && (
+        {selectedRoute !== ROUTES.PAGE_DETAILS && (
           <div
             role="complementary"
             className={classNames(styles.container, styles.rightViewCropped)}
@@ -234,7 +234,8 @@ const mapStateToProps = (state: AppState): IRightSidebarProps => ({
   services: getServicesSelector(state),
   isRoutesVisited: getIsVisitedRoutesSelector(state),
   isValidNameAndProjectPath: isValidNameAndProjectPathSelector(state),
-  contentOptions: state.wizardContent
+  contentOptions: state.wizardContent,
+  selectedRoute : state.wizardRoutes.selected
 });
 
 const mapDispatchToProps = (
@@ -254,9 +255,8 @@ const mapDispatchToProps = (
   }
 });
 
-export default withRouter(
+export default
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(injectIntl(RightSidebar))
-);
+  )(injectIntl(RightSidebar));
