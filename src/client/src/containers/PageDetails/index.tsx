@@ -47,7 +47,7 @@ class PageDetails extends React.Component<Props> {
     const { selectedRoute } = this.props;
     return (
       <div className={styles.detailsContainer}>
-        {(selectedRoute === ROUTES.REVIEW_AND_GENERATE) && (<>{ this.props.mainFramework &&
+        {(selectedRoute === ROUTES.NEW_PROJECT) && (<>{ this.props.mainFramework &&
                   <FrameworkDetail 
                   title={this.props.mainFramework.title as string} 
                   description={this.props.mainFramework.longDescription as string} 

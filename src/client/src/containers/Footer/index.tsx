@@ -141,9 +141,10 @@ class Footer extends React.Component<Props> {
 
 
   public handlBackClick = (event: React.SyntheticEvent, pathname: string) => {
-    const { setRouteVisited } = this.props;
+    const { setRouteVisited, setPage } = this.props;
     this.trackPageForTelemetry(pathname);
     setRouteVisited(pathsNext[pathname]);
+    setPage(pathsBack[pathname]);
   };
 
   public trackPageForTelemetry = (pathname: string) => {
