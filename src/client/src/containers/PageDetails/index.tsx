@@ -1,6 +1,5 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { withRouter, RouteComponentProps } from "react-router";
 import FrameworkDetail from "../../components/FrameworkDetail";
 import { IOption } from "../../types/option";
 import { ISelected } from "../../types/selected";
@@ -9,7 +8,6 @@ import RootAction from "../../actions/ActionType";
 import { getProjectTypesAction } from "../../actions/wizardContentActions/getProjectTypes";
 import styles from "./styles.module.css";
 import { AppState } from "../../reducers";
-import { Route } from "react-router-dom";
 import {
   ROUTES, KENDOKAS
 } from "../../utils/constants";
@@ -23,6 +21,8 @@ interface IPageDetailsProps {
   type: IOption[];
   mainFramework: IOption;
   serverPort: number;
+  selectedRoute : string;
+
 }
 
 interface IStoreProps {
@@ -33,7 +33,7 @@ interface IDispatchProps {
   getProjectTypes: (serverPort: number) => any;
 }
 
-type Props = IDispatchProps & IStoreProps & IPageDetailsProps & RouteComponentProps & ISelected;
+type Props = IDispatchProps  & IStoreProps & IPageDetailsProps & ISelected;
 
 
 class PageDetails extends React.Component<Props> {
@@ -44,34 +44,30 @@ class PageDetails extends React.Component<Props> {
     }
   }
   public render () { 
+    const { selectedRoute } = this.props;
     return (
       <div className={styles.detailsContainer}>
-          <Route path={ROUTES.NEW_PROJECT} exact={true} component={
-            () =>
-              <>{ this.props.mainFramework &&
+        {(selectedRoute === ROUTES.NEW_PROJECT) && (<>{ this.props.mainFramework &&
                   <FrameworkDetail 
                   title={this.props.mainFramework.title as string} 
                   description={this.props.mainFramework.longDescription as string} 
                   name={this.props.mainFramework.internalName as string} />
-              }</>
-          }/>
-          <Route path={ROUTES.SELECT_FRAMEWORKS} exact={true}  component={ 
-            () =>
-              <FrameworkDetail 
-                title={this.props.frontEndFramwork.title as string} 
-                description={this.props.frontEndFramwork.description as string} 
-                name={this.props.frontEndFramwork.internalName as string}/>
-          }/>
+              }</>)}
 
-          <Route path={ROUTES.SELECT_PAGES} exact={true}  component={ 
-            () =>
-              <SortablePageList></SortablePageList>
-          }/>
+      {(selectedRoute === ROUTES.SELECT_FRAMEWORKS) && (<>{
+                  <FrameworkDetail 
+                  title={this.props.frontEndFramwork.title as string} 
+                  description={this.props.frontEndFramwork.description as string} 
+                  name={this.props.frontEndFramwork.internalName as string}/>
+              }</>)}
 
-          <Route path={ROUTES.SELECT_THEME} exact={true}  component={ 
-            () =>
-              <ProjectSummary></ProjectSummary>
-          }/>
+          {(selectedRoute === ROUTES.SELECT_PAGES) && (<>{
+                <SortablePageList></SortablePageList>
+              }</>)}
+
+{(selectedRoute === ROUTES.SELECT_THEME) && (<>{
+                <ProjectSummary></ProjectSummary>
+              }</>)}
       </div>
     );
   }
@@ -85,6 +81,7 @@ const mapStateToProps = (state: AppState, props): IPageDetailsProps => {
     type: state.wizardContent.projectTypes,
     mainFramework: state.wizardContent.projectTypes[0],
     frontEndFramwork: state.selection.frontendFramework,
+    selectedRoute : state.wizardRoutes.selected,
     serverPort
   };
 };
@@ -98,9 +95,9 @@ const mapDispatchToProps = (
 });
 
 
-export default withRouter(
+export default
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(PageDetails)
-);
+;

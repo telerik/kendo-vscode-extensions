@@ -2,8 +2,6 @@ import classNames from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
 
-import { Link } from "react-router-dom";
-
 import CardBody from "../../components/CardBody";
 import CardTitle from "../../components/CardTitle";
 import DependencyInfo from "../DependencyInfo";

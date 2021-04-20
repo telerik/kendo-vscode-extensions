@@ -1,8 +1,6 @@
 import classnames from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import { Route, RouteComponentProps } from "react-router-dom";
 
 import Steps from "./components/Steps";
 import PageDetails from "./containers/PageDetails";
@@ -86,9 +84,10 @@ interface IDispatchProps {
 interface IStateProps {
   vscode: IVSCodeObject;
   frontendOptions: IOption[];
+  selectedRoute : string;
 }
 
-type Props = IDispatchProps & IStateProps & RouteComponentProps;
+type Props = IDispatchProps & IStateProps;
 
 class App extends React.Component<Props> {
   public static defaultProps = {
@@ -157,7 +156,6 @@ class App extends React.Component<Props> {
               }
             });
             this.props.resetPageSelection();
-            this.props.history.push(ROUTES.SELECT_PAGES);
           }
           break;
         case EXTENSION_COMMANDS.GET_PREVIEW_STATUS:
@@ -182,7 +180,7 @@ class App extends React.Component<Props> {
   }
 
   public render() {
-    const { pathname } = this.props.location;
+    const { selectedRoute } = this.props;
     return (
       <React.Fragment>
         <div className={appStyles.layout}>
@@ -191,26 +189,14 @@ class App extends React.Component<Props> {
             <PostGenerationModal />
             <main
               className={classnames(appStyles.centerView, {
-                [appStyles.centerViewMaxHeight]: pathname === ROUTES.PAGE_DETAILS
+                [appStyles.centerViewMaxHeight]: selectedRoute === ROUTES.PAGE_DETAILS
               })}
             >
-              <Route
-                path={ROUTES.REVIEW_AND_GENERATE}
-                component={ReviewAndGenerate}
-              />
-              <Route
-                path={ROUTES.SELECT_FRAMEWORKS}
-                component={SelectFrameworks}
-              />
-              <Route path={ROUTES.SELECT_PAGES} component={SelectPages} />
-
-              <Route path={ROUTES.SELECT_THEME} component={SelectTheme} />
-              
-              <Route
-                exact={true}
-                path={ROUTES.NEW_PROJECT}
-                component={NewProject}
-              />
+              {(selectedRoute === ROUTES.REVIEW_AND_GENERATE) && (<ReviewAndGenerate/>)}
+              {(selectedRoute === ROUTES.SELECT_FRAMEWORKS) && (<SelectFrameworks/>)}
+              {(selectedRoute === ROUTES.SELECT_PAGES) && (<SelectPages/>)}
+              {(selectedRoute === ROUTES.SELECT_THEME) && (<SelectTheme/>)}
+              {(selectedRoute === ROUTES.NEW_PROJECT) && (<NewProject/>)}
             </main>
             <hr />
             <PageDetails />
@@ -268,12 +254,11 @@ const mapDispatchToProps = (
 
 const mapStateToProps = (state: AppState): IStateProps => ({
   vscode: getVSCodeApiSelector(state),
-  frontendOptions: state.wizardContent.frontendOptions
+  frontendOptions: state.wizardContent.frontendOptions,
+  selectedRoute : state.wizardRoutes.selected
 });
 
-export default withRouter(
-  connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(App)
-);
+  )(App);

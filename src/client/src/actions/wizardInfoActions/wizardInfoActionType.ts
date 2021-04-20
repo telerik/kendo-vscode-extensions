@@ -1,6 +1,6 @@
 import { IVersionData } from "./getVersionData";
 import { ISetDetails } from "./setDetailsPage";
-import { ISetVisitedPage } from "./setVisitedWizardPage";
+import { ISetVisitedPage, ISetPageAction, IResetVisitedPageAction } from "./setVisitedWizardPage";
 import {
   IUpdateGenStatusMessage,
   IUpdateGenStatus
@@ -13,8 +13,10 @@ type WizardInfoType =
   | ISetDetails
   | ISetVisitedPage
   | IUpdateGenStatus
+  | ISetPageAction
   | IResetWizard
   | IUpdateGenStatusMessage
+  | IResetVisitedPageAction
   | IUpdateDependencyInfo;
 
 export default WizardInfoType;

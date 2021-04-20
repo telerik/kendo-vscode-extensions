@@ -1,8 +1,6 @@
 import classnames from "classnames";
 import * as React from "react";
 import { connect } from "react-redux";
-import { RouteComponentProps } from "react-router";
-import { Link, withRouter } from "react-router-dom";
 
 import buttonStyles from "../../css/buttonStyles.module.css";
 import styles from "./styles.module.css";
@@ -26,7 +24,7 @@ import {
   getAzureFunctionsNamesSelector
 } from "../../selectors/azureFunctionsServiceSelector";
 
-import { setVisitedWizardPageAction } from "../../actions/wizardInfoActions/setVisitedWizardPage";
+import { setVisitedWizardPageAction, setPageWizardPageAction } from "../../actions/wizardInfoActions/setVisitedWizardPage";
 import { openPostGenModalAction } from "../../actions/modalActions/modalActions";
 import { getVSCodeApiSelector } from "../../selectors/vscodeApiSelector";
 
@@ -50,6 +48,7 @@ import { IFunctionName } from "../AzureFunctionsSelection";
 interface IDispatchProps {
   setRouteVisited: (route: string) => void;
   openPostGenModal: () => any;
+  setPage: (route: string) => void;
 }
 
 interface IStateProps {
@@ -62,9 +61,10 @@ interface IStateProps {
   isVisited: IVisitedPages;
   isValidNameAndProjectPath: boolean;
   functionNames?: IFunctionName[];
+  selectedRoute : string;
 }
 
-type Props = RouteComponentProps &
+type Props =
   IStateProps &
   IDispatchProps &
   InjectedIntlProps;
@@ -96,7 +96,8 @@ class Footer extends React.Component<Props> {
       selectedFunctions,
       functions,
       vscode,
-      openPostGenModal
+      openPostGenModal,
+      selectedRoute
     } = this.props;
     e.preventDefault();
     // @ts-ignore
@@ -113,35 +114,37 @@ class Footer extends React.Component<Props> {
         functions
       }
     });
-    const { pathname } = this.props.location;
-    this.trackPageForTelemetry(pathname);
+    this.trackPageForTelemetry(selectedRoute);
     openPostGenModal();
   };
   public isReviewAndGenerate = (): boolean => {
-    return this.props.location.pathname === ROUTES.REVIEW_AND_GENERATE;
+    return this.props.selectedRoute === ROUTES.REVIEW_AND_GENERATE;
   };
   public isSelectTheme = (): boolean => {
-    return this.props.location.pathname === ROUTES.SELECT_THEME;
+    return this.props.selectedRoute === ROUTES.SELECT_THEME;
   };
 
   public isNewProject = (): boolean => {
-    return this.props.location.pathname === ROUTES.NEW_PROJECT;
+    return this.props.selectedRoute === ROUTES.NEW_PROJECT;
   };
 
   public handleLinkClick = (event: React.SyntheticEvent, pathname: string) => {
-    const { setRouteVisited } = this.props;
+    const { setRouteVisited, setPage } = this.props;
     this.trackPageForTelemetry(pathname);
     if (this.shouldDisableNextPage()) {
       event.preventDefault();
       return;
     }
     setRouteVisited(pathsNext[pathname]);
+    setPage(pathsNext[pathname]);
   };
 
+
   public handlBackClick = (event: React.SyntheticEvent, pathname: string) => {
-    const { setRouteVisited } = this.props;
+    const { setRouteVisited, setPage } = this.props;
     this.trackPageForTelemetry(pathname);
     setRouteVisited(pathsNext[pathname]);
+    setPage(pathsBack[pathname]);
   };
 
   public trackPageForTelemetry = (pathname: string) => {
@@ -154,12 +157,12 @@ class Footer extends React.Component<Props> {
   };
 
   public shouldDisableNextPage = () => {
-    const { location, isValidNameAndProjectPath } = this.props;
-    const { pathname } = location;
+    const { isValidNameAndProjectPath } = this.props;
+    const { selectedRoute } = this.props;
 
-    if (pathname === ROUTES.NEW_PROJECT) {
+    if (selectedRoute === ROUTES.NEW_PROJECT) {
       return !isValidNameAndProjectPath;
-    } else if (pathname === ROUTES.SELECT_PAGES) {
+    } else if (selectedRoute === ROUTES.SELECT_PAGES) {
       return !(this.props.engine.pages && this.props.engine.pages.length > 0);
     }
     return false;
@@ -196,35 +199,30 @@ class Footer extends React.Component<Props> {
       }
     }
 
-    const { location, isVisited, intl } = this.props;
-    const { pathname } = location;
+    const { isVisited, intl } = this.props;
+    const { selectedRoute } = this.props;
     return (
       <nav aria-label={intl.formatMessage(messages.navAriaLabel)}>
-        {pathname !== ROUTES.PAGE_DETAILS && (
+        {selectedRoute !== ROUTES.PAGE_DETAILS && (
           <div className={styles.footer}>
             <div>
             </div>
             <div className={styles.buttonContainer}>
               { !this.isNewProject() &&
-              <Link
-                tabIndex={pathname === ROUTES.NEW_PROJECT ? -1 : 0}
+              <a
+                tabIndex={selectedRoute === ROUTES.NEW_PROJECT ? -1 : 0}
                 className={classnames(buttonStyles.buttonDark, styles.button, {
-                  [styles.disabledOverlay]: pathname === ROUTES.NEW_PROJECT
+                  [styles.disabledOverlay]: selectedRoute === ROUTES.NEW_PROJECT
                 })}
                 onClick={event => {
-                  this.handlBackClick(event, pathname);
+                  this.handlBackClick(event, selectedRoute);
                 }}
-                to={
-                  pathsBack[pathname] === undefined
-                    ? ROUTES.NEW_PROJECT
-                    : pathsBack[pathname]
-                }
               >
                 <FormattedMessage id="footer.back" defaultMessage="Previous" />
-              </Link>
+              </a>
               }
               { !this.isSelectTheme() &&
-              <Link
+              <a
                 tabIndex={
                   this.shouldDisableNextPage()
                     ? -1
@@ -237,21 +235,16 @@ class Footer extends React.Component<Props> {
                   [styles.disabledOverlay]: this.shouldDisableNextPage()
                 })}
                 onClick={event => {
-                  this.handleLinkClick(event, pathname);
+                  this.handleLinkClick(event, selectedRoute);
                 }}
-                to={
-                  pathname === ROUTES.SELECT_THEME
-                    ? ROUTES.SELECT_THEME
-                    : pathsNext[pathname]
-                }
               >
                 <FormattedMessage id="footer.next" defaultMessage="Next" />
-              </Link>
+              </a>
               }
               { this.isSelectTheme() &&
               <button
                 disabled={
-                  pathname !== ROUTES.SELECT_THEME || !areValidNames
+                  selectedRoute !== ROUTES.SELECT_THEME || !areValidNames
                 }
                 className={classnames(styles.button, {
                   [buttonStyles.buttonDark]:
@@ -286,7 +279,8 @@ const mapStateToProps = (state: AppState): IStateProps => ({
   functionNames: getAzureFunctionsNamesSelector(state),
   functions: getAzureFunctionsOptionsSelector(state),
   isVisited: getIsVisitedRoutesSelector(state),
-  isValidNameAndProjectPath: isValidNameAndProjectPathSelector(state)
+  isValidNameAndProjectPath: isValidNameAndProjectPathSelector(state),
+  selectedRoute : state.wizardRoutes.selected
 });
 
 const mapDispatchToProps = (
@@ -297,12 +291,14 @@ const mapDispatchToProps = (
   },
   openPostGenModal: () => {
     dispatch(openPostGenModalAction());
-  }
+  },
+  setPage: (route: string) => {
+    dispatch(setPageWizardPageAction(route));
+  },
 });
 
-export default withRouter(
+export default
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(injectIntl(Footer))
-);
+  )(injectIntl(Footer));
