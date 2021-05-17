@@ -2,6 +2,7 @@
   "author": "Microsoft",
   "classifications": [ "Universal" ],
   "name": "AzureFunctions",
+  "shortName": "AzureFunctions",
   "groupIdentity": "wts.Feature.Azure.AzureFunctions",
   "identity": "wts.Feature.Azure.AzureFunctions",
   "description": "Serverless",

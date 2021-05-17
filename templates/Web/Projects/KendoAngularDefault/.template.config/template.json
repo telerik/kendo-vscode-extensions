@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "KendoAngularDefault",
+  "shortName": "Kendo Angular",
   "groupIdentity": "wts.Proj.KendoAngularDefault",
   "identity": "wts.Proj.KendoAngularDefault",
   "description": "",

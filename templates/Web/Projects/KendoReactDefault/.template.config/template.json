@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "KendoReactDefault",
+  "shortName": "Kendo React",
   "groupIdentity": "wts.Proj.KendoReactDefault",
   "identity": "wts.Proj.KendoReactDefault",
   "description": "",
