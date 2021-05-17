@@ -26,6 +26,10 @@
   ],
   "preview": true,
   "homepage": "https://www.telerik.com/kendo-ui/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telerik/kendo-vscode-extensions.git"
+  },
   "bugs": {
     "url": "https://www.telerik.com/account/support-tickets"
   },
