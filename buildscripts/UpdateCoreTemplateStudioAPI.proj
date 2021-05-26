@@ -36,6 +36,10 @@
     <Copy SourceFiles="@(LinuxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(LinuxFolderName)\%(RecursiveDir)" />
     <Copy SourceFiles="@(WinFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(Win32FolderName)\%(RecursiveDir)" />
 
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(DarwinFolderName)" />
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(LinuxFolderName)" />
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(Win32FolderName)" />
+
   </Target>
 
 </Project>
