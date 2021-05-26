@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "KendoVueDefault",
+  "shortName": "Kendo Vue",
   "groupIdentity": "wts.Proj.KendoVueDefault",
   "identity": "wts.Proj.KendoVueDefault",
   "description": "",

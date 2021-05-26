@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "Blank",
+  "shortName": "Blank",
   "groupIdentity": "wts.Page.Kendo.Blank",
   "identity": "wts.Page.Kendo.React.Blank",
   "description": "A blank page for you to build your web application from scratch.",

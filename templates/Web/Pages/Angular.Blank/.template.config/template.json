@@ -2,6 +2,7 @@
   "author": "Microsoft",
   "classifications": ["Universal"],
   "name": "Blank",
+  "shortName": "Blank",
   "groupIdentity": "wts.Page.Blank",
   "identity": "wts.Page.Angular.Blank",
   "description": "A blank page for you to build your web application from scratch.",

@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "Form",
+  "shortName": "Form",
   "groupIdentity": "wts.Page.Kendo.Form",
   "identity": "wts.Page.Kendo.React.Form",
   "description": "A form page for you to build your web application.",

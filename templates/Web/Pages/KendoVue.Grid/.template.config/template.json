@@ -2,6 +2,7 @@
   "author": "Progress",
   "classifications": ["Universal"],
   "name": "Grid",
+  "shortName": "Grid",
   "groupIdentity": "wts.Page.Kendo.Grid",
   "identity": "wts.Page.Kendo.Vue.Grid",
   "description": "A grid page for you to build your web application.",
