@@ -27,17 +27,18 @@
   <Target Name="UpdateExtensionsWithLatestAPI" >
 
     <ItemGroup>
-      <OsxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\**\*.*" 
-	            Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
-      <LinuxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\**\*.*"
-	              Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
-      <WinFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\**\*.*"
-	            Exclude="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\CoreTemplateStudio.config.json"/>
+      <OsxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(OsxRuntime)\$(PublishFolderName)\**\*.*" />
+      <LinuxFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(LinuxRuntime)\$(PublishFolderName)\**\*.*" />
+      <WinFiles Include="$(CoreTemplateStudioApiDirectory)\bin\$(Configuration)\$(TargetFramework)\$(WinRuntime)\$(PublishFolderName)\**\*.*" />
     </ItemGroup>
 
     <Copy SourceFiles="@(OsxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(DarwinFolderName)\%(RecursiveDir)" />
     <Copy SourceFiles="@(LinuxFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(LinuxFolderName)\%(RecursiveDir)" />
     <Copy SourceFiles="@(WinFiles)" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(Win32FolderName)\%(RecursiveDir)" />
+
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(DarwinFolderName)" />
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(LinuxFolderName)" />
+    <Copy SourceFiles="CoreTemplateStudio.config.json" DestinationFolder="$(KendoVscodeExtensionsApiDirectory)\$(Win32FolderName)" />
 
   </Target>
 

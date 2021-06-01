@@ -27,7 +27,7 @@
     <OsxRuntime>osx-x64</OsxRuntime>
     <LinuxRuntime>linux-x64</LinuxRuntime>
     <WinRuntime>win-x86</WinRuntime>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <!--<WtsPackagingTool-->
     <WtsPackagingToolOutputDirectory>$(WtsPackagingToolDirectory)\bin\$(Configuration)</WtsPackagingToolOutputDirectory>
