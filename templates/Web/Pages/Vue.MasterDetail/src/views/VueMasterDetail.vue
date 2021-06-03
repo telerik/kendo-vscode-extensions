@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <main id="mainContent" class="container-fluid">
       <div class="row">

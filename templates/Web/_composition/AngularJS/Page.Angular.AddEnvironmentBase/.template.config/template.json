@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddEnvironmentBase",
+    "shortName": "Page.Angular.AddEnvironmentBase",
+    "identity": "Page.Angular.AddEnvironmentBase",
   "tags": {
     "language": "Any",
     "type": "item",

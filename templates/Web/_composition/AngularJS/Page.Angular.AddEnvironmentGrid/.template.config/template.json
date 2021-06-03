@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddEnvironmentGrid",
+    "shortName": "Page.Angular.AddEnvironmentGrid",
+    "identity": "Page.Angular.AddEnvironmentGrid",
   "tags": {
     "language": "Any",
     "type": "item",

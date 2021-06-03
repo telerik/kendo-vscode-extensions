@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Input, Checkbox } from '@progress/kendo-react-inputs';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
 import { Form, Field } from '@progress/kendo-react-form';

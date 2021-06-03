@@ -1,4 +1,4 @@
-﻿import React, {useState} from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import { Header } from './components/Header'
 import { BrowserRouter as Router, Route } from "react-router-dom";

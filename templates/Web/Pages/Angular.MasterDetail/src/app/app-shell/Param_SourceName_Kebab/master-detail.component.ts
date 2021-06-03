@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MasterDetailService, IMasterDetailText } from './master-detail.service';
 

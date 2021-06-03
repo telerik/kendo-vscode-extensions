@@ -2,6 +2,8 @@
     "author": "Microsoft Community",
     "classifications": ["Universal"],
     "name": "Feature.Node.Azure.Cosmos.Mongo",
+    "shortName": "Feature.Node.Azure.Cosmos.Mongo",
+    "identity": "Feature.Node.Azure.Cosmos.Mongo",
     "tags": {
       "language": "Any",
       "type": "item",

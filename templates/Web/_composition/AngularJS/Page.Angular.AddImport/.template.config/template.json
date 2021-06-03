@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddImport",
+    "shortName": "Page.Angular.AddImport",
+    "identity": "Page.Angular.AddImport",
   "tags": {
     "language": "Any",
     "type": "item",

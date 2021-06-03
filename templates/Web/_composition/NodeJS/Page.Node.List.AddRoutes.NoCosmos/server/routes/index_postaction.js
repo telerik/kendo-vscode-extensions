@@ -1,4 +1,4 @@
-﻿//{[{
+//{[{
 const CONSTANTS = require("../constants");
 //}]}
 const express = require("express");

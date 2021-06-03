@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Progress",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Kendo.React.AddImport",
+    "shortName": "Page.Kendo.React.AddImport",
+    "identity": "Page.Kendo.React.AddImport",
     "tags": {
       "language": "Any",
       "type": "item",

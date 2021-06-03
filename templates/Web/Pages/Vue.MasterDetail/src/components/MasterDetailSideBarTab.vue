@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <button
     v-on:click="$emit('onDisplayTabClick', index)"
     type="button"

@@ -1,4 +1,4 @@
-﻿## Getting Started
+## Getting Started
 
 In the root directory of the project...
 

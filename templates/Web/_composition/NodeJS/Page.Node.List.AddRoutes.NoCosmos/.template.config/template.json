@@ -1,7 +1,9 @@
-﻿{
+{
   "author": "Microsoft Community",
   "classifications": ["Universal"],
   "name": "Page.Node.List.AddRoutes.NoCosmos",
+  "shortName": "Page.Node.List.AddRoutes.NoCosmos",
+  "identity": "Page.Node.List.AddRoutes.NoCosmos",
   "tags": {
     "language": "Any",
     "type": "item",

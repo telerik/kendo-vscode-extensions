@@ -1,4 +1,4 @@
-﻿var SQLClient = require("./sqlClient");
+var SQLClient = require("./sqlClient");
 const CONSTANTS = require("../constants");
 
 module.exports = class SQLController {

@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Vue.AddImport",
+    "shortName": "Page.Vue.AddImport",
+    "identity": "Page.Vue.AddImport",
   "tags": {
     "language": "Any",
     "type": "item",

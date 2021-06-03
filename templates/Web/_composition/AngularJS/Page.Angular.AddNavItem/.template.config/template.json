@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddNavItem",
+    "shortName": "Page.Angular.AddNavItem",
+    "identity": "Page.Angular.AddNavItem",
   "tags": {
     "language": "Any",
     "type": "item",

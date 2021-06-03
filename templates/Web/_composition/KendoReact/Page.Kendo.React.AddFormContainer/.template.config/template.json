@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Kendo.React.AddFormContainer",
+    "shortName": "Page.Kendo.React.AddFormContainer",
+    "identity": "Page.Kendo.React.AddFormContainer",
     "tags": {
     "language": "Any",
     "type": "item",

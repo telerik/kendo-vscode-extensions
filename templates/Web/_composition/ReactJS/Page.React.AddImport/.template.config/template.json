@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddImport",
+    "shortName": "Page.React.AddImport",
+    "identity": "Page.React.AddImport",
   "tags": {
     "language": "Any",
     "type": "item",

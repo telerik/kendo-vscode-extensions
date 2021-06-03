@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddHome",
+    "shortName": "Page.React.AddHome",
+    "identity": "Page.React.AddHome",
   "tags": {
     "language": "Any",
     "type": "item",

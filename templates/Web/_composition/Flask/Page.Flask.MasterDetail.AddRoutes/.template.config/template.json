@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Flask.MasterDetail.AddRoutes",
+    "shortName": "Page.Flask.MasterDetail.AddRoutes",
+    "identity": "Page.Flask.MasterDetail.AddRoutes",
   "tags": {
     "language": "Any",
     "type": "item",

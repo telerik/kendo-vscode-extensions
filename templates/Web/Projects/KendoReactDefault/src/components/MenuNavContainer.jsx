@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Menu, MenuItem } from '@progress/kendo-react-layout';
 import { useHistory } from 'react-router-dom';
 

@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Progress",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Kendo.Angular.AddHeaderNav",
+    "shortName": "Page.Kendo.Angular.AddHeaderNav",
+    "identity": "Page.Kendo.Angular.AddHeaderNav",
     "tags": {
     "language": "Any",
     "type": "item",

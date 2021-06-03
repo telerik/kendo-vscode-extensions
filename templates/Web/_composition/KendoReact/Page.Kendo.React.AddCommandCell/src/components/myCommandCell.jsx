@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { GridCell } from '@progress/kendo-react-grid';
 
 export function MyCommandCell({ edit, remove, add, update, discard, cancel, editField }) {

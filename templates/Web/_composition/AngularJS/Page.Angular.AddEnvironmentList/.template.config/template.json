@@ -1,7 +1,9 @@
-﻿{
+{
   "author": "Microsoft Community",
   "classifications": ["Universal"],
   "name": "Page.Angular.AddEnvironmentList",
+  "shortName": "Page.Angular.AddEnvironmentList",
+  "identity": "Page.Angular.AddEnvironmentList",
   "tags": {
     "language": "Any",
     "type": "item",

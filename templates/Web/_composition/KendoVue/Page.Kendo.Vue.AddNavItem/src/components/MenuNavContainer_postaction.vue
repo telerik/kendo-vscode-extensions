@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <Menu>
       <li>
         <router-link class="k-link k-menu-link" to="/">Home</router-link>

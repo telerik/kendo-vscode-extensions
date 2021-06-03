@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddWarnings",
+    "shortName": "Page.React.AddRoute",
+    "identity": "Page.React.AddRoute",
   "tags": {
     "language": "Any",
     "type": "item",

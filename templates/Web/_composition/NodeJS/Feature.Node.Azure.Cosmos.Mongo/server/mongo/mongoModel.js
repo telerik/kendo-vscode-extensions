@@ -1,4 +1,4 @@
-﻿const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const CONSTANTS = require("../constants");
 
 // TODO Web Template Studio: The Cosmos Mongo Database is set up to hold a collection called ListItems which contains documents

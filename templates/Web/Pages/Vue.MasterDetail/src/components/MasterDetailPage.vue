@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="col">
     <div class="row heading">
       <div class="col">

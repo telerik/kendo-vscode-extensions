@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="alert alert-warning ml-3 warningPosition" role="alert">
     {{text}}
     <button v-on:click="$emit('onWarningClose')" class="close ml-2" aria-label="Close">

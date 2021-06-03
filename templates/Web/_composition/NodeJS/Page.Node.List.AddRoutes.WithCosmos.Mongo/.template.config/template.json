@@ -1,7 +1,9 @@
-﻿{
+{
   "author": "Microsoft Community",
   "classifications": ["Universal"],
   "name": "Page.Node.List.AddRoutes.WithCosmos.Mongo",
+  "shortName": "Page.Node.List.AddRoutes.WithCosmos.Mongo",
+  "identity": "Page.Node.List.AddRoutes.WithCosmos.Mongo",
   "tags": {
     "language": "Any",
     "type": "item",
