@@ -1,4 +1,4 @@
-﻿//{[{
+//{[{
 const shortLoremIpsum = `Lorem id sint aliqua tempor tempor sit. Ad dolor dolor ut nulla mollit dolore non eiusmod Lorem tempor nisi cillum.`;
 //}]}
 const sampleData = {};

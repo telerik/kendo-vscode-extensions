@@ -1,4 +1,4 @@
-﻿<template>
+<template>
 <div class='container-fluid'>
            <div class='row my-4'>
                 <div class='col-12 col-lg-9 border-right' >

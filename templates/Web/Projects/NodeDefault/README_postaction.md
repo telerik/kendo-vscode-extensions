@@ -1,4 +1,4 @@
-﻿## File Structure
+## File Structure
 
 //{[{
 The back-end is based on [Express Generator](https://expressjs.com/en/starter/generator.html).

@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddNavItem",
+    "shortName": "Page.React.AddNavItem",
+    "identity": "Page.React.AddNavItem",
   "tags": {
     "language": "Any",
     "type": "item",

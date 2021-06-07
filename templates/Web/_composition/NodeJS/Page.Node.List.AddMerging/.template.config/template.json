@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Node.List.AddMerging",
+    "shortName": "Page.Node.List.AddMerging",
+    "identity": "Page.Node.List.AddMerging",
   "tags": {
     "language": "Any",
     "type": "item",

@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Progress",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Kendo.React.AddCommandCell",
+    "shortName": "Page.Kendo.React.AddCommandCell",
+    "identity": "Page.Kendo.React.AddCommandCell",
     "tags": {
     "language": "Any",
     "type": "item",

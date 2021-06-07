@@ -1,4 +1,4 @@
-﻿export const sampleProducts = [
+export const sampleProducts = [
     {
         "ProductID": 1,
         "ProductName": "Chai",

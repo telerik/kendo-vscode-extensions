@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <td v-if="!dataItem['inEdit']" class="k-command-cell">
         <button
             class="k-primary k-button k-grid-edit-command"

@@ -1,4 +1,4 @@
-﻿const routes = [
+const routes = [
   {
     path: "/",
     name: "Home",

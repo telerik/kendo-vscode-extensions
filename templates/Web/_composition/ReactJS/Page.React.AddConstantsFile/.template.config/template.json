@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddConstantsFile",
+    "shortName": "Page.React.AddConstantsFile",
+    "identity": "Page.React.AddConstantsFile",
   "tags": {
     "language": "Any",
     "type": "item",

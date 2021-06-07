@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <footer class="footer">
     <div class="container-fluid">
       <div class="row justify-content-around">

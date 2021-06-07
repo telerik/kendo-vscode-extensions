@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Kendo.Vue.AddFormContainer",
+    "shortName": "Page.Kendo.Vue.AddFormContainer",
+    "identity": "Page.Kendo.Vue.AddFormContainer",
     "tags": {
     "language": "Any",
     "type": "item",

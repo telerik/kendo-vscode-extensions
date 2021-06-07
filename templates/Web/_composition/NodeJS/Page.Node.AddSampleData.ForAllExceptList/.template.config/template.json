@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
   "name": "Page.Node.AddSampleData.ForAllExceptList",
+  "shortName": "Page.Node.AddSampleData.ForAllExceptList",
+  "identity": "Page.Node.AddSampleData.ForAllExceptList",
   "tags": {
     "language": "Any",
     "type": "item",

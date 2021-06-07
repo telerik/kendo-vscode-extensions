@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <main id="mainContent">
       <div class="text-center header">

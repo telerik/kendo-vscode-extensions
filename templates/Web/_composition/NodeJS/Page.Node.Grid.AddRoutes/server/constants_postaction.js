@@ -1,4 +1,4 @@
-﻿const CONSTANTS = {};
+const CONSTANTS = {};
 //{[{
 CONSTANTS.ENDPOINT = {};
 //}]}

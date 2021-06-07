@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Flask.Grid.AddMerging",
+    "shortName": "Page.Flask.Grid.AddMerging",
+    "identity": "Page.Flask.Grid.AddMerging",
   "tags": {
     "language": "Any",
     "type": "item",

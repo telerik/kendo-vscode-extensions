@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export default function GridComponent(props) {
   const { image, header, description } = props;

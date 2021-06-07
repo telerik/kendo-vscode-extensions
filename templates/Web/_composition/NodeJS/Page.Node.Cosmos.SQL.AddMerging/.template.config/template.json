@@ -1,7 +1,9 @@
-﻿{
+{
   "author": "Microsoft Community",
   "classifications": ["Universal"],
   "name": "Page.Node.Cosmos.SQL.AddMerging",
+  "shortName": "Page.Node.Cosmos.SQL.AddMerging",
+  "identity": "Page.Node.Cosmos.SQL.AddMerging",
   "tags": {
     "language": "Any",
     "type": "item",

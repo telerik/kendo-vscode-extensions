@@ -2,6 +2,8 @@
     "author": "Microsoft Community",
     "classifications": ["Universal"],
     "name": "Page.Flask.List.AddRoutes.WithCosmos.SQL",
+    "shortName": "Page.Flask.List.AddRoutes.WithCosmos.SQL",
+    "identity": "Page.Flask.List.AddRoutes.WithCosmos.SQL",
     "tags": {
       "language": "Any",
       "type": "item",

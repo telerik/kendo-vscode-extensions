@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Flask.Grid.AddRoutes",
+    "shortName": "Page.Flask.Grid.AddRoutes",
+    "identity": "Page.Flask.Grid.AddRoutes",
   "tags": {
     "language": "Any",
     "type": "item",

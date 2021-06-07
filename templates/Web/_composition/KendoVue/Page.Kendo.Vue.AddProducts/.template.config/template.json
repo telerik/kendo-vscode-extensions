@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Progress",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Kendo.Vue.AddProducts",
+    "shortName": "Page.Kendo.Vue.AddProducts",
+    "identity": "Page.Kendo.Vue.AddProducts",
     "tags": {
     "language": "Any",
     "type": "item",

@@ -1,4 +1,4 @@
-﻿import React, { Component } from "react";
+import React, { Component } from "react";
 import classnames from "classnames";
 import WarningMessage from "../WarningMessage";
 import MasterDetailPage from "./MasterDetailPage";

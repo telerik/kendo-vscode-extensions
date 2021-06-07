@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Flask.List.AddMerging",
+    "shortName": "Page.Flask.List.AddMerging",
+    "identity": "Page.Flask.List.AddMerging",
   "tags": {
     "language": "Any",
     "type": "item",

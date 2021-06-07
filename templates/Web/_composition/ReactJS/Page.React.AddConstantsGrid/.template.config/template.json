@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.React.AddConstantsGrid",
+    "shortName": "Page.React.AddConstantsGrid",
+    "identity": "Page.React.AddConstantsGrid",
   "tags": {
     "language": "Any",
     "type": "item",

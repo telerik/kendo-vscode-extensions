@@ -1,4 +1,4 @@
-﻿const ReadPreference = require("mongodb").ReadPreference;
+const ReadPreference = require("mongodb").ReadPreference;
 const ListItem = require("./mongoModel");
 
 require("./mongoConnect").connect();

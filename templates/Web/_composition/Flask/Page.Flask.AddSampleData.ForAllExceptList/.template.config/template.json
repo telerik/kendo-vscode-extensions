@@ -4,6 +4,8 @@
       "Universal"
     ],
   "name": "Page.Flask.AddSampleData.ForAllExceptList",
+  "shortName": "Page.Flask.AddSampleData.ForAllExceptList",
+  "identity": "Page.Flask.AddSampleData.ForAllExceptList",
   "tags": {
     "language": "Any",
     "type": "item",

@@ -1,4 +1,4 @@
-﻿## Next Steps
+## Next Steps
 
 //{[{
 

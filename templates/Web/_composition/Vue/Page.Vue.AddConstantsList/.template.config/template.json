@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Vue.AddConstantsList",
+    "shortName": "Page.Vue.AddConstantsList",
+    "identity": "Page.Vue.AddConstantsList",
   "tags": {
     "language": "Any",
     "type": "item",

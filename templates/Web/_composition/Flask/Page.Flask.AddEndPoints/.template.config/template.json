@@ -4,6 +4,8 @@
       "Universal"
     ],
     "name": "Page.Flask.AddEndPoints",
+    "shortName": "Page.Flask.AddEndPoints",
+    "identity": "Page.Flask.AddEndPoints",
   "tags": {
     "language": "Any",
     "type": "item",

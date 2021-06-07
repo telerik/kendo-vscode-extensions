@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddWarnings",
+    "shortName": "Page.Angular.AddWarnings",
+    "identity": "Page.Angular.AddWarnings",
   "tags": {
     "language": "Any",
     "type": "item",

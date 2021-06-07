@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Angular.AddRoute",
+    "shortName": "Page.Angular.AddRoute",
+    "identity": "Page.Angular.AddRoute",
   "tags": {
     "language": "Any",
     "type": "item",

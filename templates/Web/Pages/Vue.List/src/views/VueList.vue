@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <main class="container" id="mainContent">
     <div class="row">
       <div class="col mt-5 p-0">

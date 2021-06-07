@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Microsoft Community",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Node.Grid.AddRoutes",
+    "shortName": "Page.Node.Grid.AddRoutes",
+    "identity": "Page.Node.Grid.AddRoutes",
   "tags": {
     "language": "Any",
     "type": "item",

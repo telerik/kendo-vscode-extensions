@@ -1,4 +1,4 @@
-﻿<Menu onSelect={onSelect}>
+<Menu onSelect={onSelect}>
     <MenuItem text="Home" data={{ route: '/' }}/>
     //^^
     //{[{

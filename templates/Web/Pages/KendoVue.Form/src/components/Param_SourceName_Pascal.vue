@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="container-fluid">
             <Dialog v-if="showDialog" @close="toggleDialog">
                 <p :style='{ margin: "25px", textAlign: "center" }'>The form is successfully submitted!</p>

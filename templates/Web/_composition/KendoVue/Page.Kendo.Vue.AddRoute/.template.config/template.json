@@ -1,9 +1,11 @@
-﻿{
+{
     "author": "Progress",
     "classifications": [
       "Universal"
     ],
     "name": "Page.Kendo.Vue.AddRoute",
+    "shortName": "Page.Kendo.Vue.AddRoute",
+    "identity": "Page.Kendo.Vue.AddRoute",
   "tags": {
     "language": "Any",
     "type": "item",
