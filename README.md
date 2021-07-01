@@ -1,3 +1,6 @@
+> NOTE: This repo is archived, all the code past the "monorepo-snapshot" tag, and further development has moved to:
+> [https://github.com/telerik/vscode-extensions](https://github.com/telerik/vscode-extensions)
+
 # Starter projects locations
 
 Starter projects are sourced from https://github.com/telerik/kendo-vsx-templates
